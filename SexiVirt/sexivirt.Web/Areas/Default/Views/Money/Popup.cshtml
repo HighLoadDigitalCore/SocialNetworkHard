@@ -1,0 +1,17 @@
+﻿@model DepositCandidateView
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<div class="popupBg"></div>
+<div class="popup balance pp-type2">
+    <div class="pp_close close-popup">×</div>
+    <div class="pp_title">Ваш баланс: @currentUser.Money р.</div>
+    <div class="popup-tabs">
+        <span class="active" id="MoneyAdd">Пополнить баланс</span>
+        <span id="MoneyRemove">Вывести средства</span>
+        <span id="MoneyHistory">История платежей</span>
+    </div>
+    <div id="PopupContent">
+        @Html.Partial("MoneyAdd", new MoneyAddModel())
+    </div>
+</div>

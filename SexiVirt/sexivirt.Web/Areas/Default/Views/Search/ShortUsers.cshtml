@@ -1,0 +1,52 @@
+﻿@model IList<User>
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var opened = ((bool?)ViewBag.Opened) ?? false;
+}
+@foreach (var user in Model)
+{
+    <div class="cpu_user">
+        <div class="blogEntryItem @user.GenderStr active">
+            <div class="p_photo">
+                <img src="@user.FullAvatarPath?w=94&h=94&mode=crop" alt="">
+            </div>
+            <div class="cp_userName"><a href="@Url.Action("Index", "User", new { id = user.ID })">@user.FirstName</a></div>
+
+            @if (user.CityID.HasValue)
+            {
+                <div class="cp_authorCity">@user.City.Name</div>
+            }
+            else
+            {
+                <div class="cp_authorCity">&nbsp;</div>
+            }
+            <div class="cp_text">
+                @user.Status
+            </div>
+            <div class="cam_services">
+                @foreach (var preference in @user.SubPreferences.Take(3))
+                {
+                    if (currentUser != null && currentUser.HasPreference(preference.ID))
+                    {
+                        <div class="selected">@preference.Name</div>
+                    }
+                    else
+                    {
+                        <div>@preference.Name</div>
+                    }
+                }
+                @if (user.SubPreferences.Count > 3)
+                {
+                    if (opened)
+                    {
+                        <div class="dots" data-opened="False" data-id="@user.ID">>&larr;</div>
+                    }
+                    else
+                    {
+                        <div class="dots" data-opened="True" data-id="@user.ID">>...</div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,5 @@
+D:\Sites\SexiVirt\Common.Tools\Tool\bin\Release\Tool.dll
+D:\Sites\SexiVirt\Common.Tools\Tool\bin\Release\Tool.pdb
+D:\Sites\SexiVirt\Common.Tools\Tool\obj\Release\Tool.csprojResolveAssemblyReference.cache
+D:\Sites\SexiVirt\Common.Tools\Tool\obj\Release\Tool.dll
+D:\Sites\SexiVirt\Common.Tools\Tool\obj\Release\Tool.pdb

@@ -1,0 +1,19 @@
+﻿@model Meeting
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+
+<div class="my-meeting-item @(Model.MeetingDate.Date < DateTime.Now.Date ? "past" : "")">
+    <div class="date">@Model.MeetingDate.EventDateNamed()</div>
+    <div class="city">@Model.City.Name</div>
+    <div class="text">
+        @Model.Text
+    </div>
+    @if (currentUser.ID == Model.UserID && Model.MeetingDate.Date >= DateTime.Now.Date)
+    {
+        <div class="action">
+            <a href="@Url.Action("Edit", "Meeting", new { id = Model.ID })" class="edit">Редактировать</a>
+            <a href="@Url.Action("Delete", "Meeting", new { id = Model.ID })" class="delete">Удалить</a>
+        </div>
+    }
+</div>

@@ -1,0 +1,11 @@
+D:\Sites\SexiVirt\sexivirt.Model\bin\Debug\sexivirt.Model.dll.config
+D:\Sites\SexiVirt\sexivirt.Model\bin\Debug\sexivirt.Model.dll
+D:\Sites\SexiVirt\sexivirt.Model\bin\Debug\sexivirt.Model.pdb
+D:\Sites\SexiVirt\sexivirt.Model\bin\Debug\Ninject.dll
+D:\Sites\SexiVirt\sexivirt.Model\bin\Debug\Tool.dll
+D:\Sites\SexiVirt\sexivirt.Model\bin\Debug\Tool.pdb
+D:\Sites\SexiVirt\sexivirt.Model\bin\Debug\Ninject.pdb
+D:\Sites\SexiVirt\sexivirt.Model\bin\Debug\Ninject.xml
+D:\Sites\SexiVirt\sexivirt.Model\obj\Debug\sexivirt.Model.csprojResolveAssemblyReference.cache
+D:\Sites\SexiVirt\sexivirt.Model\obj\Debug\sexivirt.Model.dll
+D:\Sites\SexiVirt\sexivirt.Model\obj\Debug\sexivirt.Model.pdb

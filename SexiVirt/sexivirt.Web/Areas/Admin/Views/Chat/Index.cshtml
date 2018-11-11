@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Групповой чат";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section scripts
+{
+    <script type="text/javascript" src="/Scripts/jquery-ui-1.10.4.custom.min.js"></script>
+}
+@model int?
+<div id="ChatWindow">
+    @if (Model.HasValue)
+    {
+        <input type="hidden" id="FromUserID" value="@Model.Value"/>
+        @Html.Action("IndexChat", new { UserChatID = Model.Value })
+
+    }
+</div>

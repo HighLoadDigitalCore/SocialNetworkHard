@@ -1,0 +1,31 @@
+﻿@model IList<Event>
+@foreach (var item in Model)
+{
+    <div class="event-item">
+        <div class="image">
+            <a href="@Url.Action("Item", "Event", new { id = item.ID })">
+                <div class="frame"></div>
+                <img src="@item.ImagePath?w=160&h=176&mode=crop" alt="">
+            </a>
+        </div>
+        <div class="date">@item.EventDate.EventDateNamed()</div>
+        <a href="@Url.Action("Item", "Event", new { id = item.ID })">@item.Name</a>
+        <div class="text">
+            @item.Description.Teaser(100)
+        </div>
+        @foreach (var user in item.SubUsers.Take(3))
+        {
+            <div class="like @user.GenderStr">
+                <a href="@Url.Action("Index", "User", new { id = user.ID })">
+                    <img src="@user.FullAvatarPath?w=40&h=40&mode=crop" alt="">
+                </a>
+            </div>
+        }
+        @if (item.SubUsersCount > 3)
+        {
+            <div class="liked">
+                <div class="number">еще<br>@(item.SubUsersCount - 3)</div>
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,41 @@
+﻿@model IList<Event>
+@{
+    ViewBag.Title = "События";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var eventSearch = (sexivirt.Web.Models.ViewModels.Info.EventSearch)ViewBag.EventSearch;
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+
+}
+
+@section header {
+    @Scripts.Render("~/Scripts/jquery.jscroll.js")
+    @Scripts.Render("/Scripts/default/event.js")
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="events-list">
+            <h1>События</h1>
+            @if (currentUser != null)
+            {
+                <div class="addWrite"><a href="@Url.Action("Create", "Event")">Добавить новое событие</a></div>
+            }
+            @Html.Partial("SearchEvent", eventSearch)
+            <div class="all-events">
+                <h2>Все события</h2>
+                <div id="EventResult" data-skip="@Model.Count">
+                    <div class="event-list">
+                        @foreach (var item in Model)
+                        {
+                            @Html.Partial("EventShortItem", item)
+                        }
+                    </div>
+                    @if (Model.Count == 18)
+                    {
+                        <a class="next" href="@Url.Action("Load","Event")">Загружаю</a>
+                    }
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

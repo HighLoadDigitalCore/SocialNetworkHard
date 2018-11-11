@@ -1,0 +1,31 @@
+﻿@model IList<Connect>
+@{
+    ViewBag.Title = "Мои сообщения";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+@section header {
+    @Scripts.Render("~/Scripts/jquery.jscroll.js")
+    @Scripts.Render("/Scripts/default/message.js")
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="messages clear">
+            <h1>Сообщения</h1>
+            <div class="c_search">
+                <input class="inputSearch" type="text" id="MessageSearch" placeholder="Начните вводить имя, логин или e-mail">
+                <button class="searchBut"></button>
+            </div>
+            <div id="ConnectsWrapper">
+                @foreach (var item in Model)
+                {
+                    @Html.Partial("ConnectItem", item)
+                }
+                @if (Model.Count == 10)
+                {
+                    <a class="next" href="@Url.Action("LoadConversations", "Message", new { skip = 10 })">Загружаю</a>
+                }
+            </div>
+        </section>
+    </div>
+</div>

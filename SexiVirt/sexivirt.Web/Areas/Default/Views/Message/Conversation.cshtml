@@ -1,0 +1,64 @@
+﻿@model IList<Message>
+@{
+    ViewBag.Title = "Общение";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var connect = (sexivirt.Model.Connect)ViewBag.Connect;
+    var opponent = connect.Viral(currentUser);
+}
+@section header {
+    @Scripts.Render("/Scripts/default/conversation.js")
+}
+@Html.Hidden("ID", connect.ID)
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="dialog @opponent.GenderStr clear">
+            <h1><a href="@Url.Action("Index", "Message")">Сообщения</a></h1>
+            <div class="c_userName">
+                <a href="@Url.Action("Index", "User", new { id = opponent.ID })">@opponent.FirstName</a>
+                <div class="c_userPhoto @opponent.GenderStr">
+                    <div class="status @(opponent.IsOnline ? "online" : "offline")" style="right: -12px"></div>
+                    <img src="@opponent.FullAvatarPath?w=52&h=52&mode=crop" alt="" />
+                </div>
+            </div>
+            <div class="list" id="MessagesWrapper">
+                @*
+                @if (Model.Count < connect.MessagesCount(currentUser.ID))
+                {
+                    <em class="load" id="LoadMarker" data-skip="@Model.Count">Загрузка...</em>
+                }
+*@
+                <div id="MessagesList">
+                    @foreach (var message in Model)
+                    {
+                        @Html.Partial("MessageItem", message)
+                    }
+                </div>
+                <div id="LastLine"></div>
+            </div>
+            <div class="send clear">
+                @if (!currentUser.BlockedBy(opponent.ID))
+                {
+                    <div class="right">
+                        @Html.TextArea("Message", "", new { placeholder = "Введите текст сообщения" })
+                        <a class="delete" href="@Url.Action("RemoveAll", "Message", new {id = connect.ID })">
+                            Удалить беседу
+                        </a>
+                        <button class="greenBut" id="WriteMessageBtn">Отправить</button>
+                    </div>
+                }
+                else
+                {
+                    <div class="right">
+                        <p class="block-message">
+                            @opponent.FirstName @(opponent.Sex ? "заблокировал" : "заблокировала") Вас
+                        </p>
+                    </div>
+                }
+            </div>
+        </section>
+    </div>
+</div>
+
+

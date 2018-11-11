@@ -1,0 +1,46 @@
+﻿@model IList<Event>
+@if (Model.Any())
+{
+    <section class="mm_events">
+        <div class="mm_title"><a href="@Url.Action("Index", "Event")">События</a></div>
+        <div class="carousel carousel1">
+            <div class="carouselWrap">
+                <ul>
+                    @foreach (var ev in Model)
+                    {
+                        <div class="event-item">
+                            <div class="image">
+                                <a href="@Url.Action("Item", "Event", new {id = ev.ID})">
+                                    <div class="frame"></div>
+                                    <img src="@ev.ImagePath?w=160&h=176&mode=crop" alt="">
+                                </a>
+                            </div>
+                            <div class="date">@ev.EventDate.EventDateNamed()</div>
+                            <a href="@Url.Action("Item", "Event", new {id = ev.ID})">@ev.Name</a>
+                            <div class="text">
+                                @ev.Description.Teaser(100)
+                            </div>
+                            @foreach (var item in ev.SubUsers.Take(3))
+                            {
+                                <div class="like @item.GenderStr">
+                                    <a href="@Url.Action("Index", "User", new {id = item.ID})">
+                                        <img src="@item.FullAvatarPath?w=40&h=40&mode=crop" alt="">
+                                    </a>
+                                </div>
+                            }
+                            @if (ev.SubUsersCount > 3)
+                            {
+                                <div class="liked">
+                                    <div class="number">еще<br>@(ev.SubUsersCount - 3)</div>
+                                </div>
+                            }
+
+                        </div>
+                    }
+                </ul>
+            </div>
+            <div class="carouselPrev carouselPrev1"></div>
+            <div class="carouselNext carouselNext1"></div>
+        </div>
+    </section>
+}

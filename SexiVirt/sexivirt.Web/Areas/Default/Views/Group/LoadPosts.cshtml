@@ -1,0 +1,17 @@
+﻿@model IList<GroupBlogPost>
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var total = (int)ViewBag.Total;
+}
+@Html.Hidden("LastSkip", total)
+
+@foreach (var blogPost in Model)
+{
+    @Html.Partial("ShortGroupBlogPost", blogPost)
+}
+@if (Model.Count == 10)
+{
+    <a class="next" href="@Url.Action("LoadPosts", "Group", new { id = Model.First().GroupID, skip = total })">Загружаю</a>
+}
+
+

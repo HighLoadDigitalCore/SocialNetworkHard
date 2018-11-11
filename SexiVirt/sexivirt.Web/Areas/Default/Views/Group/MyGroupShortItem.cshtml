@@ -1,0 +1,22 @@
+﻿@model Group
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<div class="groupItem my-group">
+    <div class="image">
+        <img src="@Model.AvatarUrl?w=155&h=155&mode=crop" alt="">
+    </div>
+    <div class="groupName"><a href="@Url.Action("Item", "Group", new {id = Model.ID })">@Model.Name</a></div>
+    <div class="text">
+        @Html.Raw(Model.Info.Teaser(300).NlToBr())
+    </div>
+    <div class="amountGroupUser">@Model.SubUsersCount.ToString("N0") @Model.SubUsersCount.CountWord("участник", "участника", "участников")</div>
+
+    @if (currentUser.ID == Model.UserID)
+    {
+        <div class="action">
+            <a href="@Url.Action("Edit", "Group", new { id = Model.ID })" class="edit">Редактировать</a>
+            <a href="@Url.Action("Delete", "Group", new { id = Model.ID })" class="delete">Удалить</a>
+        </div>
+    }
+</div>

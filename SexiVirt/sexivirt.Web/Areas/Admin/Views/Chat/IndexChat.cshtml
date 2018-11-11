@@ -1,0 +1,32 @@
+﻿@model IList<Connect>
+<link rel="stylesheet" href="~/Content/css/jquery.mCustomScrollbar.css" type="text/css" />
+@Scripts.Render("~/Scripts/jquery.jscroll.js")
+@Scripts.Render("/Scripts/admin/message.js")
+@Scripts.Render("~/Scripts/jquery.mCustomScrollbar.js")
+<input type="hidden" id="FromUserID" value="@ViewBag.ChatUserID"/>
+<div class="middle">
+    <div class="content">
+        <section class="messages clear">
+            <h2>Сообщения</h2>
+            @*
+            <div class="c_search">
+                <input class="inputSearch" type="text" id="MessageSearch" placeholder="Начните вводить имя, логин или e-mail">
+                <button class="searchBut"></button>
+            </div>
+*@
+            <div style="width: 100%; clear: both; overflow: hidden">
+                <div id="ConnectsWrapper" style="float: left">
+                    @foreach (var item in Model)
+                    {
+                        @Html.Partial("ConnectItem", item)
+                    }
+                    @if (Model.Count == 10)
+                    {
+                        <a class="next" href="@Url.Action("LoadConversations", "Chat", new { skip = 10, ChatUserID = ViewBag.ChatUserID })">Загружаю</a>
+                    }
+                </div>
+                <div id="ChatWrapper" style="float: left; min-height: 400px"></div>
+            </div>
+        </section>
+    </div>
+</div>

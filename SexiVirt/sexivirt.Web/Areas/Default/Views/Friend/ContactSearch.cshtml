@@ -1,0 +1,8 @@
+﻿@model sexivirt.Web.Models.ViewModels.Info.ContactSearch
+<div class="c_search">
+    @using (Html.BeginForm("Index", "Friend", FormMethod.Post, new { id = "ContactSearchForm" }))
+    {
+        @Html.TextBox("SearchString", Model.SearchString, new { @class = "inputSearch", placeholder = "Начните вводить имя или e-mail" })
+        <button class="searchBut"></button>
+    }
+</div>

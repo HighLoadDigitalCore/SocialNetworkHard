@@ -1,0 +1,40 @@
+﻿@model IList<object>
+@{
+    ViewBag.Title = "Дневники";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var type = (int?)ViewBag.Type ?? 2;
+}
+@section header
+{
+    @Scripts.Render("~/Scripts/jquery.jscroll.js")
+    @Scripts.Render("~/Scripts/default/index-blog.js")
+}
+
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="diaries clear">
+            <h1 class="woman">Дневники</h1>
+            @if (currentUser != null)
+            {
+                <div class="addWrite"><a href="@Url.Action("Add", "Blog")">Добавить свою запись</a></div>
+            }
+            <div class="cd_filters">
+                <span class="active" data-type="1">Последние записи</span><span data-type="2">Все дневники</span>
+            </div>
+            <div class="blogEntry" id="BlogUserWrapper" data-skip="18">
+
+
+                @foreach (var item in Model)
+                {
+                    @(type == 1 ? Html.Partial("ShortBlogPostInList", item) : Html.Partial("ShortBlogAuthor", item))
+                }
+                @if (Model.Count == 18)
+                {
+                    <a class="next" style="@(Model.Count == 18?"display:none":"")" href="@Url.Action("IndexLoad", "Blog")">Загружаю</a>
+                }
+            </div>
+        </section>
+    </div>
+</div>

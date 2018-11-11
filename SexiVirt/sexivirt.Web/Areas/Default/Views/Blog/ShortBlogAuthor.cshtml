@@ -1,0 +1,19 @@
+﻿@model User
+
+<div class="blogEntryItem @Model.GenderStr">
+    <div class="p_photo">
+        <a href="@Url.Action("Blog", "Blog", new { id = Model.ID })">
+            <img src="@Model.AvatarPath?w=94&h=94&mode=crop" alt="" />
+        </a>
+    </div>
+    <div class="cd_authorName">
+        <a href="@Url.Action("Index", "User", new { id = Model.ID })">
+            @Model.FirstName
+        </a>
+    </div>
+    <div class="cd_postAmount">
+        <a href="@Url.Action("Blog", "Blog", new { id = Model.ID })">
+            @Model.BlogPostCount @Model.BlogPostCount.CountWord("запись", "записи", "записей")
+        </a>
+    </div>
+</div>

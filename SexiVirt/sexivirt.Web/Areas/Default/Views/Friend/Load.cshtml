@@ -1,0 +1,14 @@
+﻿@model IList<Friendship>
+@{
+    var total = (int)ViewBag.Total;
+}
+@Html.Hidden("LastSkip", total)
+@foreach (var friendship in Model)
+{
+    @Html.Partial("ShortFullContactItem", friendship)
+}
+@if (Model.Count == 18)
+{
+    <a class="next" href="@Url.Action("Load","Friend")">Загружаю</a>
+}
+

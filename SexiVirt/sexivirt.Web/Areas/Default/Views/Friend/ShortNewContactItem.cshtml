@@ -1,0 +1,31 @@
+﻿@model Friendship
+<div class="contact-item new">
+    <div class="photo @Model.Sender.GenderStr">
+        <div class="status @(Model.Sender.IsOnline ? "online" : "offline")"></div>
+        <img src="@Model.Sender.AvatarPath?w=94&h=94&mode=crop" alt="">
+    </div>
+    <div class="name @Model.Sender.GenderStr">
+        <a href="@Url.Action("Index", "User", new {id = Model.SenderID })">@Model.Sender.FirstName</a>
+    </div>
+
+    <div class="city">
+        @if (Model.Sender.CityID.HasValue)
+        {
+            @Model.Sender.City.Name
+        }
+        else
+        {
+            <text>&nbsp;</text>
+        }
+    </div>
+    <div class="buttons">
+        <div class="add confirmFriendship" data-id="@Model.ID">
+            <div class="plus"></div>
+            <span>Добавить</span>
+        </div>
+        <div class="cancel declineFriendship" data-id="@Model.ID">
+            <div class="cross"></div>
+            <span>Отклонить</span>
+        </div>
+    </div>
+</div>

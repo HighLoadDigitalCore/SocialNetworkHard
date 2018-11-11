@@ -1,0 +1,12 @@
+﻿@model IList<Group>
+
+@foreach (var group in Model)
+{
+    <div class="groupItem">
+        <img src="@group.AvatarUrl?w=155&h=155&mode=crop" alt="">
+        <div class="groupName">
+            <a href="@Url.Action("Item", "Group", new { id = group.ID })">@group.Name</a>
+        </div>
+        <div class="amountGroupUser">@group.SubUsersCount.ToString("N0") @group.SubUsersCount.CountWord("участник", "участника", "участников")</div>
+    </div>
+}

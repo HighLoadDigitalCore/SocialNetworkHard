@@ -1,0 +1,47 @@
+﻿@model LoginView
+
+<aside class="unauthorized">
+    <div class="header">
+        <span>Здравствуйте!</span>
+        <p>Вы зашли на сайт анонимно<br>и не сможете в полной мере оценить общение в нашем клубе.</p>
+        Присоединяйтесь к нам!<br>С нами интересно.
+    </div>
+    @*
+        <div class="impressions">
+            <img src="/Content/images/gone-impressions.png" alt="">
+            <a href="#">Делись<br>впечатлениями</a>
+        </div>
+    *@
+    <div class="login">
+        <span>Войдите на сайт</span>
+        @using (Html.BeginForm("AjaxAside", "Login", FormMethod.Post, new { id = "AjaxAsideLoginForm" }))
+        {
+            @Html.TextBox("Email", Model.Email, new { placeholder = "Email пользователя" })
+            @Html.Password("Password", Model.Password, new { placeholder = "Пароль" })
+            <button type="button" class="greenBut" id="AjaxLoginBtn">Войти</button>
+            if (ViewBag.Message != null)
+            {
+                <p style="width: 160px; font-weight: bold; padding-top: 10px; color: orangered">@Html.Raw(ViewBag.Message)</p>
+            }
+        }
+    </div>
+    <div class="social">
+        <span>Войти через<br>социальные сети</span>
+        @*
+            <div class="item twitter"></div>
+            <div class="item facebook"></div>
+            <a class="item vkontakte" href="@Url.Action("VKLogOn", "Login")"></a>
+            <div class="item google"></div>
+            <div class="item write"></div>
+            <div class="item yellow"></div>
+        *@
+        <script src="//ulogin.ru/js/ulogin.js"></script>
+        <div id="uLoginAdd" data-ulogin="display=panel;fields=first_name,email,nickname,photo,photo_big,sex,bdate;providers=twitter,facebook,vkontakte;hidden=;redirect_uri=http%3A%2F%2F@(Request.Url.Host)%2FUser%2FSocials"></div>
+        <div id="uLogin" data-ulogin="display=panel;fields=first_name,email,nickname,photo,photo_big,sex,bdate;providers=odnoklassniki,mailru,google;hidden=;redirect_uri=http%3A%2F%2F@(Request.Url.Host)%2FUser%2FSocials"></div>
+
+    </div>
+    <a class="registration-link" href="/">— Я у вас впервые</a>
+</aside>
+<script type="text/javascript">
+
+</script>

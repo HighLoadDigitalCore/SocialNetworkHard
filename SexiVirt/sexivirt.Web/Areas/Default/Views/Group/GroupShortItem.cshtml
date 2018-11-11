@@ -1,0 +1,7 @@
+﻿@model Group
+
+<div class="groupItem">
+    <img src="@Model.AvatarUrl?w=155&h=155&mode=crop" alt="">
+    <div class="groupName"><a href="@Url.Action("Item", "Group", new {id = Model.ID })">@Model.Name</a></div>
+    <div class="amountGroupUser">@Model.SubUsersCount.ToString("N0") @Model.SubUsersCount.CountWord("участник", "участника", "участников")</div>
+</div>

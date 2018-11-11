@@ -1,0 +1,11 @@
+﻿@model Event
+
+
+@foreach (var user in Model.SubUsers)
+{
+    <a href="@Url.Action("Index", "User", new { id = user.ID })">
+        <div class="item @user.GenderStr">
+            <img src="@user.FullAvatarPath?w=94&h=94&mode=crop" alt="" />
+        </div>
+    </a>
+}

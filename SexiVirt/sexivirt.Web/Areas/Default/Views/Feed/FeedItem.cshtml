@@ -1,0 +1,158 @@
+﻿@model Feed
+<div class="news-item @Model.Actor.GenderStr">
+    <div class="user-photo">
+        <img src="@Model.Actor.FullAvatarPath?w=49&h=49&mode=crop" alt="">
+        <div class="status @(Model.Actor.IsOnline ? "online" : "offline")"></div>
+    </div>
+    @switch ((Feed.ActionTypeEnum)Model.ActionType)
+    {
+        case Feed.ActionTypeEnum.AddFriend:
+            <div class="news-body">
+                <div class="news-header">
+                    <div class="date">@Model.AddedDate.EventDateNamed() в @Model.AddedDate.ToString("HH:mm")</div>
+                    <div class="text">
+                        <a href="@Url.Action("Index", "User", new { id = Model.ActorID })">@Model.Actor.FirstName</a>
+                        @(Model.Actor.Sex ? "добавил" : "добавила") вас в друзья!
+                    </div>
+                </div>
+                <div class="news-content">
+                </div>
+            </div>
+            break;
+        case Feed.ActionTypeEnum.AddBlogPostComment:
+            if (Model.BlogPostID.HasValue)
+            {
+                <div class="news-body">
+                    <div class="news-header">
+                        <div class="date">@Model.AddedDate.EventDateNamed() в @Model.AddedDate.ToString("HH:mm")</div>
+                        <div class="text">
+                            <a href="@Url.Action("Index", "User", new {id = Model.ActorID})">@Model.Actor.FirstName</a>
+                            @(Model.Actor.Sex ? "оставил" : "оставила")  комментарий к вашей записи
+                            «<a href="@Url.Action("Post", "Blog", new {id = Model.BlogPostID})">@Model.BlogPost.Header</a>»
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <div class="comment" data-url="@Url.Action("Post", "Blog", new {id = Model.BlogPostID})" data-comment-id="@Model.CommentID">
+                            @Model.Comment.Text
+                        </div>
+                    </div>
+                </div>
+            }
+            break;
+        case Feed.ActionTypeEnum.AddCommentToComment:
+            if (Model.EventID.HasValue || Model.BlogPostID.HasValue || Model.GroupBlogPostID.HasValue)
+            {
+                <div class="news-body">
+                    <div class="news-header">
+                        <div class="date">@Model.AddedDate.EventDateNamed() в @Model.AddedDate.ToString("HH:mm")</div>
+                        <div class="text">
+                            <a href="@Url.Action("Index", "User", new {id = Model.ActorID})">@Model.Actor.FirstName</a>
+                            @(Model.Actor.Sex ? "оставил" : "оставила")  ответ к вашему комментарию в ветке «
+                            @if (Model.BlogPostID.HasValue)
+                            {
+                                <a href="@Url.Action("Post", "Blog", new {id = Model.BlogPostID})">@Model.Comment.Comment1.Text.Truncate()</a>
+                            }
+                            else if (Model.EventID.HasValue)
+                            {
+                                <a href="@Url.Action("Item", "Event", new {id = Model.EventID})">@Model.Comment.Comment1.Text.Truncate()</a>
+                            }
+                            else if (Model.GroupBlogPostID.HasValue)
+                            {
+                                <a href="@Url.Action("Post", "Group", new {id = Model.GroupBlogPostID})">@Model.Comment.Comment1.Text.Truncate()</a>
+                            }
+                            »
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        @if (Model.BlogPostID.HasValue)
+                        {
+                            <div class="comment" data-url="@Url.Action("Post", "Blog", new {id = Model.BlogPostID})" data-comment-id="@(Model.CommentID)">
+                                @Model.Comment.Text
+                            </div>
+                        }
+                        else if (Model.EventID.HasValue)
+                        {
+                            <div class="comment" data-url="@Url.Action("Item", "Event", new {id = Model.EventID})" data-comment-id="@Model.CommentID">
+                                @Model.Comment.Text
+                            </div>
+
+                        }
+                        else if (Model.GroupBlogPostID.HasValue)
+                        {
+                            <div class="comment" data-url="@Url.Action("Post", "Group", new {id = Model.GroupBlogPostID})" data-comment-id="@Model.CommentID">
+                                @Model.Comment.Text
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+            break;
+        case Feed.ActionTypeEnum.AddGroupBlogPostComment:
+            if (Model.GroupBlogPostID.HasValue)
+            {
+                <div class="news-body">
+                    <div class="news-header">
+                        <div class="date">@Model.AddedDate.EventDateNamed() в @Model.AddedDate.ToString("HH:mm")</div>
+                        <div class="text">
+                            <a href="@Url.Action("Index", "User", new {id = Model.ActorID})">@Model.Actor.FirstName</a>
+                            @(Model.Actor.Sex ? "оставил" : "оставила")  комментарий к вашей записи в группе
+                            «<a href="@Url.Action("Post", "Group", new {id = Model.GroupBlogPostID})">@Model.GroupBlogPost.Header</a>»
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <div class="comment" data-url="@Url.Action("Post", "Group", new {id = Model.GroupBlogPostID})" data-comment-id="@Model.CommentID">
+                            @Model.Comment.Text
+                        </div>
+                    </div>
+                </div>
+            }
+            break;
+        case Feed.ActionTypeEnum.AddEventComment:
+            if (Model.EventID.HasValue)
+            {
+                <div class="news-body">
+                    <div class="news-header">
+                        <div class="date">@Model.AddedDate.EventDateNamed() в @Model.AddedDate.ToString("HH:mm")</div>
+                        <div class="text">
+                            <a href="@Url.Action("Index", "User", new {id = Model.ActorID})">@Model.Actor.FirstName</a>
+                            @(Model.Actor.Sex ? "оставил" : "оставила")  комментарий к вашему событию
+                            «<a href="@Url.Action("Item", "Event", new {id = Model.EventID})">@Model.Event.Name</a>»
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <div class="comment" data-url="@Url.Action("Item", "Event", new {id = Model.EventID})" data-comment-id="@Model.CommentID">
+                            @Model.Comment.Text
+                        </div>
+                    </div>
+                </div>
+            }
+            break;
+        case Feed.ActionTypeEnum.PayForAlbumAccess:
+        <div class="news-body">
+            <div class="news-header">
+                <div class="date">@Model.AddedDate.EventDateNamed() в @Model.AddedDate.ToString("HH:mm")</div>
+                <div class="text">
+                    <a href="@Url.Action("Index", "User", new { id = Model.ActorID })">@Model.Actor.FirstName</a>
+                    <a href="#">Олег</a> @(Model.Actor.Sex ? "оплатил" : "оплатила")  доступ к вашему альбому
+                    «<a href="@Url.Action("Item", "Album", new { id = Model.AlbumAccess.AlbumID})">
+                        @Model.AlbumAccess.Album.Name
+                    </a>».<br>
+                    <br />@Model.Text
+                </div>
+            </div>
+            <div class="news-content">
+                <div class="album">
+                    <a href="@Url.Action("Item", "Album", new { id = Model.AlbumAccess.AlbumID})">
+                        <img src="@Model.AlbumAccess.Album.FirstPhoto?w=73&h=73&mode=crop" alt="">
+                        @if (Model.AlbumAccess.Album.PhotosCount > 1)
+                        {
+                            <img src="@Model.AlbumAccess.Album.SecondPhoto?w=73&h=73&mode=crop" alt="">
+                        }
+                    </a>
+                    <div class="shadow"></div>
+                </div>
+            </div>
+        </div>
+                        break;
+    }
+</div>

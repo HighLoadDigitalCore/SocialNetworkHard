@@ -1,0 +1,54 @@
+﻿@model sexivirt.Web.Models.ViewModels.User.RegisterUserView
+@using (Html.BeginForm("Register", "User", FormMethod.Post, new { @class = "form-horizontal", id = "RegisterForm" }))
+{
+    @*<div class="errors">
+            @Html.ValidationMessage("Age")
+            @Html.ValidationMessage("Email")
+            @Html.ValidationMessage("ConfirmPassword")
+            @Html.ValidationMessage("Password")
+        </div>*@
+    <div class="input-title">
+        <span>Ваше имя</span>
+        <span>...и e-mail</span>
+    </div>
+    <div>
+        @Html.TextBox("FirstName", Model.FirstName)
+        @Html.TextBox("Email", Model.Email)
+    </div>
+    <div class="input-title">
+        <span>Придумайте пароль</span>
+        <span>Введите пароль снова</span>
+    </div>
+    <div>
+        @Html.Password("Password", Model.Password)
+        @Html.Password("ConfirmPassword", Model.ConfirmPassword)
+    </div>
+    <div class="input-title">
+        <span>
+            Дата рождения
+        </span>
+    </div>
+    <div class="birthday">
+        @Html.DropDownList("BirthdateDay", Model.BirthdateDaySelectList, new { @class = "date selectEmul" })
+        @Html.DropDownList("BirthdateMonth", Model.BirthdateMonthSelectList, new { @class = "month selectEmul" })
+        @Html.DropDownList("BirthdateYear", Model.BirthdateYearSelectList, new { @class = "year selectEmul" })
+    </div>
+    <div class="input-title">
+        <span>Я - Мужчина</span>
+        <span>Я - Женщина</span>
+    </div>
+    <div>
+        @Html.RadioButton("Sex", true, Model.Sex)
+        @Html.RadioButton("Sex", false, !Model.Sex)
+    </div>
+    if (ViewBag.Message != null)
+    {
+        <div class="input-title input-title-pass-msg">
+            <span>@ViewBag.Message</span>
+        </div>
+
+    }
+    <div>
+        <button id="RegisterButton">Зарегистрироваться</button>
+    </div>
+}

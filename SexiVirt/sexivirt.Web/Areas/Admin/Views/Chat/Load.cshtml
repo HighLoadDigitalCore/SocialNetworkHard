@@ -1,0 +1,16 @@
+﻿@model IList<Message>
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var connect = (sexivirt.Model.Connect)ViewBag.Connect;
+    var opponent = connect.Viral(currentUser);
+    var total = (int)ViewBag.Total;
+}
+
+@if (Model.Count < connect.MessagesCount(currentUser.ID))
+{
+    <em class="load" id="LoadMarker" data-skip="@total">Загрузка...</em>
+}
+@foreach (var message in Model)
+{
+    @Html.Partial("MessageItem", message)
+}

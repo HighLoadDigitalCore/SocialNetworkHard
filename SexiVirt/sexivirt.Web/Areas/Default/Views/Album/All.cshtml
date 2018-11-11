@@ -1,0 +1,26 @@
+﻿@model sexivirt.Model.User
+
+@{
+    ViewBag.Title = "Все фото";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+@section header {
+    @Scripts.Render("~/Scripts/default/photo.js")
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="change-albums">
+            <h1>Все фото <a href="@Url.Action("Index", "Album", new { id = Model.ID })">К альбомам</a></h1>
+            <div class="album-list">
+                @foreach (var item in Model.SubPhotos)
+                {
+                    <div class="photo-item userPhotoItem" data-id="@item.ID">
+                        <img src="@item.FilePath?w=155&h=155&mode=crop" alt="">
+                    </div>
+                }
+            </div>
+        </section>
+    </div>
+</div>

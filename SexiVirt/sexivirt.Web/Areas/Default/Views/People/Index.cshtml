@@ -1,0 +1,41 @@
+﻿@model IList<User>
+@{
+    ViewBag.Title = "Люди";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var peopleSearch = (sexivirt.Web.Models.ViewModels.Info.PeopleSearch)ViewBag.PeopleSearch;
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+@section styles {
+    @Styles.Render("~/Content/css/jquery-ui-1.10.0.custom.css")
+}
+@section header {
+    @Scripts.Render("~/Scripts/jquery.jscroll.js")
+    @Scripts.Render("~/bundles/jquery-ui")
+    @Scripts.Render("/Scripts/default/people.js")
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="people">
+            <h1>Люди</h1>
+            @if (currentUser != null)
+            {
+                @*<div class="addWrite"><a href="@Url.Action("Add", "Meeting")">Добавить свою встречу</a></div>*@
+            }
+            @Html.Partial("SearchPeople", peopleSearch)
+            <section class="cp_usersOnline clear">
+                <div class="title">Результат поиска </div>
+                <div id="UserResult" data-skip="@Model.Count">
+                    @foreach (var user in Model)
+                    {
+                        @Html.Partial("UserShortItem", user)
+                    }
+                    @if (Model.Count == 18)
+                    {
+                        <a class="next" href="@Url.Action("Load","People")">Загружаю</a>
+                    }
+                </div>
+            </section>
+        </section>
+    </div>
+</div>

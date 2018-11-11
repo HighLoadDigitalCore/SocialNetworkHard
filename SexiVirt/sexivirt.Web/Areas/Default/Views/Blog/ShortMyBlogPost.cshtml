@@ -1,0 +1,26 @@
+﻿@model BlogPost
+<div>
+    <div class="diariesItemInfo">
+        <div class="di_edit">
+            <div class="cdc_edit">
+                <a href="@Url.Action("Edit", "Blog", new { id = Model.ID })">Редактировать</a>
+            </div>
+            <div class="cdc_delete">
+                <a href="@Url.Action("Delete", "Blog", new { id = Model.ID })">Удалить</a>
+            </div>
+        </div>
+        <div class="cdс_date">@Model.AddedDate.EventDateNamed() в @Model.AddedDate.ToString("HH:mm")</div>
+        <div class="cd_comments"><a href="@Url.Action("Post", "Blog", new { id = Model.ID})">@Model.CommentsCount @Model.CommentsCount.CountWord("комментарий", "комментария", "комментариев")</a></div>
+    </div>
+    <article class="diariesItem">
+        <div class="cd_title"><a href="@Url.Action("Post", "Blog", new { id = Model.ID})">@Model.Header</a></div>
+        <div class="cd_text">
+
+            @if (!string.IsNullOrEmpty(Model.Attach))
+            {
+                <img src="@Model.Attach?w=200&h=150&mode=crop" />
+            }
+            @Html.Raw(Model.Text.StripTags().Teaser(300).NlToBr())
+        </div>
+    </article>
+</div>

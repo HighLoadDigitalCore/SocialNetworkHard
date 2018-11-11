@@ -1,0 +1,28 @@
+﻿@model BlogPost
+
+<div class="@Model.User.GenderStr">
+    <div class="diariesItemInfo">
+        <div class="cdс_date">@Model.AddedDate.EventDateNamed() в @Model.AddedDate.ToString("HH:mm")</div>
+        <div class="cd_comments">
+            @if (Model.CommentsCount > 0)
+            {
+                <a href="@Url.Action("Post", "Blog", new { id = Model.ID })">
+            @Model.CommentsCount @Model.CommentsCount.CountWord("комментарий", "комментария", "комментариев")</a>        
+            }
+            else
+            {
+                <div class="cd_comments noComments"><a href="@Url.Action("Post", "Blog", new { id = Model.ID })">Оставить комментарий</a></div>
+            }
+        </div>
+    </div>
+    <article class="diariesItem">
+        <div class="cd_title"><a href="@Url.Action("Post", "Blog", new { id = Model.ID })">@Model.Header</a></div>
+        <div class="cd_text">
+            @if (!string.IsNullOrEmpty(Model.Attach))
+            {
+                <img src="@Model.Attach?w=200&h=150&mode=crop" />
+            }
+            @Html.Raw(Model.Text.StripTags().Teaser(300).NlToBr())
+        </div>
+    </article>
+</div>

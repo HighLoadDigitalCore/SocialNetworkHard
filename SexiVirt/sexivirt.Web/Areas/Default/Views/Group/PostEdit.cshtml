@@ -1,0 +1,46 @@
+﻿@using Microsoft.Ajax.Utilities
+@model GroupBlogPost
+@{
+    ViewBag.Title = Model.ID == 0 ? "Новая запись" : "Редактирование записи";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var isPost = (bool?) ViewBag.IsPost ?? false;
+}
+@section styles {
+    @Styles.Render("~/Content/css/jquery.cleditor.css")
+}
+@section header {
+    @Scripts.Render("~/Scripts/jquery.jscroll.js")
+    @Scripts.Render("~/bundles/fineuploader")
+    @Scripts.Render("~/Scripts/default/item-group.js")
+}
+@if (currentUser != null && Model!=null && currentUser.ID == Model.UserID)
+{
+    <div class="middle">
+        @Html.Action("MainMenu", "Home")
+        <div class="content">
+            <section class="create-note clear">
+                <h1>@(Model.ID == 0 ? "Новая запись" : "Редактирование записи") в группе <a href="@Url.Action("Item", "Group", new {ID = Model.GroupID})">@Model.Group.Name</a></h1>
+                @using (Html.BeginForm("PostEdit", "Group", FormMethod.Post))
+                {
+                    @Html.Hidden("ID", Model.ID)
+                    @Html.Hidden("Attach", Model.Attach)
+                    @Html.TextBoxFor(x => x.Header, new { placeholder = "Введите заголовок вашей записи", @class = (isPost && Model.Header.IsNullOrWhiteSpace() ? "input-validation-error":"") })
+                    <div class="image" id="AttachWrapper" style="margin-top: 5px">
+                        @if (!string.IsNullOrEmpty(Model.Attach))
+                        {
+                            <img src="@Model.Attach?w=300&h=200&mode=crop" />
+                            <div class="remove"></div>
+                        }
+                    </div>
+                    <div id="EditorCell" class="@(isPost && Model.Text.IsNullOrWhiteSpace() ? "input-validation-error-outer":"")" style="margin-top: 5px">
+                        @Html.TextAreaFor(x => x.Text, new {placeholder = "Здесь будет текст вашей записи"})
+                    </div>
+                    <button class="greenBut">Отправить</button>
+                    <div class="addimage link" id="AttachImageBtn">Приложить картинку</div>
+                }
+            </section>
+        </div>
+    </div>
+    @Html.Partial("~/Areas/Default/Views/Blog/UploadTemplateImage.cshtml")
+}

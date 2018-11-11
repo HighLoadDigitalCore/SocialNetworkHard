@@ -1,0 +1,32 @@
+﻿@model IList<Meeting>
+@{
+    ViewBag.Title = "Мои встречи";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var filter = (int)ViewBag.Filter;
+
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="meeting">
+            <h1>Мои встречи</h1>
+            @if (currentUser != null)
+            {
+                <div class="addWrite"><a href="@Url.Action("Add", "Meeting")">Добавить свою встречу</a></div>
+            }
+            <div class="cm_filter">
+                <a href="@Url.Action("My", "Meeting", new { filter = 0 })" class="radioEmul @(filter == 0 ? "active" : "") filter gender" data-value="0">Все встречи</a>
+                <a href="@Url.Action("My", "Meeting", new { filter = 1 })" class="radioEmul @(filter == 1 ? "active" : "") filter gender" data-value="1">Новые</a>
+                <a href="@Url.Action("My", "Meeting", new { filter = 2 })" class="radioEmul @(filter == 2 ? "active" : "") filter gender" data-value="2">Прошедшие</a>
+            </div>
+            <div class="meeting-list">
+                @foreach (var item in Model)
+                {
+                    @Html.Partial("MyMeetingItem", item)
+                }
+            </div>
+        </section>
+    </div>
+</div>
+

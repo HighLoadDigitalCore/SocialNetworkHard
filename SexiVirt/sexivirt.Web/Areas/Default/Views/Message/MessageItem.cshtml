@@ -1,0 +1,19 @@
+﻿@model Message
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var connect = Model.Connect;
+    var opponent = connect.Viral(currentUser);
+}
+
+<div class="dialog-item @Model.Sender.GenderStr @(Model.SenderID == opponent.ID ? "user-1" : "user-2")" data-id="@Model.ID">
+    <div class="c_userPhoto">
+        <img src="@Model.Sender.FullAvatarPath?w=52&h=52&mode=crop" alt="" />
+    </div>
+    <div class="body">
+        <div class="date">@Model.AddedDate.ToString("dd MMMMM в HH:mm")</div>
+        <div class="text delete">
+            <div class="delete-icon"></div>
+            @Html.Raw(Model.Text.StripTags().NlToBr())
+        </div>
+    </div>
+</div>

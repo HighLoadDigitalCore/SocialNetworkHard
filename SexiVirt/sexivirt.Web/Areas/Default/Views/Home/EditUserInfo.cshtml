@@ -1,0 +1,47 @@
+﻿@model sexivirt.Web.Models.ViewModels.User.UserInfoView
+
+@using (Html.BeginForm("EditUserInfo", "Home", FormMethod.Post, new { id = "EditUserInfoForm" }))
+{
+    @Html.Hidden("CityID", Model.CityID)
+    if (Html.HasAnyError())
+    {
+        <div class="warning">
+            @Html.ValidationSummary(false)
+        </div>
+    }
+    <div class="control-group">
+        <div class="label">
+            Дата рождения
+        </div>
+        <div class="control">
+            @Html.DropDownList("BirthdateDay", Model.BirthdateDaySelectList, new { @class = "date selectEmul" })
+            @Html.DropDownList("BirthdateMonth", Model.BirthdateMonthSelectList, new { @class = "month selectEmul" })
+            @Html.DropDownList("BirthdateYear", Model.BirthdateYearSelectList, new { @class = "year selectEmul" })
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="label">
+            Город
+        </div>
+        <div class="control">
+            @Html.TextBox("CityName", Model.CityName)
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="label">
+            Рост, см
+        </div>
+        <div class="control">
+            @Html.TextBox("Height", Model.Height)
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="label">
+            Вес, кг
+        </div>
+        <div class="control">
+            @Html.TextBox("Weight", Model.Weight)
+        </div>
+    </div>
+    <button type="button" class="send" id="SaveUserInfoBtn">Сохранить</button>
+}

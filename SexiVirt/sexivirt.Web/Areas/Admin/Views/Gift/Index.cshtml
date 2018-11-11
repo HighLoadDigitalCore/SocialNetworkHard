@@ -1,0 +1,60 @@
+@model PagedList.IPagedList<Gift>
+
+@{
+    ViewBag.Title = "Подарки";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Подарки
+</h2>
+@Html.ActionLink("Создать", "Create", "Gift", null, new { @class = "btn btn-primary" })
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Подарок
+            </th>
+            <th>
+                Цена
+            </th>
+            <th>
+                Тип
+            </th>
+            <th>
+                Активный?
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                <img src="@item.Image?w=100&h=100&mode=crop" />
+            </td>
+            <td>
+                @item.Price.ToString("0,00") руб.
+            </td>
+            <td>
+                @item.TypeStr
+            </td>
+            <td>
+                @(item.IsActive ? "да" : "нет")
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "Edit", "Gift", new { id = item.ID }, new { @class = "btn  btn-default" })
+                @Html.ActionLink("Удалить", "Delete", "Gift", new { id = item.ID }, new { @class = "btn  btn-danger" })
+            </td>
+        </tr>
+    }
+</table>
+<div class="pager">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

@@ -1,0 +1,30 @@
+﻿@model Connect
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var opposide = Model.Viral(currentUser);
+    var unread = Model.UnreadMessagesCount(currentUser.ID);
+    var lastMessage = Model.LastMessage(currentUser.ID);
+}
+
+<div class="messages-item @lastMessage.Sender.GenderStr">
+    <div class="photo @opposide.GenderStr">
+        <div class="status @(opposide.IsOnline ? "online":"offline")"></div>
+        @if (unread > 0)
+        {
+            <a href="@Url.Action("Conversation", "Message", new { id = Model.ID })" class="unread">@unread</a>
+        }
+        <a href="@Url.Action("Conversation", "Message", new { id = Model.ID })"><img src="@opposide.FullAvatarPath?w=94&h=94&mode=crop" alt=""></a>
+    </div>
+    @if (lastMessage.SenderID == currentUser.ID)
+    {
+        <div class="right-photo @currentUser.GenderStr">
+            <img src="@currentUser.FullAvatarPath?w=54&h=54&mode=crop" alt="">
+        </div>
+    }
+    <div class="title"><a style="text-decoration: none; color: #666" href="@Url.Action("Conversation", "Message", new { id = Model.ID })">@opposide.FirstName<span>, @Model.TotalMessagesCount @Model.TotalMessagesCount.CountWord("сообщение", "сообщения", "сообщений")</span></a></div>
+    <a style="text-decoration: none" href="@Url.Action("Conversation", "Message", new { id = Model.ID })">
+        <div class="text @(lastMessage.SenderID == currentUser.ID ? "right" : "left")">
+            @Html.Raw(Model.LastMessage(currentUser.ID).Text.NlToBr())
+        </div>
+    </a>
+</div>

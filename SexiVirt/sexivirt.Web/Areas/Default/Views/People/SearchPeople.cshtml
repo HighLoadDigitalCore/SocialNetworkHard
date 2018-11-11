@@ -1,0 +1,32 @@
+﻿@model sexivirt.Web.Models.ViewModels.Info.PeopleSearch
+<div class="cm_filter">
+    @using (Html.BeginForm("Index", "People", FormMethod.Post, new { id = "PeopleSearchForm" }))
+    {
+        @Html.Hidden("IsReal", true)
+        @Html.Hidden("CityID", Model.CityID)
+        @Html.Hidden("Sex", Model.Sex)
+        <div><strong>Я ищу </strong></div>
+        <div class="radioEmul gender @(Model.Sex ? "active" : "") male" data-value="true">Мужчину</div>
+        <div class="radioEmul gender @(Model.Sex ? "" : "active") female" data-value="false">Женщину</div>
+        <span>от</span>
+        @Html.DropDownList("AgeStart", Model.AgeStartSelectList, new { @class = "selectEmul" })
+        <span>до</span>
+        @Html.DropDownList("AgeEnd", Model.AgeEndSelectList, new { @class = "selectEmul" })
+        <span>лет из города</span>
+        @Html.TextBox("CityName", Model.CityName, new { placeholder = "Введите название" })
+        <br />
+        <span>с предпочтениями </span>
+        <div class="cmf_type" id="PreferenceSelectWrapper">
+            @Html.Partial("SearchPreference", Model.Preferences ?? new List<Preference>())
+        </div>
+        <div class="checkboxWrap">
+
+            @Html.CheckBox("OnlyOnline", Model.OnlyOnline, new { @class = "checkboxEmul" })
+            <span class="checkboxLabel">Только онлайн</span>
+
+            @Html.CheckBox("WithPhoto", Model.WithPhoto, new { @class = "checkboxEmul" })
+            <span class="checkboxLabel">Только фото</span>
+            <button class="cmf_button greenBut">Найти</button>
+        </div>
+    }
+</div>

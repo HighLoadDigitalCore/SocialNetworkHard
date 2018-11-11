@@ -1,0 +1,5 @@
+D:\Sites\SexiVirt\Common.Tools\ManageAttribute\bin\Debug\ManageAttribute.dll
+D:\Sites\SexiVirt\Common.Tools\ManageAttribute\bin\Debug\ManageAttribute.pdb
+D:\Sites\SexiVirt\Common.Tools\ManageAttribute\obj\Debug\ManageAttribute.csprojResolveAssemblyReference.cache
+D:\Sites\SexiVirt\Common.Tools\ManageAttribute\obj\Debug\ManageAttribute.dll
+D:\Sites\SexiVirt\Common.Tools\ManageAttribute\obj\Debug\ManageAttribute.pdb

@@ -1,0 +1,44 @@
+﻿@model IList<sexivirt.Model.UserGift>
+
+@{
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    if (currentUser != null && currentUser.ID == ((User)ViewBag.GiftUser).ID)
+    {
+        ViewBag.Title = "Мои подарки";
+    }
+    else
+    {
+        ViewBag.Title = "Подарки";
+    }
+
+}
+@section header
+{
+    @Scripts.Render("~/Scripts/jScrollPane.js")
+    @Scripts.Render("~/Scripts/default/gift.js")
+}
+
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="c_albums clear">
+            <h1>
+                @ViewBag.Title
+            </h1>
+            <div class="gifts">
+                @if (Model.Any())
+                {
+                    foreach (var userGift in Model)
+                    { @Html.Partial("GiftPartial", userGift)  }
+                }
+                else
+                {
+                    <div class="empty-description">
+                        Если человеку дарят подарки — значит он точно не одинок. Но у вас пока нет ни одного. Знакомтесь с людьми, чтобы их получить. Вы также можете <a href="#" id="MakeGiftAnchor" data-id="@currentUser.ID">подарить подарок</a> сами себе.
+                    </div>
+                }
+            </div>
+        </section>
+    </div>
+</div>

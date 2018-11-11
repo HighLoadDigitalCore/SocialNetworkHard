@@ -1,0 +1,18 @@
+﻿@model Group
+@foreach (var user in Model.SubUsers.Take(5))
+{
+    <a href="@Url.Action("Index", "User", new { id = user.ID })">
+        <div class="item @user.GenderStr">
+            <img src="@user.FullAvatarPath?w=94&h=94&mode=crop" alt="" />
+        </div>
+    </a>
+}
+@if (Model.SubUsersCount > 5)
+{
+    <div class="item another">
+        <span>Еще @(Model.SubUsersCount - 5)<br></span>
+        <a href="#" id="LoadAllUsers" data-id="@Model.ID">Показать<br>всех</a>
+    </div>
+}
+
+

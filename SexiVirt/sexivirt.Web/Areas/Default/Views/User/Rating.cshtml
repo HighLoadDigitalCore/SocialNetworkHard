@@ -1,0 +1,29 @@
+﻿@model User
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<div class="cdcl_voice">
+    @if (currentUser != null && currentUser.ID != Model.ID)
+    {
+        if (currentUser.IsVotedFor(Model.ID, false))
+        {
+            <div class="vote selected">-</div>
+        }
+        else
+        {
+            <div class="vote voteForUser" data-id="@Model.ID" data-mark="false">-</div>
+        }
+    }
+    <div class="voiceAmount">@Model.CalculatedRating</div>
+    @if (currentUser != null && currentUser.ID != Model.ID)
+    {
+        if (currentUser.IsVotedFor(Model.ID, true))
+        {
+            <div class="vote selected">+</div>
+        }
+        else
+        {
+            <div class="vote voteForUser" data-id="@Model.ID" data-mark="true">+</div>
+        }
+    }
+</div>

@@ -1,0 +1,16 @@
+﻿@model IList<Feed>
+@{
+    var total = (int)ViewBag.Total;
+}
+@Html.Hidden("LastSkip", total)
+<div class="feed-list">
+    @foreach (var feed in Model)
+    {
+        @Html.Partial("FeedItem", feed)
+    }
+</div>
+@if (Model.Count == 18)
+{
+    <a class="next" href="@Url.Action("Load", "Feed", new { skip = total + Model.Count })">Загружаю</a>
+}
+

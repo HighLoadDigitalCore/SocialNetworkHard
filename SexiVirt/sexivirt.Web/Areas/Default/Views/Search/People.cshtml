@@ -1,0 +1,27 @@
+﻿@model sexivirt.Web.Models.ViewModels.Info.SearchInfo
+@{
+    ViewBag.Title = "Поиск";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+@section header {
+    @Scripts.Render("~/Scripts/jquery.highlight.js")
+    @Scripts.Render("~/Scripts/default/search.js")
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="clear search-results">
+            @Html.Partial("SearchForm", Model)
+            <div class="results-block">
+                <div class="title">
+                        @Model.Users.Count @Model.Users.Count.CountWord("человек", "человека", "человек")
+                </div>
+                @if (Model.Users != null && Model.Users.Any())
+                {
+                    @Html.Partial("ShortUsers", Model.Users)
+                }
+            </div>
+        </section>
+    </div>
+</div>
+

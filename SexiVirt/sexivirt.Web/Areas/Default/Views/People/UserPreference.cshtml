@@ -1,0 +1,29 @@
+﻿@model User
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var opened = ViewBag.Opened;
+    var sub = opened ? Model.SubPreferences : Model.SubPreferences.Take(3);
+}
+@foreach (var preference in sub)
+{
+    if (currentUser != null && currentUser.HasPreference(preference.ID))
+    {
+        <div class="selected">@preference.Name</div>
+    }
+    else
+    {
+        <div>@preference.Name</div>
+    }
+
+}  
+@if (Model.SubPreferences.Count > 3)
+{
+    if (opened)
+    {
+        <div class="dots" data-opened="False" data-id="@Model.ID">&larr;</div>
+    }
+    else
+    {
+        <div class="dots" data-opened="True" data-id="@Model.ID">...</div>
+    }
+}

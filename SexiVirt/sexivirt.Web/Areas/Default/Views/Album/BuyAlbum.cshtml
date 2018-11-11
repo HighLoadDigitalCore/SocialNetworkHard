@@ -1,0 +1,22 @@
+﻿@model Album
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+
+<div class="popupBg"></div>
+<div class="popup open-album pp-type1">
+    <div class="pp_close close-popup">×</div>
+    <div class="pp_title">@Model.Name</div>
+    <div class="pp_text">закрытый альбом</div>
+    <div class="ca_album">
+        <div class="albumImg first close"><img src="/Content/images/photo/albums/close_@(Model.User.GenderStr).png" alt=""></div>
+        <div class="albumImg first"><img src="@Model.FirstPhoto?w=158&h=158&mode=crop" alt=""></div>
+        <div class="albumImg second close"><img src="/Content/images/photo/albums/close_@(Model.User.GenderStr).png" alt=""></div>
+        <div class="albumImg second"><img src="@Model.SecondPhoto?w=158&h=158&mode=crop" alt=""></div>
+        <div class="ca_photoNumber">@Model.PhotosCount фото</div>
+    </div>
+    <div class="pp_desc">@Model.User.FirstName @(Model.User.Sex ? "закрыл" : "закрыла") свой альбом от посторонних. Но вы можете открыть этот альбом. После этого он будет доступен вам всегда. Стоимость этого альбома:</div>
+    <div class="pp_albumPrice">@Model.Price @Model.Price.Value.CountWord("рубль", "рубля", "рублей")</div>
+    <button class="ppa_but greenBut" id="OpenAlbumBtn" data-id="@Model.ID" data-userid="@currentUser.ID">Открыть альбом</button>
+    <span class="pp_cancel close-popup">Нет, спасибо</span>
+</div>

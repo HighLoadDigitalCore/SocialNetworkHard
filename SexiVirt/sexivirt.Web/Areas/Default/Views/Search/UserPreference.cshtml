@@ -1,0 +1,15 @@
+﻿@model User
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+@foreach (var preference in Model.SubPreferences)
+{
+    if (currentUser != null && currentUser.HasPreference(preference.ID))
+    {
+        <div class="selected">@preference.Name</div>
+    }
+    else
+    {
+        <div>@preference.Name</div>
+    }
+}

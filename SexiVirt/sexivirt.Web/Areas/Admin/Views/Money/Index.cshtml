@@ -1,0 +1,59 @@
+﻿
+@model PagedList.IPagedList<MoneyWithdraw>
+@{
+    ViewBag.Title = "Списание средств";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Заявки на вывод средств
+</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Пользователь
+            </th>
+            <th>
+                Сумма для списания
+            </th>
+            <th>
+                Баланс пользователя
+            </th>
+            <th>
+                Статус
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.User.FirstName
+            </td>
+            <td>
+                @item.Sum
+            </td>
+            <td>
+                @item.User.Money
+            </td>
+            <td>
+                @(item.Submitted ? "Подтверждена" : "Не подтверждена")
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "Edit", "Money", new { id = item.ID }, new { @class = "btn  btn-default" })
+            </td>
+        </tr>
+    }
+</table>
+<div class="pager">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

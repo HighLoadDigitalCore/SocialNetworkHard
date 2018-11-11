@@ -1,0 +1,11 @@
+﻿@model Photo 
+<div class="popupBg"></div>
+<div class="popup picture">
+    <div class="pp_close popup-close">×</div>
+    <div class="pp_title">Фото @Model.NumberOfAlbum из @Model.AlbumCount</div>
+    <div class="picturt-wrapper">
+        <img src="@Model.FilePath?maxwidth=600&maxheight=600" alt="" />
+        <div class="right-arrow changePict" data-id="@Model.ID" data-next="false"></div>
+        <div class="left-arrow changePict" data-id="@Model.ID" data-next="true"></div>
+    </div>
+</div>

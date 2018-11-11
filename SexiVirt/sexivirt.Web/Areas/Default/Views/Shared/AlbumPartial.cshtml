@@ -1,0 +1,32 @@
+﻿@model Album
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+
+@if (!string.IsNullOrWhiteSpace(Model.FirstPhoto))
+{
+    <div class="ca_album">
+        @if (Model.HasAccess(currentUser))
+        {
+            <a href="@Url.Action("Item", "Album", new { id = Model.ID })">
+                <div class="albumImg first"><img src="@Model.FirstPhoto?w=158&h=158&mode=crop" alt=""></div>
+                @if (!string.IsNullOrWhiteSpace(Model.SecondPhoto))
+                {
+                    <div class="albumImg second"><img src="@Model.SecondPhoto?w=158&h=158&mode=crop" alt=""></div>
+                }
+            </a>
+            <div class="albumName @Model.User.GenderStr"><a href="@Url.Action("Item", "Album", new { id = Model.ID })" title="@Model.Name">@Model.Name.Teaser(35)</a></div>
+        }
+        else
+        {
+            <a href="@Url.Action("Item", "Album", new { id = Model.ID })" class="payForLook" data-id="@Model.ID">
+                <div class="albumImg first close"><img src="/Content/images/photo/albums/close_@(Model.User.GenderStr).png" alt=""></div>
+                <div class="albumImg first"><img src="@Model.FirstPhoto?w=158&h=158&mode=crop" alt=""></div>
+                <div class="albumImg second close"><img src="/Content/images/photo/albums/close_@(Model.User.GenderStr).png" alt=""></div>
+                <div class="albumImg second"><img src="@Model.SecondPhoto?w=158&h=158&mode=crop" alt=""></div>
+            </a>
+            <div class="albumName @Model.User.GenderStr"><a href="@Url.Action("Item", "Album", new { id = Model.ID })" class="payForLook" data-id="@Model.ID" title="@Model.Name">@Model.Name.Teaser(35)</a></div>
+        }
+        <div class="ca_photoNumber">@Model.PhotosCount фото</div>
+    </div>
+}

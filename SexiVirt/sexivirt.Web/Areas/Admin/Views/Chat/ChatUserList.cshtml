@@ -1,0 +1,7 @@
+﻿@model List<User>
+@foreach (var user in Model)
+{
+    <li>
+        <a title="Открыть чат" href="#" uid="@user.ID" class="user-chat" def="@user.FirstName" onclick="return showChat(@user.ID)">@user.FirstName<span title="Удалить" class="user-del" onclick="deleteUser(@user.ID)">X</span></a>
+    </li>
+}

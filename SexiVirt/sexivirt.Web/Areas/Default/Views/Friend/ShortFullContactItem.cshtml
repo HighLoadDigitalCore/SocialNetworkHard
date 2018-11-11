@@ -1,0 +1,42 @@
+﻿@model Friendship
+<div class="contact-item">
+    <div class="photo @Model.Receiver.GenderStr">
+        <div class="status @(Model.Receiver.IsOnline ? "online": "offline")"></div>
+        <img src="@Model.Receiver.AvatarPath?w=94&h=94&mode=crop" alt="">
+    </div>
+    <div class="name @Model.Receiver.GenderStr">
+        <a href="@Url.Action("Index", "User", new {id = Model.Receiver.ID })">@Model.Receiver.FirstName</a>
+    </div>
+    <div class="city">
+        @if (Model.Receiver.CityID.HasValue)
+        {
+            @Model.Receiver.City.Name
+        }
+        else
+        {
+            <text>&nbsp;</text>
+        }
+    </div>
+    @if (Setting.Get("EnablePayMessages") == "True" && !Model.HasConversation && (!Model.Sender.PayedMessage.HasValue || Model.Sender.PayedMessage.Value < DateTime.Now))
+    {
+        <a class="write-button message" id="MessagePay">
+            <span class="letter"></span>
+            Отправить сообщение
+        </a>
+    }
+    else
+    {
+        <a class="write-button message" href="@Url.Action("Write", "Message", new {id = Model.Receiver.ID})">
+            <span class="letter"></span>
+            Отправить сообщение
+        </a>
+    }
+    <div class="button blockUser" data-id="@Model.ReceiverID">
+        <div class="block-icon"></div>
+        <span>Заблокировать</span>
+    </div>
+    <div class="button removeFriend" data-id="@Model.ReceiverID">
+        <div class="cross"></div>
+        <span>Удалить</span>
+    </div>
+</div>

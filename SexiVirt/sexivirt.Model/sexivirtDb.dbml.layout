@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 34, 51.5" name="sexivirtDb">
+  <DataContextMoniker Name="/sexivirtDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a898bcb2-6473-4c11-9a5d-b5f576c7145b" absoluteBounds="31.125, 32.125, 2, 2.1554996744791595">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Album" />
+      <nestedChildShapes>
+        <elementListCompartment Id="35a4aeed-de44-4139-bf43-04c491b7fbe5" absoluteBounds="31.14, 32.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a0e4392e-d6ff-4547-a3a1-1493c45d5922" absoluteBounds="21.75, 41, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/sexivirtDbDataContext/UserStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="35e4d532-cc0f-40f4-a40a-35a66055ccd0" absoluteBounds="21.765, 41.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="efc8a3bd-ac34-40d5-bba1-8a617421aab2" absoluteBounds="28.625, 32.875, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/sexivirtDbDataContext/AlbumAccess" />
+      <nestedChildShapes>
+        <elementListCompartment Id="28f9fcee-1910-45d5-ae80-b1c5a15e1b2e" absoluteBounds="28.64, 33.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5c2242c8-5afe-4e94-a5e8-94a5639fbb83" absoluteBounds="16, 29.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Blocked" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1145f2ce-3bb6-4920-b65f-5928d04421e4" absoluteBounds="16.015, 30.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c487fc80-afaf-4109-955a-84212b6f9b29" absoluteBounds="14, 40.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/sexivirtDbDataContext/BlockGroupUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a0c9cf23-eb73-430f-8cfe-9e581358d372" absoluteBounds="14.015, 41.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="674c81df-b0c1-4a5e-9e5a-3efb8b7eccff" absoluteBounds="7.5, 25.5, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/sexivirtDbDataContext/BlogPost" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56c79cc3-029b-4aa3-8d79-6e545e4591be" absoluteBounds="7.515, 25.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d0b21032-bdec-4675-bc4c-e76f04a8fb45" absoluteBounds="11.125, 29.375, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/sexivirtDbDataContext/City" />
+      <nestedChildShapes>
+        <elementListCompartment Id="30ed5ec0-3c5b-4b65-bde6-a591a111d1f1" absoluteBounds="11.14, 29.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e47d446-0f49-4d70-84de-ed072805409b" absoluteBounds="14.5, 22.5, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/sexivirtDbDataContext/CommentEvent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ce6d6ec8-fc1c-4d68-a28e-e9dd24ae0509" absoluteBounds="14.515, 22.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="62302eb9-57e3-48d8-b9a2-55f1b3af1379" absoluteBounds="23.75, 20, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/sexivirtDbDataContext/DepositCandidate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f858f9a-975e-4b9a-8209-4d60ade9951e" absoluteBounds="23.765, 20.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e5120dc6-456d-412a-8900-a58946849f31" absoluteBounds="12.125, 24.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Event" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5ec18895-5e67-4ebb-a586-2c32ec4ef8e7" absoluteBounds="12.14, 25.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="326810b2-c20f-49d7-82ec-7e41695787d4" absoluteBounds="23.75, 37.75, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Friendship" />
+      <nestedChildShapes>
+        <elementListCompartment Id="825264e9-9229-4f2f-9e69-243037371f7c" absoluteBounds="23.765, 38.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cbd61f0e-a585-4113-86ef-6c20bd16930b" absoluteBounds="25.5, 34.625, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Gift" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49246b5f-1757-43be-a20c-d5d3f1e58ed1" absoluteBounds="25.515, 35.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a60e7d16-bd5e-4e5e-b9b8-1a1309c00de4" absoluteBounds="15.25, 46.625, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Group" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd2736b5-b7a8-4f17-9328-36cdff912ced" absoluteBounds="15.265, 47.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="faed47ba-ad8f-4d0a-8aa5-96209ba5b9ff" absoluteBounds="11.75, 45.875, 2, 2.1554996744791595">
+      <DataClassMoniker Name="/sexivirtDbDataContext/GroupBlogPost" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ad9e6e3-3d41-46b4-9771-c1e530e9848f" absoluteBounds="11.765, 46.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cfc6a187-6ebe-4bd0-a497-e5c98d9f8f22" absoluteBounds="11.75, 32.25, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Meeting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="37596f77-96ed-4726-8b97-b913e8433d28" absoluteBounds="11.765, 32.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1b23e5bf-4e47-4a3b-8f8a-064444062fda" absoluteBounds="27.375, 43.375, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/sexivirtDbDataContext/MoneyWithdraw" />
+      <nestedChildShapes>
+        <elementListCompartment Id="958c526f-1c54-4db6-b5dd-45ea3c9c2397" absoluteBounds="27.39, 43.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4af893d2-2ef3-4fa5-bd15-1cb706c3bd29" absoluteBounds="29.375, 35.625, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Photo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="59e06405-a6f4-4deb-8fb3-d00717cde99f" absoluteBounds="29.39, 36.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="567aff4e-0fce-44db-b052-0386099273f9" absoluteBounds="14.5, 32.875, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Preference" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d668da5-939e-4242-806f-f18cf994f14f" absoluteBounds="14.515, 33.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0a940bbe-e4ae-4703-8d8b-ad4534d8aa31" absoluteBounds="9.375, 34.5, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f60a6551-0d4a-459b-8e66-f99299abd8a3" absoluteBounds="9.39, 34.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eff8d773-1f77-418f-8346-b3103b960599" absoluteBounds="14.625, 26.875, 2, 1.5785953776041701">
+      <DataClassMoniker Name="/sexivirtDbDataContext/UserEventRating" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1702a2e-49f5-4771-9bc1-fc90689a60f9" absoluteBounds="14.64, 27.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e77d5198-fb90-402d-9257-a01552ea9952" absoluteBounds="22.375, 33.75, 2, 2.1554996744791595">
+      <DataClassMoniker Name="/sexivirtDbDataContext/UserGift" />
+      <nestedChildShapes>
+        <elementListCompartment Id="91a9ef02-b09b-45d6-b08e-a938fffd8c80" absoluteBounds="22.39, 34.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b0c3a655-c094-473b-b909-670e3083935d" absoluteBounds="15.625, 35, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/sexivirtDbDataContext/UserPreference" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fa60b904-959b-43ca-b2af-a8eab581c0b1" absoluteBounds="15.64, 35.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ec28b8b2-e0f8-4443-ba01-61a307d02f99" absoluteBounds="31.75, 29.75, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/sexivirtDbDataContext/UserRating" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bea0eba8-2628-4ec7-add6-c7f0c695538c" absoluteBounds="31.765, 30.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9701c606-91a5-4e6d-a85f-b602d9b8bedc" absoluteBounds="13.5, 36.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/sexivirtDbDataContext/UserRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="66762106-2b0a-465a-bc3c-ce7bc36ddb9d" absoluteBounds="13.515, 36.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(31.125 : 33.5777498372396); (30.625 : 33.5777498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Album/Album_AlbumAccess" />
+      <nodes>
+        <classShapeMoniker Id="a898bcb2-6473-4c11-9a5d-b5f576c7145b" />
+        <classShapeMoniker Id="efc8a3bd-ac34-40d5-bba1-8a617421aab2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.59375 : 24.625); (13.59375 : 23.4175439453125); (14.5 : 23.4175439453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Event/Event_CommentEvent" />
+      <nodes>
+        <classShapeMoniker Id="e5120dc6-456d-412a-8900-a58946849f31" />
+        <classShapeMoniker Id="3e47d446-0f49-4d70-84de-ed072805409b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.625 : 29.375); (12.625 : 27.3574039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/City/City_Event" />
+      <nodes>
+        <classShapeMoniker Id="d0b21032-bdec-4675-bc4c-e76f04a8fb45" />
+        <classShapeMoniker Id="e5120dc6-456d-412a-8900-a58946849f31" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.5732973472331 : 46.625); (15.5732973472331 : 42.1362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Group/Group_BlockGroupUser" />
+      <nodes>
+        <classShapeMoniker Id="a60e7d16-bd5e-4e5e-b9b8-1a1309c00de4" />
+        <classShapeMoniker Id="c487fc80-afaf-4109-955a-84212b6f9b29" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.25 : 48.0068551037439); (13.75 : 48.0068551037439)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Group/Group_GroupBlogPost" />
+      <nodes>
+        <classShapeMoniker Id="a60e7d16-bd5e-4e5e-b9b8-1a1309c00de4" />
+        <classShapeMoniker Id="faed47ba-ad8f-4d0a-8aa5-96209ba5b9ff" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(12.4375 : 30.5689925130208); (12.4375 : 32.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/City/City_Meeting" />
+      <nodes>
+        <classShapeMoniker Id="d0b21032-bdec-4675-bc4c-e76f04a8fb45" />
+        <classShapeMoniker Id="cfc6a187-6ebe-4bd0-a497-e5c98d9f8f22" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(32.2500005 : 34.2804996744792); (32.2500005 : 36.4142976888021); (31.375 : 36.4142976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Album/Album_Photo" />
+      <nodes>
+        <classShapeMoniker Id="a898bcb2-6473-4c11-9a5d-b5f576c7145b" />
+        <classShapeMoniker Id="4af893d2-2ef3-4fa5-bd15-1cb706c3bd29" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.125 : 27.1162019856771); (14.625 : 27.1162019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Event/Event_UserEventRating" />
+      <nodes>
+        <classShapeMoniker Id="e5120dc6-456d-412a-8900-a58946849f31" />
+        <classShapeMoniker Id="eff8d773-1f77-418f-8346-b3103b960599" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(25.5 : 35.2652498372396); (24.375 : 35.2652498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Gift/Gift_UserGift" />
+      <nodes>
+        <classShapeMoniker Id="cbd61f0e-a585-4113-86ef-6c20bd16930b" />
+        <classShapeMoniker Id="e77d5198-fb90-402d-9257-a01552ea9952" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.0625 : 34.0689925130208); (16.0625 : 35)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Preference/Preference_UserPreference" />
+      <nodes>
+        <classShapeMoniker Id="567aff4e-0fce-44db-b052-0386099273f9" />
+        <classShapeMoniker Id="b0c3a655-c094-473b-b909-670e3083935d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.375 : 35.2588932291667); (14.09375 : 35.2588932291667); (14.09375 : 36.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Role/Role_UserRole" />
+      <nodes>
+        <classShapeMoniker Id="0a940bbe-e4ae-4703-8d8b-ad4534d8aa31" />
+        <classShapeMoniker Id="9701c606-91a5-4e6d-a85f-b602d9b8bedc" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="3b049158-2e6d-4367-8a3c-c22fc677f4ad" absoluteBounds="24.625, 27.125, 2, 1.9631982421875">
+      <DataClassMoniker Name="/sexivirtDbDataContext/ChangePassword" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dc0f982b-87b9-4f6f-9473-a2f8117feda3" absoluteBounds="24.64, 27.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e4b097ce-ab9d-40a3-9bc6-ef5e3a645797" absoluteBounds="12.375, 20.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/sexivirtDbDataContext/CommentBlogPost" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0bdf6b0-b402-4af7-8aa0-7eff3613a3f0" absoluteBounds="12.39, 20.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.5 : 25.5); (8.5 : 20.9431469726563); (12.375 : 20.9431469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/BlogPost/BlogPost_CommentBlogPost" />
+      <nodes>
+        <classShapeMoniker Id="674c81df-b0c1-4a5e-9e5a-3efb8b7eccff" />
+        <classShapeMoniker Id="e4b097ce-ab9d-40a3-9bc6-ef5e3a645797" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b6ca6a59-509f-4249-a95f-f9b1a1bc7644" absoluteBounds="17.125, 26.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/sexivirtDbDataContext/UserEvent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a5df7a1-8dcd-4229-9309-785320e74259" absoluteBounds="17.14, 27.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(14.125 : 26.2111701888021); (18.15625 : 26.2111701888021); (18.15625 : 26.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Event/Event_UserEvent" />
+      <nodes>
+        <classShapeMoniker Id="e5120dc6-456d-412a-8900-a58946849f31" />
+        <classShapeMoniker Id="b6ca6a59-509f-4249-a95f-f9b1a1bc7644" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b901f080-c5dc-45ec-9894-589a2ec7e19b" absoluteBounds="20.75, 23.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Connect" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dfbe4c83-3b3f-4474-8e97-a8dbfcdbfcc8" absoluteBounds="20.765, 24.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ed2de7e4-ddf7-491f-9917-e7c237f8e9b8" absoluteBounds="29, 25.75, 2, 2.5401025390625">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Message" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d7a6cc05-0ec4-4cbb-a749-b20a74d338d0" absoluteBounds="29.015, 26.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(22.71875 : 25.0112939453125); (22.71875 : 26.28125); (27.9166666666667 : 26.28125 : JumpStart); (28.0833333333333 : 26.28125 : JumpEnd); (29 : 26.28125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Connect/Connect_Message" />
+      <nodes>
+        <classShapeMoniker Id="b901f080-c5dc-45ec-9894-589a2ec7e19b" />
+        <classShapeMoniker Id="ed2de7e4-ddf7-491f-9917-e7c237f8e9b8" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2aaffa99-af2d-450a-868c-35c5b273567c" absoluteBounds="25.625, 47.125, 2, 2.5401025390625">
+      <DataClassMoniker Name="/sexivirtDbDataContext/MoneyDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="314772a3-8d6c-4544-a4f3-6e152c064a0b" absoluteBounds="25.64, 47.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(26.4999995 : 47.125); (26.4999995 : 45.1671033300781); (27.375 : 45.1671033300781)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/MoneyDetail/MoneyDetail_MoneyWithdraw" />
+      <nodes>
+        <classShapeMoniker Id="2aaffa99-af2d-450a-868c-35c5b273567c" />
+        <classShapeMoniker Id="1b23e5bf-4e47-4a3b-8f8a-064444062fda" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="97ba3e68-f507-425f-ae7d-6b0acf139d83" absoluteBounds="15.125, 24.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/sexivirtDbDataContext/CommentRating" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e4be8c51-e628-43f5-9834-cdc70c5c2862" absoluteBounds="15.14, 24.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c77e7d0e-ee54-4949-9f67-03a33ac14c3d" absoluteBounds="8.25, 46.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/sexivirtDbDataContext/CommentGroupBlogPost" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f46f1b86-4fb1-4c4f-848c-921bc21958ac" absoluteBounds="8.265, 47.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.75 : 47.3181469726563); (10.25 : 47.3181469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/GroupBlogPost/GroupBlogPost_CommentGroupBlogPost" />
+      <nodes>
+        <classShapeMoniker Id="faed47ba-ad8f-4d0a-8aa5-96209ba5b9ff" />
+        <classShapeMoniker Id="c77e7d0e-ee54-4949-9f67-03a33ac14c3d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="9dbcc0e1-d486-4e56-8a67-15866937752c" absoluteBounds="17.875, 49.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/sexivirtDbDataContext/UserGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0777fd70-2f61-4b25-a44d-f1785190cc8f" absoluteBounds="17.89, 50.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(16.25 : 49.1651025390625); (16.25 : 50.5681469726563); (17.875 : 50.5681469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Group/Group_UserGroup" />
+      <nodes>
+        <classShapeMoniker Id="a60e7d16-bd5e-4e5e-b9b8-1a1309c00de4" />
+        <classShapeMoniker Id="9dbcc0e1-d486-4e56-8a67-15866937752c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dff0445b-0902-4fdc-955c-8e849c6b3a43" absoluteBounds="16.875, 31.5, 2, 3.1170068359375">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Feed" />
+      <nestedChildShapes>
+        <elementListCompartment Id="03ba3100-8796-4772-a3c5-8fa30433a2a3" absoluteBounds="16.89, 31.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(28.625 : 33.28125); (22.2864608333333 : 33.28125 : JumpStart); (22.1197941666667 : 33.28125 : JumpEnd); (22.1145833333333 : 33.28125 : JumpStart); (21.7291666666667 : 33.28125 : JumpEnd); (21.6770833333333 : 33.28125 : JumpStart); (21.0729166666667 : 33.28125 : JumpEnd); (20.9427058333333 : 33.28125 : JumpStart); (20.5963479166667 : 33.28125 : JumpEnd); (18.875 : 33.28125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/AlbumAccess/AlbumAccess_Feed" />
+      <nodes>
+        <classShapeMoniker Id="efc8a3bd-ac34-40d5-bba1-8a617421aab2" />
+        <classShapeMoniker Id="dff0445b-0902-4fdc-955c-8e849c6b3a43" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.9687475 : 27.4631982421875); (7.9687475 : 31.84375); (12.6666666666667 : 31.84375 : JumpStart); (12.8333333333333 : 31.84375 : JumpEnd); (13.8854166666667 : 31.84375 : JumpStart); (14.0520833333333 : 31.84375 : JumpEnd); (16.875 : 31.84375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/BlogPost/BlogPost_Feed" />
+      <nodes>
+        <classShapeMoniker Id="674c81df-b0c1-4a5e-9e5a-3efb8b7eccff" />
+        <classShapeMoniker Id="dff0445b-0902-4fdc-955c-8e849c6b3a43" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.96875 : 27.3574039713542); (13.96875 : 34.3742496744792); (15.9791666666667 : 34.3742496744792 : JumpStart); (16.1458333333333 : 34.3742496744792 : JumpEnd); (16.875 : 34.3742496744792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Event/Event_Feed" />
+      <nodes>
+        <classShapeMoniker Id="e5120dc6-456d-412a-8900-a58946849f31" />
+        <classShapeMoniker Id="dff0445b-0902-4fdc-955c-8e849c6b3a43" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.75 : 46.0156225); (18.28125 : 46.0156225); (18.28125 : 34.6170068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/GroupBlogPost/GroupBlogPost_Feed" />
+      <nodes>
+        <classShapeMoniker Id="faed47ba-ad8f-4d0a-8aa5-96209ba5b9ff" />
+        <classShapeMoniker Id="dff0445b-0902-4fdc-955c-8e849c6b3a43" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="cf800789-b383-45e9-b358-57e81d539421" absoluteBounds="25.75, 23.125, 2, 1.9631982421875">
+      <DataClassMoniker Name="/sexivirtDbDataContext/RoboTransaction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1359ee53-196d-4ee0-82b9-a3a4a27a1d7b" absoluteBounds="25.765, 23.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(26.93750225 : 47.125); (26.93750225 : 36.6458968098958); (28 : 36.6458968098958); (28 : 24.1065991210938); (27.75 : 24.1065991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/MoneyDetail/MoneyDetail_RoboTransaction" />
+      <nodes>
+        <classShapeMoniker Id="2aaffa99-af2d-450a-868c-35c5b273567c" />
+        <classShapeMoniker Id="cf800789-b383-45e9-b358-57e81d539421" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6e6247ff-a3f0-473f-badf-1bf5acd95c3c" absoluteBounds="14.875, 16, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Setting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3e17cf0d-bb5a-485c-981e-d486e403e0ae" absoluteBounds="14.89, 16.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9b245721-92dc-4a6d-aae2-bc45dd04840d" absoluteBounds="18.125, 16, 2, 1.3862939453125">
+      <DataClassMoniker Name="/sexivirtDbDataContext/MessagePayment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0965587-2e4e-43e8-956f-3bea743d26be" absoluteBounds="18.14, 16.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" absoluteBounds="20.625, 26.875, 2, 5.6169254557291657">
+      <DataClassMoniker Name="/sexivirtDbDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3dfac91-ad6a-4065-94bf-0aa7367b8dc8" absoluteBounds="20.64, 27.335, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(22.625 : 31.7580471888021); (28.6979166666667 : 31.7580471888021 : JumpStart); (28.8645833333333 : 31.7580471888021 : JumpEnd); (31.40625 : 31.7580471888021); (31.40625 : 32.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Album" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="a898bcb2-6473-4c11-9a5d-b5f576c7145b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.03125 : 32.4919254557292); (22.03125 : 41)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_UserStatus" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="a0e4392e-d6ff-4547-a3a1-1493c45d5922" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.625 : 30.4231202154948); (27.9166666666667 : 30.4231202154948 : JumpStart); (28.0833333333333 : 30.4231202154948 : JumpEnd); (28.78125 : 30.4231202154948); (28.78125 : 32.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_AlbumAccess" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="efc8a3bd-ac34-40d5-bba1-8a617421aab2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.625 : 30.4431469726563); (20.4270808333333 : 30.4431469726563 : JumpStart); (20.2604141666667 : 30.4431469726563 : JumpEnd); (19.5520833333333 : 30.4431469726563 : JumpStart); (19.3854166666667 : 30.4431469726563 : JumpEnd); (18.3333333333333 : 30.4431469726563 : JumpStart); (18.1666666666667 : 30.4431469726563 : JumpEnd); (18 : 30.4431469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Blocked" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="5c2242c8-5afe-4e94-a5e8-94a5639fbb83" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.625 : 30.0340734863281); (20.4270808333333 : 30.0340734863281 : JumpStart); (20.2604141666667 : 30.0340734863281 : JumpEnd); (19.5520833333333 : 30.0340734863281 : JumpStart); (19.3854166666667 : 30.0340734863281 : JumpEnd); (18.3333333333333 : 30.0340734863281 : JumpStart); (18.1666666666667 : 30.0340734863281 : JumpEnd); (18 : 30.0340734863281)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Blocked1" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="5c2242c8-5afe-4e94-a5e8-94a5639fbb83" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(21.15625 : 32.4919254557292); (21.15625 : 40.84375); (20.7942670833333 : 40.84375 : JumpStart); (20.5963479166667 : 40.84375 : JumpEnd); (18.3645833333333 : 40.84375 : JumpStart); (18.1979166666667 : 40.84375 : JumpEnd); (16 : 40.84375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_BlockGroupUser" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="c487fc80-afaf-4109-955a-84212b6f9b29" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.625 : 28.9142976888021); (20.4270808333333 : 28.9142976888021 : JumpStart); (20.2604141666667 : 28.9142976888021 : JumpEnd); (19.7239608333333 : 28.9142976888021 : JumpStart); (19.5572941666667 : 28.9142976888021 : JumpEnd); (19.5520833333333 : 28.9142976888021 : JumpStart); (19.3854166666667 : 28.9142976888021 : JumpEnd); (14.0520833333333 : 28.9142976888021 : JumpStart); (13.8854166666667 : 28.9142976888021 : JumpEnd); (12.7083333333333 : 28.9142976888021 : JumpStart); (12.5416666666667 : 28.9142976888021 : JumpEnd); (9.83333333333333 : 28.9142976888021 : JumpStart); (9.66666666666667 : 28.9142976888021 : JumpEnd); (8.76562625 : 28.9142976888021); (8.76562625 : 27.4631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_BlogPost" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="674c81df-b0c1-4a5e-9e5a-3efb8b7eccff" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.65625 : 26.875); (20.65625 : 20.8854484049479); (23.75 : 20.8854484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_DepositCandidate" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="62302eb9-57e3-48d8-b9a2-55f1b3af1379" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.625 : 28.6839440332031); (20.4270808333333 : 28.6839440332031 : JumpStart); (20.2604141666667 : 28.6839440332031 : JumpEnd); (19.7239608333333 : 28.6839440332031 : JumpStart); (19.5572941666667 : 28.6839440332031 : JumpEnd); (19.5520833333333 : 28.6839440332031 : JumpStart); (19.3854166666667 : 28.6839440332031 : JumpEnd); (14.0781275 : 28.6839440332031); (14.0781275 : 27.3574039713542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Event" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="e5120dc6-456d-412a-8900-a58946849f31" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(21.59375 : 32.4919254557292); (21.59375 : 38.5392976888021); (23.75 : 38.5392976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Friendship" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="326810b2-c20f-49d7-82ec-7e41695787d4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.8593725 : 32.4919254557292); (20.8593725 : 38.113396344401); (21.2916666666667 : 38.113396344401 : JumpStart); (21.4583333333333 : 38.113396344401 : JumpEnd); (23.75 : 38.113396344401)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Friendship1" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="326810b2-c20f-49d7-82ec-7e41695787d4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(21.375 : 32.4919254557292); (21.375 : 47.8950512695313); (17.25 : 47.8950512695313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Group" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="a60e7d16-bd5e-4e5e-b9b8-1a1309c00de4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.71093375 : 32.4919254557292); (20.71093375 : 46.32031375); (13.75 : 46.32031375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_GroupBlogPost" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="faed47ba-ad8f-4d0a-8aa5-96209ba5b9ff" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.625 : 29.6834627278646); (20.4270808333333 : 29.6834627278646 : JumpStart); (20.2604141666667 : 29.6834627278646 : JumpEnd); (19.5520833333333 : 29.6834627278646 : JumpStart); (19.3854166666667 : 29.6834627278646 : JumpEnd); (18.25 : 29.6834627278646); (18.25 : 31.25); (16.625 : 31.25); (16.625 : 31.3862939453125); (14.0520833333333 : 31.3862939453125 : JumpStart); (13.8854166666667 : 31.3862939453125 : JumpEnd); (12.75 : 31.3862939453125); (12.75 : 32.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Meeting" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="cfc6a187-6ebe-4bd0-a497-e5c98d9f8f22" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(21.00781125 : 32.4919254557292); (21.00781125 : 44.239799165039); (21.2916666666667 : 44.239799165039 : JumpStart); (21.5677083333333 : 44.239799165039 : JumpEnd); (27.375 : 44.239799165039)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_MoneyWithdraw" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="1b23e5bf-4e47-4a3b-8f8a-064444062fda" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.625 : 28.3886946614583); (20.4270808333333 : 28.3886946614583 : JumpStart); (20.2604141666667 : 28.3886946614583 : JumpEnd); (19.7239608333333 : 28.3886946614583 : JumpStart); (19.5572941666667 : 28.3886946614583 : JumpEnd); (19.5520833333333 : 28.3886946614583 : JumpStart); (19.3854166666667 : 28.3886946614583 : JumpEnd); (16.625 : 28.3886946614583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_UserEventRating" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="eff8d773-1f77-418f-8346-b3103b960599" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(21.8125 : 32.4919254557292); (21.8125 : 34.8277498372396); (22.375 : 34.8277498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_UserGift" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="e77d5198-fb90-402d-9257-a01552ea9952" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(21.921875 : 32.4919254557292); (21.921875 : 34.2576224186198); (21.9479166666667 : 34.2576224186198 : JumpStart); (22.1145833333333 : 34.2576224186198 : JumpEnd); (22.375 : 34.2576224186198)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_UserGift1" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="e77d5198-fb90-402d-9257-a01552ea9952" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.2031275 : 32.4919254557292); (22.2031275 : 36.1771468098958); (22.1145833333333 : 36.1771468098958 : JumpStart); (21.9479166666667 : 36.1771468098958 : JumpEnd); (21.6770833333333 : 36.1771468098958 : JumpStart); (21.0729166666667 : 36.1771468098958 : JumpEnd); (20.9427058333333 : 36.1771468098958 : JumpStart); (20.5963479166667 : 36.1771468098958 : JumpEnd); (18.3645833333333 : 36.1771468098958 : JumpStart); (18.1979166666667 : 36.1771468098958 : JumpEnd); (17.625 : 36.1771468098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_UserPreference" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="b0c3a655-c094-473b-b909-670e3083935d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.625 : 30.9383577965495); (27.9166666666667 : 30.9383577965495 : JumpStart); (28.0833333333333 : 30.9383577965495 : JumpEnd); (28.6979166666667 : 30.9383577965495 : JumpStart); (28.8645833333333 : 30.9383577965495 : JumpEnd); (31.75 : 30.9383577965495)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_UserRating" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="ec28b8b2-e0f8-4443-ba01-61a307d02f99" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.625 : 30.0240601077474); (27.9166666666667 : 30.0240601077474 : JumpStart); (28.0833333333333 : 30.0240601077474 : JumpEnd); (31.75 : 30.0240601077474)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_UserRating1" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="ec28b8b2-e0f8-4443-ba01-61a307d02f99" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(21.265625 : 32.4919254557292); (21.265625 : 37.0425439453125); (20.9427058333333 : 37.0425439453125 : JumpStart); (20.6276004166667 : 37.0425439453125 : JumpEnd); (18.3645833333333 : 37.0425439453125 : JumpStart); (18.1979166666667 : 37.0425439453125 : JumpEnd); (15.5 : 37.0425439453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_UserRole" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="9701c606-91a5-4e6d-a85f-b602d9b8bedc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.625 : 28.1065991210938); (24.625 : 28.1065991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_ChangePassword" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="3b049158-2e6d-4367-8a3c-c22fc677f4ad" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.625 : 27.5681469726563); (20.4270808333333 : 27.5681469726563 : JumpStart); (20.2604141666667 : 27.5681469726563 : JumpEnd); (19.7239608333333 : 27.5681469726563 : JumpStart); (19.5572941666667 : 27.5681469726563 : JumpEnd); (19.5520833333333 : 27.5681469726563 : JumpStart); (19.3854166666667 : 27.5681469726563 : JumpEnd); (19.125 : 27.5681469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_UserEvent" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="b6ca6a59-509f-4249-a95f-f9b1a1bc7644" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(21.6875 : 26.875); (21.6875 : 25.0112939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Connect" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="b901f080-c5dc-45ec-9894-589a2ec7e19b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.21875 : 26.875); (22.21875 : 25.0112939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Connect1" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="b901f080-c5dc-45ec-9894-589a2ec7e19b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.625 : 26.96875); (27.9166666666667 : 26.96875 : JumpStart); (28.0833333333333 : 26.96875 : JumpEnd); (29 : 26.96875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Message" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="ed2de7e4-ddf7-491f-9917-e7c237f8e9b8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.625 : 29.5561266749674); (27.9166666666667 : 29.5561266749674 : JumpStart); (28.0833333333333 : 29.5561266749674 : JumpEnd); (30 : 29.5561266749674); (30 : 28.2901025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Message1" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="ed2de7e4-ddf7-491f-9917-e7c237f8e9b8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(21.484375 : 32.4919254557292); (21.484375 : 48.7800769042969); (25.625 : 48.7800769042969)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_MoneyDetail" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="2aaffa99-af2d-450a-868c-35c5b273567c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.640625 : 26.875); (20.640625 : 25.4511946614583); (20.4270808333333 : 25.4511946614583 : JumpStart); (20.2604141666667 : 25.4511946614583 : JumpEnd); (19.7239608333333 : 25.4511946614583 : JumpStart); (19.5572941666667 : 25.4511946614583 : JumpEnd); (19.5520833333333 : 25.4511946614583 : JumpStart); (19.3854166666667 : 25.4511946614583 : JumpEnd); (17.125 : 25.4511946614583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_CommentRating" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="97ba3e68-f507-425f-ae7d-6b0acf139d83" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.67968125 : 32.4919254557292); (20.67968125 : 50.5681469726563); (19.875 : 50.5681469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_UserGroup" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="9dbcc0e1-d486-4e56-8a67-15866937752c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.625 : 31.9959627278646); (18.875 : 31.9959627278646)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Feed" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="dff0445b-0902-4fdc-955c-8e849c6b3a43" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.625 : 31.6854813639323); (18.875 : 31.6854813639323)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Feed1" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="dff0445b-0902-4fdc-955c-8e849c6b3a43" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.671875 : 26.875); (20.671875 : 23.34375); (25.75 : 23.34375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_RoboTransaction" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="cf800789-b383-45e9-b358-57e81d539421" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.125 : 29.4667313639323); (13.8854166666667 : 29.4667313639323 : JumpStart); (14.0520833333333 : 29.4667313639323 : JumpEnd); (19.3854166666667 : 29.4667313639323 : JumpStart); (19.5520833333333 : 29.4667313639323 : JumpEnd); (20.2604141666667 : 29.4667313639323 : JumpStart); (20.4270808333333 : 29.4667313639323 : JumpEnd); (20.625 : 29.4667313639323)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/City/City_User" />
+      <nodes>
+        <classShapeMoniker Id="d0b21032-bdec-4675-bc4c-e76f04a8fb45" />
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4c6fbd3e-edbb-4b2b-b4da-c5049633e440" absoluteBounds="17.75, 20.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/sexivirtDbDataContext/Comment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="335ba84e-a6ef-426a-85aa-c0ab6d8a858c" absoluteBounds="17.765, 20.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(17.75 : 21.2989005533854); (15.5 : 21.2989005533854); (15.5 : 22.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Comment/Comment_CommentEvent" />
+      <nodes>
+        <classShapeMoniker Id="4c6fbd3e-edbb-4b2b-b4da-c5049633e440" />
+        <classShapeMoniker Id="3e47d446-0f49-4d70-84de-ed072805409b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.75 : 20.7119502766927); (14.375 : 20.7119502766927)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Comment/Comment_CommentBlogPost" />
+      <nodes>
+        <classShapeMoniker Id="4c6fbd3e-edbb-4b2b-b4da-c5049633e440" />
+        <classShapeMoniker Id="e4b097ce-ab9d-40a3-9bc6-ef5e3a645797" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18.75 : 22.4728011067708); (18.75 : 24.8193448307292); (17.125 : 24.8193448307292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Comment/Comment_CommentRating" />
+      <nodes>
+        <classShapeMoniker Id="4c6fbd3e-edbb-4b2b-b4da-c5049633e440" />
+        <classShapeMoniker Id="97ba3e68-f507-425f-ae7d-6b0acf139d83" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(17.75 : 21.9171028300781); (15.5833333333333 : 21.9171028300781 : JumpStart); (15.4166666666667 : 21.9171028300781 : JumpEnd); (14.625 : 21.9171028300781); (14.625 : 21.8862939453125); (9.75 : 21.8862939453125); (9.75 : 34.25); (9.125 : 34.25); (9.125 : 46.25); (9.25 : 46.25); (9.25 : 46.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Comment/Comment_CommentGroupBlogPost" />
+      <nodes>
+        <classShapeMoniker Id="4c6fbd3e-edbb-4b2b-b4da-c5049633e440" />
+        <classShapeMoniker Id="c77e7d0e-ee54-4949-9f67-03a33ac14c3d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.46875 : 22.4728011067708); (19.46875 : 33.9803809179688); (18.875 : 33.9803809179688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Comment/Comment_Feed" />
+      <nodes>
+        <classShapeMoniker Id="4c6fbd3e-edbb-4b2b-b4da-c5049633e440" />
+        <classShapeMoniker Id="dff0445b-0902-4fdc-955c-8e849c6b3a43" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(18.4592307692308 : 20.125); (18.4592307692308 : 19.875); (19.0546153846154 : 19.875); (19.0546153846154 : 20.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/sexivirtDbDataContext/Comment/Comment_Comment" />
+      <nodes>
+        <classShapeMoniker Id="4c6fbd3e-edbb-4b2b-b4da-c5049633e440" />
+        <classShapeMoniker Id="4c6fbd3e-edbb-4b2b-b4da-c5049633e440" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.625 : 29.1905145263672); (20.4270808333333 : 29.1905145263672 : JumpStart); (20.2604141666667 : 29.1905145263672 : JumpEnd); (19.6406275 : 29.1905145263672); (19.6406275 : 22.4728011067708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_Comment" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="4c6fbd3e-edbb-4b2b-b4da-c5049633e440" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dded8a9e-9de0-4b9c-8244-2f83b262620f" absoluteBounds="20.125, 17.75, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/sexivirtDbDataContext/AdminChat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1de4c44a-4d39-476d-bb19-b72e54bab001" absoluteBounds="20.14, 18.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(20.625 : 31.0643141682943); (20.3437475 : 31.0643141682943); (20.3437475 : 18.9439925130208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/sexivirtDbDataContext/User/User_AdminChat" />
+      <nodes>
+        <classShapeMoniker Id="9f704f0d-4dc8-4a83-91eb-f35d00b9d4d2" />
+        <classShapeMoniker Id="dded8a9e-9de0-4b9c-8244-2f83b262620f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

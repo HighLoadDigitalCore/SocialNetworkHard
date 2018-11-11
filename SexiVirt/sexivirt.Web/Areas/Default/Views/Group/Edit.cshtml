@@ -1,0 +1,49 @@
+﻿@model GroupView
+@{
+    ViewBag.Title = Model.ID == 0 ? "Новая группа" : "Редактировать группу";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+@section header {
+    @Scripts.Render("~/bundles/fineuploader")
+    @Scripts.Render("~/Scripts/default/edit-group.js")
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="create clear">
+            @if (Model.ID == 0)
+            {
+                <h1>Новая <a href="@Url.Action("Index", "Group")">группа</a></h1>
+            }
+            else
+            {
+                <h1>Редактирование  <a href="@Url.Action("Index", "Group")">группы</a></h1>
+            }
+            @using (Html.BeginForm("Edit", "Group", FormMethod.Post))
+            {
+                @Html.Hidden("ID", Model.ID)
+                @Html.Hidden("AvatarUrl", Model.AvatarUrl)
+                <div class="left">
+                    @Html.TextBox("Name", Model.Name, new { placeholder = "Введите название группы" })
+                    @Html.TextArea("Info", Model.Info, new { placeholder = "Опишите вашу группу" })
+                    <button class="greenBut">@(Model.ID == 0 ? "Создать" : "Изменить")</button>
+                </div>
+                <div class="right">
+                    <div class="@((string.IsNullOrEmpty(Model.AvatarUrl)) ? "hidden" :"")" id="AvatarWrapper">
+                        <div class="photo avatar-group">
+                            <img src="@Model.AvatarUrl?w=255&h=255&mode=crop" alt="" id="AvatarImage">
+                        </div>
+                        <div class="cdc_delete" >
+                            <a href="#" id="RemoveAvatar">Удалить</a>
+                        </div>
+                    </div>
+                    <div class="add-photo @(!string.IsNullOrEmpty(Model.AvatarUrl) ? "hidden" :"")" id="ChangeAvatar">
+                        Добавьте<br>фото
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+
+@Html.Partial("UploadTemplateAvatar")

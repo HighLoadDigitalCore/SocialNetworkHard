@@ -1,0 +1,100 @@
+﻿@model Group
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+@section header {
+    @Scripts.Render("~/Scripts/jquery.jscroll.js")
+    @Scripts.Render("~/Scripts/jquery.fineuploader-4.1.1.min.js")
+    @Scripts.Render("~/Scripts/default/item-group.js")
+
+}
+
+@Html.Hidden("ID", Model.ID)
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="group-page clear">
+            <h1 class="@Model.User.GenderStr"><a href="@Url.Action("Index", "Group")">Группы</a></h1>
+            <div class="c_userName @Model.User.GenderStr">
+                <a href="@Url.Action("Index", "User", new {id =Model.UserID })">@Model.User.FirstName</a>
+
+                <div class="c_userPhoto @Model.User.GenderStr">
+                    <img src="@Model.User.AvatarPath?w=52&h=52&mode=crop" alt="" />
+                </div>
+            </div>
+            <div class="group-text">
+                <p><h2>@Model.Name</h2></p>
+                @Html.Raw(@Model.Info.NlToP())
+                <br/>
+                <div class="share42init"></div>
+                <script type="text/javascript" src="/Content/share42/share42.js"></script>
+
+            </div>
+
+            <div class="right-block">
+                <img src="@Model.AvatarUrl?w=155&h=155&mode=crop" alt="" />
+                @if (currentUser != null)
+                {
+                    if (currentUser.InGroup(Model))
+                    {
+                        <a href="@Url.Action("LeaveGroup", "Group", new { id = Model.ID })" class="sign-up greenBut minus">Выйти из группы</a>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("EnterGroup", "Group", new { id = Model.ID })" class="sign-up greenBut">Вступить в группу</a>
+                    }
+                }
+            </div>
+            <div class="blocks">
+
+                <div class="title">В группе</div>
+                <div id="GroupUserWrapper">
+                    @*
+                        @foreach (var user in Model.SubUsers.Take(5))
+                        {
+                            <a href="@Url.Action("Index", "User", new { id = user.ID })">
+                                <div class="item @user.GenderStr">
+                                    <img src="@user.FullAvatarPath?w=94&h=94&mode=crop" alt="" />
+                                </div>
+                            </a>
+                        }
+                        @if (Model.SubUsersCount > 5)
+                        {
+                            <div class="item another">
+                                <span>Еще @(Model.SubUsersCount - 5)<br></span>
+                                <a href="#" id="LoadAllUsers" data-id="@Model.ID">Показать<br>всех</a>
+                            </div>
+                        }
+                    *@
+                    @Html.Partial("HideUsers", Model)
+                </div>
+            </div>
+
+            @if (currentUser != null && currentUser.InGroup(Model))
+            {
+                <div id="CreatePostWrapper">
+                    @Html.Action("CreatePost", "Group", new { id = Model.ID })
+                </div>
+            }
+
+            <div class="blocks">
+                <div class="title">Записи группы</div>
+
+                <div id="GroupPostListWrapper" data-skip="@(Model.SubBlogPostCount > 10 ? 10 : Model.SubBlogPostCount)">
+                    @foreach (var blogPost in Model.SubBlogPost(0).Take(10))
+                    {
+                        @Html.Partial("ShortGroupBlogPost", blogPost)
+                    }
+
+                    @if (Model.SubBlogPostCount > 10)
+                    {
+                        <a class="next" href="@Url.Action("LoadPosts", "Group", new { id = Model.ID, skip = 10 })">Загружаю</a>
+                    }
+                </div>
+
+            </div>
+        </section>
+    </div>
+</div>

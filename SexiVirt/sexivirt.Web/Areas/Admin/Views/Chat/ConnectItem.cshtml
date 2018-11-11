@@ -1,0 +1,24 @@
+﻿@using sexivirt.Web.Areas.Admin.Controllers
+@using Tool
+@model Connect
+@{
+    var currentUser = ((ChatController)ViewContext.Controller).CurrentUser;
+    var opposide = Model.Viral(currentUser);
+    var unread = Model.UnreadMessagesCount(currentUser.ID);
+    var lastMessage = Model.LastMessage(currentUser.ID);
+}
+
+@if (lastMessage != null)
+{
+    <div class="messages-item @lastMessage.Sender.GenderStr" arg="@Model.ID">
+        <div class="title"><a onclick="loadConversation(this); return false;" style="text-decoration: none; color: #666" href="@Url.Action("Conversation", "Chat", new { id = Model.ID, ViewBag.ChatUserID })">@opposide.FirstName<span></span></a></div>
+        <div class="photo @opposide.GenderStr">
+            <div class="status @(opposide.IsOnline ? "online" : "offline")">Статус: <b>@(opposide.IsOnline ? "онлайн" : "оффлайн")</b></div>
+            @if (unread > 0)
+            {
+                <a onclick="loadConversation(this); return false;" href="@Url.Action("Conversation", "Chat", new {id = Model.ID, ViewBag.ChatUserID})" class="unread">Новых сообщений: @unread </a>
+            }
+        </div>
+      
+    </div>
+}

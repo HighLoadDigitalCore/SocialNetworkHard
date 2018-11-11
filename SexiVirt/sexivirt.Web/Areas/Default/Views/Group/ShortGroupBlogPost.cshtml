@@ -1,0 +1,36 @@
+﻿@model GroupBlogPost
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<div class="record-item">
+    <img src="@Model.User.FullAvatarPath?w=37&h=37&mode=crop" alt="" />
+    <div class="head">
+        <a href="@Url.Action("Post", "Group", new {id =Model.ID })">@Model.Header</a>
+        <div class="date">
+            <span>@Model.AddedDate.EventDateNamed() в @Model.AddedDate.ToString("HH:mm")</span><br>
+            <div class="write">
+                <a href="@Url.Action("Post", "Group", new {id =Model.ID })">@Model.CommentsCount @Model.CommentsCount.CountWord("комментарий", "комментария", "комментариев")</a>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        @if (!string.IsNullOrWhiteSpace(Model.Attach))
+        {
+            <img src="@Model.Attach?w=198&h=198&mode=crop">
+        }
+        @Html.Raw(Model.Text.Teaser(100).NlToP())
+    </div>
+    <div class="footer @Model.User.GenderStr">
+        <a href="@Url.Action("Post", "Group", new {id =Model.ID })">Показать полностью</a>
+        @if (currentUser != null && Model.UserID == currentUser.ID)
+        {
+            <br/>
+            <a href="@Url.Action("PostEdit", "Group", new {id = Model.ID })">Редактировать запись</a>
+        }
+
+        <div class="user">
+            <a href="@Url.Action("Index", "User" , new {id=Model.UserID })">@Model.User.FirstName</a>
+            <img src="@Model.User.FullAvatarPath?w=40&h=40&mode=crop" alt="">
+        </div>
+    </div>
+</div>

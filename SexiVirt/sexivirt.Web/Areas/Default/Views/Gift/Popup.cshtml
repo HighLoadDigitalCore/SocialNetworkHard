@@ -1,0 +1,29 @@
+﻿@model UserGiftView
+<div class="popupBg"></div>
+<div class="popup gifts pp-type2">
+    <div class="pp_close closePopup">×</div>
+    <div class="pp_title">Подарить подарок</div>
+    @using (Html.BeginForm("Popup", "Gift", FormMethod.Post, new { id = "MakeGiftForm" }))
+    {
+        @Html.Hidden("ReceiverID", Model.ReceiverID)
+        @Html.Hidden("GiftID", Model.GiftID)
+        @Html.Hidden("GiftType", Model.GiftType)
+        
+        <div class="popup-tabs">
+            <span class="@(Model.GiftType == null ?"active" :"") switchGiftList" data-type="">Все</span>
+            <span class="@(Model.GiftType == 1 ?"active" :"") switchGiftList" data-type="1">Популярные</span>
+            <span class="@(Model.GiftType == 2 ?"active" :"") switchGiftList" data-type="2">Романтические</span>
+            <span class="@(Model.GiftType == 3 ?"active" :"") switchGiftList" data-type="3">Сексуальные</span>
+        </div>
+        <div class="popup-wrapper" id="GiftListWrapper">
+            @Html.Action("List", "Gift", new { type = Model.GiftType })
+        </div>
+        <div class="errors" id="ErrorWrapper">
+            @Html.ValidationSummary()
+        </div>
+        @Html.TextArea("Text", Model.Text)
+        @Html.CheckBox("Visible", Model.Visible, new { @class = "checkboxEmul" })
+        <span class="ruble">Подарок виден только получателю</span>
+        <button type="button" class="greenBut" id="MakeGiftSubmit">Отправить</button>
+    }
+</div>

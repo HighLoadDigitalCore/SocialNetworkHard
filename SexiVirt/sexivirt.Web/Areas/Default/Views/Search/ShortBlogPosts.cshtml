@@ -1,0 +1,25 @@
+﻿@model IList<BlogPost>
+
+@{
+    var i = 0;
+}
+@foreach (var blogPost in Model)
+{
+    <div class="@(i % 2 == 0 ? "left" : "right")">
+        <div class="diary-item @blogPost.User.GenderStr">
+            <div class="user">
+                <a href="@Url.Action("Index", "User", new {id = blogPost.ID })">@blogPost.User.FirstName</a>
+                <div class="photo">
+                    <img src="@blogPost.User.FullAvatarPath?w=40&h=40&mode=crop" alt="">
+                </div>
+            </div>
+            <div class="text-wrapper">
+                <div class="text">
+                    @Html.Raw(blogPost.Text.StripTags().Teaser(300).NlToBr())
+                </div>
+            </div>
+            <a href="@Url.Action("Post", "Blog", new { id = blogPost.ID})">Показать полностью</a>
+        </div>
+    </div>
+    i++;
+}

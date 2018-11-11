@@ -1,0 +1,14 @@
+﻿@model IList<User>
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var total = (int)ViewBag.Total;
+}
+@Html.Hidden("LastSkip", total)
+@foreach (var user in Model)
+{
+    @Html.Partial("UserShortItem", user)
+}
+@if (Model.Count == 18)
+{
+    <a class="next" href="@Url.Action("Load","People")">Загружаю</a>
+}

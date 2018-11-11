@@ -1,0 +1,6 @@
+﻿@model IList<Friendship>
+@foreach (var friendship in Model)
+{
+    @Html.Partial("ShortNewContactItem", friendship)
+   
+}

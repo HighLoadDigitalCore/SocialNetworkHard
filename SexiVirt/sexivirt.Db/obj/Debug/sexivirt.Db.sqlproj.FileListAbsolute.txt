@@ -1,0 +1,5 @@
+D:\Sites\SexiVirt\sexivirt.Db\bin\Debug\sexivirt.Db.dacpac
+D:\Sites\SexiVirt\sexivirt.Db\bin\Debug\sexivirt.Db.dll
+D:\Sites\SexiVirt\sexivirt.Db\bin\Debug\sexivirt.Db.pdb
+D:\Sites\SexiVirt\sexivirt.Db\obj\Debug\sexivirt.Db.dll
+D:\Sites\SexiVirt\sexivirt.Db\obj\Debug\sexivirt.Db.pdb

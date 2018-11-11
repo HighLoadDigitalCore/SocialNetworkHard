@@ -1,0 +1,28 @@
+﻿@model User
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+
+@if (currentUser != null && currentUser.ID == Model.ID)
+{
+    <div class="write another active" id="StatusActiveBtn">
+        @if (!string.IsNullOrEmpty(Model.Status))
+        {
+            @Model.Status 
+        }
+        else
+        {
+            <em>Кликните, чтобы изменить статус</em>
+        }
+    </div>
+}
+else
+{
+    if (!string.IsNullOrEmpty(Model.Status)) 
+    {
+        <div class="write another">
+            @Model.Status
+        </div>
+    }
+}
+

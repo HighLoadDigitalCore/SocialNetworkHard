@@ -1,0 +1,71 @@
+﻿@model Comment
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<div class="@Model.User.GenderStr cd_comment commentItem" data-id="@Model.ID">
+    <div class="diariesItemInfo">
+        <div class="cdc_likes">
+            <div class="c_userName">
+                <a href="@Url.Action("Index", "User", new { id = Model.UserID})">@Model.User.FirstName</a>
+                <div class="c_userPhoto @Model.User.GenderStr">
+                    <img src="@Model.User.FullAvatarPath?w=52&h=52&mode=crop" alt="" />
+                </div>
+            </div>
+            <div class="rating-wrapper">
+                @Html.Partial("CommentRating", Model)
+            </div>
+        </div>
+        <div class="cdс_date">@Model.AddedDate.EventDateNamed() в @Model.AddedDate.ToString("HH:mm")</div>
+        
+        @if (currentUser != null)
+{
+    <div class="cdc_reply commentReply" style="padding-right: 5px" data-cid="@Model.ID" data-id="@Model.ID" data-copy="@Model.UserID" data-name="@Model.User.FirstName">Ответить</div>
+}
+
+        @if (currentUser != null &&
+                 (currentUser.ID == Model.UserID
+                  || (Model.EnityOwner != null && currentUser.ID == Model.EnityOwner.ID)))
+        {
+
+            if (!Model.IsDeleted)
+            {
+                <div class="cdc_delete deleteComment" data-id="@Model.ID">Удалить</div>
+            }
+        }
+
+    </div>
+    <article class="diariesItem">
+        <div class="cd_text">
+            @if (Model.IsDeleted)
+            {
+                <span class="deleted-comment">
+                    @if (Model.DeleteAuthorID.HasValue)
+                    {
+                        if (Model.DeleteAuthorID == Model.UserID)
+                        {
+                            @Html.Raw("Комментарий был удален автором")
+                        }
+                        else
+                        {
+                            @Html.Raw("Комментарий был удален создателем группы")
+                        }
+                    }
+                    else
+                    {
+                        @Html.Raw("Комментарий был удален")
+                    }
+                </span>
+            }
+            else
+            {
+                @Html.Raw(Model.Text.NlToP())
+            }
+
+
+        </div>
+    </article>
+</div>
+@foreach (var subComment in Model.SubComments)
+{
+    @Html.Partial("SubComment", subComment)
+}

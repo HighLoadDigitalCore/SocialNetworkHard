@@ -1,0 +1,12 @@
+﻿@model User
+
+@if (!string.IsNullOrWhiteSpace(Model.Description))
+{
+    @Html.Raw(Model.Description.NlToBr())
+}
+else
+{
+    <div class="empty-description">
+        Напишите что-нибудь о себе, чтобы заинтересовать человека, зашедшего на вашу страницу. Кто знает, может именно эти строчки смогут его соблазнить?
+    </div>
+}

@@ -1,0 +1,12 @@
+﻿@model sexivirt.Web.Models.ViewModels.Info.EventSearch
+<div class="cm_filter">
+    @using (Html.BeginForm("Index", "Event", FormMethod.Post, new { id = "SearchEventForm" }))
+    {
+        @Html.Hidden("IsReal", true)
+        <div><strong>Даты: </strong>начиная с</div>
+        @Html.DropDownList("DayStart", Model.DayStartSelectList, new { @class = "selectEmul" })
+        <span>до</span>
+        @Html.DropDownList("DayEnd", Model.DayEndSelectList, new { @class = "selectEmul" })
+        <button type="button" class="cmf_button greenBut" id="SearchBtn">Найти</button>
+    }
+</div>

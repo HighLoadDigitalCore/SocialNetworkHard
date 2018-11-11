@@ -1,0 +1,22 @@
+﻿@model List<Preference>
+@{
+    var peopleSearch = (sexivirt.Web.Models.ViewModels.Info.PeopleSearch)ViewBag.PeopleSearch;
+}
+<div class="popupBg"></div>
+<div class="popupOpenAlbum popupType-1 popup">
+    <div class="pp_close closePreference">×</div>
+    <div class="pp_title">Предпочтения</div>
+    <div class="pp_desc"></div>
+    <div class="pp_text">
+        <div class="preferences">
+            <ul class="choise">
+                @foreach (var item in Model)
+                {
+                    <li class="@(peopleSearch.HasPreference(item.ID) ? "active" : "")" data-id="@item.ID">@item.Name</li>
+                }
+            </ul>
+        </div>
+    </div>
+    <button class="ppa_select greenBut" id="SelectPreferencesBtn">Выбрать</button>
+    <span class="pp_acncel"><a href="#" class="closePreference close-popup">Закрыть</a></span>
+</div>

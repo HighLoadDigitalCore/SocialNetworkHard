@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="f96e4830-888a-4cf6-8752-f17bd155aebf" ChangeDateTime="03/16/2014 11:57:17">
+    <Property Name="ElementName" Value="[dbo].[Event].[Place]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Event]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CityID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b72c5605-5e4b-4638-bca7-7ab8e99d66a6" ChangeDateTime="03/16/2014 11:57:59">
+    <Property Name="ElementName" Value="[dbo].[Event].[Lat]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Event]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Coordinate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="00d03216-6d4e-4695-aeee-3854970140c2" ChangeDateTime="03/18/2014 06:59:31">
+    <Property Name="ElementName" Value="[dbo].[GroupBlogPost].[Text]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GroupBlogPost]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Tex" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f4f42acf-e03d-4356-8e66-a60b2a55dde7" ChangeDateTime="03/18/2014 06:59:33">
+    <Property Name="ElementName" Value="[dbo].[GroupBlogPost].[Tex]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[GroupBlogPost]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Text" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="60561b79-b83c-452d-a5a1-e77118f52012" ChangeDateTime="03/18/2014 07:10:21">
+    <Property Name="ElementName" Value="[dbo].[Gift].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Gift]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+</Operations>

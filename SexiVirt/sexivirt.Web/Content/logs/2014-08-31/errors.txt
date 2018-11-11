@@ -1,0 +1,1 @@
+2014-08-31 20:01:59.4279|ERROR|sexivirt.Web.Global.Auth.CustomAuthentication|Failed authentication: Ошибка на транспортном уровне при получении результатов с сервера. (provider: TCP Provider, error: 0 - Превышен таймаут семафора.)

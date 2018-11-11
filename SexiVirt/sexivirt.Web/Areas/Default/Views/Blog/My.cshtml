@@ -1,0 +1,41 @@
+﻿@model IList<BlogPost>
+@{
+    ViewBag.Title = "Мои дневники";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+
+@section header{
+    @Scripts.Render("~/Scripts/jquery.jscroll.js")
+    @Scripts.Render("~/Scripts/default/my-blog.js")
+
+}
+
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="diaries myDiaries clear">
+            <h1 class="woman">Мои дневники</h1>
+            <div class="addWrite">
+                <a href="@Url.Action("Add", "Blog")" class="greenBut">Добавить запись</a>
+            </div>
+
+            <div id="BlogPostWrapper" class="commentsWrap man" data-skip="10">
+                @foreach (var item in Model)
+                {
+                    @Html.Partial("ShortMyBlogPost", item)
+                }
+                @if (Model.Count == 10)
+                {
+                    <a class="next" href="@Url.Action("MyLoad", "Blog")">Загружаю</a>
+                }
+            </div>
+
+@*
+            <div class="addWrite cd_botBut">
+                <a href="@Url.Action("Add", "Blog")" class="greenBut">Добавить запись</a>
+            </div>
+*@
+        </section>
+    </div>
+</div>

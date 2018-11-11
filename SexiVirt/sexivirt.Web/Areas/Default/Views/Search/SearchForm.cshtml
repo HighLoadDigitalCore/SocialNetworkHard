@@ -1,0 +1,7 @@
+﻿@model sexivirt.Web.Models.ViewModels.Info.SearchInfo 
+<h1>Поиск по всему сайту</h1>
+@using (Html.BeginForm("Index", "Search", FormMethod.Post))
+{
+    @Html.TextBox("searchString", Model.SearchString)
+    <button class="greenBut">Найти</button>    
+}

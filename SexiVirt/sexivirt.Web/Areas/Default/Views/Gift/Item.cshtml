@@ -1,0 +1,37 @@
+﻿@model sexivirt.Model.UserGift
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<div class="popupBg"></div>
+<div class="popup gifts pp-type2">
+    <div class="pp_close closePopup">×</div>
+    <div class="pp_title">Подарок</div>
+    <div class="gift">
+        <img src="@Model.Gift.Image?w=128&h=128&mode=crop" />
+    </div>
+    @if (!Model.Visible || (currentUser != null && (currentUser.ID == Model.SenderID || currentUser.ID == Model.ReceiverID)))
+    {
+        <div class="dialog-item @Model.Sender.GenderStr user-1">
+            <div class="c_userPhoto">
+                
+                <a href="@Url.Action("Index", "User", new { id = Model.SenderID })">
+                    <img src="@Model.Sender.FullAvatarPath?w=54&h=54&mode=crop" />
+                </a>
+                <a class="un" title="@Model.Sender.FirstName" href="@Url.Action("Index", "User", new { id = Model.SenderID })">@Model.Sender.FirstName</a>
+            </div>
+            <div class="body">
+                <div class="date">@Model.AddedDate.ToString("dd MMMMM в HH:mm")</div>
+                <div class="text delete">
+                    <div class="text-wrapper">
+                        @Html.Raw(Model.Text.NlToBr())
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (currentUser != null && currentUser.ID == Model.ReceiverID)
+    {
+        <div class="red-button deleteUserGift" data-id="@Model.ID">Удалить</div>
+    }
+    <span class="pp_cancel close-popup">Закрыть</span>
+</div>

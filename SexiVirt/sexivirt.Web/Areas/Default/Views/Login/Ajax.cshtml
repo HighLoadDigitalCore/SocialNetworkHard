@@ -1,0 +1,25 @@
+﻿@using Microsoft.Ajax.Utilities
+@model sexivirt.Web.Models.ViewModels.LoginView
+<div id="LoginForm">
+    @using (Ajax.BeginForm("Ajax", "Login", new { }, new AjaxOptions() { HttpMethod = "POST", UpdateTargetId = "LoginForm", InsertionMode = InsertionMode.Replace, OnComplete = "initLoginBtns();" }, new { id = "AuthAjaxForm" }))
+    {
+        <div class="input-title" style="margin-bottom: 5px;">
+            <span>Ваш e-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>...и пароль</span>
+        </div>
+        <div>
+            @Html.TextBox("Email", Model.Email)
+            @Html.Password("Password", Model.Password)
+        </div>
+        if (!((string)ViewBag.Message).IsNullOrWhiteSpace())
+        {
+            <div class="input-title input-title-pass-msg" style="margin-bottom: 10px;">
+                <span>@ViewBag.Message</span>
+            </div>
+        }
+        <div>
+            <span>Забыли пароль? <a id="pass" href="#">Не беда</a></span>
+            <button id="AuthAjaxButton">Войти</button>
+        </div>
+    }
+</div>

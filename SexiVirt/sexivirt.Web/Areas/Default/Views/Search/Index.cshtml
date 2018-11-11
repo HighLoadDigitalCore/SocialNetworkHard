@@ -1,0 +1,63 @@
+﻿@model sexivirt.Web.Models.ViewModels.Info.SearchInfo
+@{
+    ViewBag.Title = "Поиск";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+@section header {
+    @Scripts.Render("~/Scripts/jquery.highlight.js")
+    @Scripts.Render("~/Scripts/default/search.js")
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="clear search-results">
+            @Html.Partial("SearchForm", Model)
+
+            @if (Model.Users != null && Model.Users.Any())
+            {
+                <div class="results-block">
+                    <div class="title">
+                        <a href="@Url.Action("People", "Search", new {searchString = Model.SearchString })">
+                            @Model.Users.Count @Model.Users.Count.CountWord("человек", "человека", "человек")
+                        </a>
+                    </div>
+                    @Html.Partial("ShortUsers", Model.Users.Take(3).ToList())
+                </div>
+            }
+            @if (Model.Events != null && Model.Events.Any())
+            {
+                <div class="results-block">
+                    <div class="title">
+                        <a href="@Url.Action("Events", "Search", new {searchString = Model.SearchString })">
+                            @Model.Events.Count @Model.Events.Count.CountWord("событие", "события", "событий")
+                        </a>
+                    </div>
+                    @Html.Partial("ShortEvents", Model.Events.Take(3).ToList())
+                </div>
+            }
+            @if (Model.Groups != null && Model.Groups.Any())
+            {
+                <div class="results-block">
+                    <div class="title">
+                        <a href="@Url.Action("Groups", "Search", new {searchString = Model.SearchString })">
+                            @Model.Groups.Count @Model.Groups.Count.CountWord("группа", "группы", "групп")
+                        </a>
+                    </div>
+                    @Html.Partial("ShortGroups", Model.Groups.Take(3).ToList())
+                </div>
+            }
+            @if (Model.BlogPosts != null && Model.BlogPosts.Any())
+            {
+                <div class="results-block">
+                    <div class="title">
+                        <a href="@Url.Action("BlogPosts", "Search", new {searchString = Model.SearchString })">
+                            @Model.BlogPosts.Count @Model.BlogPosts.Count.CountWord("запись", "записи", "записей")
+                        </a>
+                    </div>
+                    @Html.Partial("ShortBlogPosts", Model.BlogPosts.Take(2).ToList())
+                </div>
+            }
+        </section>
+    </div>
+</div>
+

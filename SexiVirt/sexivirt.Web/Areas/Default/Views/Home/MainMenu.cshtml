@@ -1,0 +1,57 @@
+﻿@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+@if (currentUser != null)
+{
+    <aside class="@currentUser.GenderStr">
+        <a href="@Url.Action("Home", "Home")">
+            <img src="@currentUser.FullAvatarPath?w=94&h=94&mode=crop" alt="" id="MenuAvatar">
+        </a>
+        <div class="name"><a href="@Url.Action("Home", "Home")">@currentUser.FirstName</a></div>
+        <div class="money"><a href="javascript:" id="MoneyBtn">Баланс:</a><span> @currentUser.Money р.</span></div>
+        <div class="menu"><a href="@Url.Action("Home", "Home")">Мой профиль</a> </div>
+        <nav>
+            <a href="@Url.Action("Index", "Message")">
+                Мои сообщения
+                @if (currentUser.UnreadMessagesCount > 0)
+                {
+                    <span class="count">@currentUser.UnreadMessagesCount</span>
+                }
+            </a>
+            <a href="@Url.Action("Index", "Friend")">
+                Мои контакты
+                @if (currentUser.AskedForNewFriend)
+                {
+                    <span class="count">@currentUser.CountAskedForNewFriend</span>
+                }
+            </a>
+            @if (currentUser.AskedForNewFriend)
+            {
+                <div class="newContacts">
+                    @foreach (var friendship in currentUser.MeAskedFriendships.Take(3))
+                    {
+                        <a href="@Url.Action("Index", "User", new {id = friendship.SenderID})"><img src="@friendship.Sender.AvatarPath?w=42&h=42&mode=crop" alt=""></a>
+                    }
+                </div>
+            }
+            <a href="@Url.Action("Index", "Album")">Мои фотографии</a>
+            <a href="@Url.Action("My", "Meeting")">Мои встречи</a>
+            <a href="@Url.Action("My", "Event")">Мои события</a>
+            <a href="@Url.Action("My", "Blog")">Мой дневник</a>
+            <a href="@Url.Action("Index", "Feed")">
+                Мои новости
+                @Html.Action("Count", "Feed")
+            </a>
+            <a href="@Url.Action("My", "Group")">Мои группы</a>
+            <a href="@Url.Action("Index", "Gift")">Мои подарки</a>
+            <a href="@Url.Action("Index", "Settings")">Мои настройки</a>
+            <a href="@Url.Action("Logout", "Login")">Выход из сайта</a>
+        </nav>
+    </aside>
+}
+else
+{
+    <div id="AsideLoginWrapper">
+        @Html.Action("AjaxAside", "Login")
+    </div>
+}

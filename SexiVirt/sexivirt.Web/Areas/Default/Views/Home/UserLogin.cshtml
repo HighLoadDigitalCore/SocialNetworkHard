@@ -1,0 +1,13 @@
+﻿@model User
+
+@if (Model != null)
+{
+    <li>@Html.ActionLink(Model.Email, "Index", "User", null, null)</li>
+    <li>@Html.ActionLink("Sign out", "Logout", "Login", null, null)</li>
+}
+else
+{
+    <li>@Html.ActionLink("Sign in", "Index", "Login", null, null)</li>
+    <li>@Html.ActionLink("Register", "Register", "User", null, null)</li>
+}
+

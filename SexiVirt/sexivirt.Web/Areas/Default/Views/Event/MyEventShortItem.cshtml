@@ -1,0 +1,38 @@
+﻿@model Event
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<div class="event-item">
+    <div class="image">
+        <a href="@Url.Action("Item", "Event", new { id = Model.ID })">
+            <div class="frame"></div>
+            <img src="@Model.ImagePath?w=160&h=176&mode=crop" alt="">
+        </a>
+    </div>
+    <div class="date">@Model.EventDate.EventDateNamed()</div>
+    <a href="@Url.Action("Item", "Event", new { id = Model.ID })">@Model.Name</a>
+    <div class="text">
+        @Model.Description.Teaser(100)
+    </div>
+    @foreach (var item in Model.SubUsers.Take(3))
+    {
+        <div class="like @item.GenderStr">
+            <a href="@Url.Action("Index", "User", new { id = item.ID })">
+                <img src="@item.FullAvatarPath?w=40&h=40&mode=crop" alt="">
+            </a>
+        </div>
+    }
+    @if (Model.SubUsersCount > 3)
+    {
+        <div class="liked">
+            <div class="number">еще<br>@(Model.SubUsersCount - 3)</div>
+        </div>
+    }
+    @if (Model.UserID == currentUser.ID)
+{
+    <div class="event-controls">
+        <a href="@Url.Action("Edit", "Event", new { id = Model.ID })" class="edit">Редактировать</a>
+        <a href="@Url.Action("Delete", "Event", new { id = Model.ID })" class="delete">Удалить</a>
+    </div>
+}
+</div>

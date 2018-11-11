@@ -1,0 +1,13 @@
+﻿@model IList<Gift>
+
+<div class="jScrollPaneContainer">
+    <div id="pane" class="scroll-pane">
+        @foreach (var item in Model)
+        {
+            <div class="item giftItem" data-id="@item.ID">
+                <img src="@item.Image?w=88&h=88&mode=crop" alt="" />
+                <div class="cost">@item.Price.ToString("0") р.</div>
+            </div>
+        }
+    </div>
+</div>

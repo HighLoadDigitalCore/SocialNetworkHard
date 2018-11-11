@@ -1,0 +1,38 @@
+﻿@model IList<Setting>
+@{
+    ViewBag.Title = "Settings";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Редактирование настроек сайта</h2>
+<p></p>
+@using (Html.BeginForm("Index", "Settings", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <p style="color: red">
+        @Html.ValidationSummary(true)
+    </p>
+    <fieldset>
+        @foreach (var setting in Model)
+        {
+            if (setting.Type == "CheckBox")
+            {
+                <div class="form-group">
+                    <label class="col-sm-5 control-label" for="@setting.Name">
+                        @setting.Label:
+                    </label>
+                    <div class="col-sm-5">
+                        @Html.CheckBox(setting.Name, setting.Value.ToLower() == "true", new {@class = "form-control"})
+                    </div>
+                    <div class="col-sm-4">
+                        
+                    </div>
+                </div>
+            }
+        }
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                Сохранить
+            </button>
+        </div>
+    </fieldset>
+}

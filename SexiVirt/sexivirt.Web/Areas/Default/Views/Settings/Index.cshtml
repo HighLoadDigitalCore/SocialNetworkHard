@@ -1,0 +1,73 @@
+﻿@using AutoMapper.Internal
+@model sexivirt.Model.Proxy.UserSettings
+@{
+    ViewBag.Title = "Мои настройки";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="change-albums settings-list">
+            <h1>Мои настройки</h1>
+            @using (Html.BeginForm("Index", "Settings", FormMethod.Post))
+            {
+                <div class="settings-list">
+
+                    <div class="settings-group">
+                        <h2>Изменить пароль</h2>
+                        <p>Поменяйте пароль на тот, который вы точно не забудете, и который не смогут угадать другие</p>
+                        @if (!string.IsNullOrEmpty(ViewBag.ErrorPass))
+                        {
+                            <p class="res-msg">@ViewBag.ErrorPass</p>
+                        }
+                        <div class="left">
+                            <div class="line">
+                                <label>Текущий пароль</label>
+                                @Html.TextBoxFor(x => x.MyPassword)
+                            </div>
+                            <div class="line">
+                                <label>Новый пароль</label>
+                                @Html.TextBoxFor(x => x.NewPassword)
+                            </div>
+                            <div class="line">
+                                <label>Введите пароль еще раз</label>
+                                @Html.TextBoxFor(x => x.NewPasswordRepeat)
+
+                            </div>
+                            <button class="greenBut" name="pass">Сохранить</button>
+                        </div>
+
+                    </div>
+                    <div class="settings-group">
+                        <h2>Изменить e-mail</h2>
+                        @*<p>После изменения электронного адреса, его необходимо подтвердить. Если вы не подтвердите свой новый e-mail, система будет использовать ваш предыдущий.</p>*@
+                        @if (!string.IsNullOrEmpty(ViewBag.ErrorMail))
+                        {
+                            <p class="res-msg">@ViewBag.ErrorMail</p>
+                        }
+                        <div class="left">
+                            <div class="line">
+                                <label>Текущий e-mail</label>
+                                <b>@Model.MyMail</b>
+                            </div>
+                            <div class="line">
+                                <label>Новый e-mail</label>
+                                @Html.TextBoxFor(x => x.NewMail)
+                            </div>
+                            <div class="line">
+                                <label>Текущий пароль</label>
+                                @Html.TextBoxFor(x => x.MyPassForMail)
+
+                            </div>
+                            <button class="greenBut" name="mail">Сохранить</button>
+                        </div>
+
+                    </div>
+
+                </div>
+            }
+
+        </section>
+    </div>
+</div>

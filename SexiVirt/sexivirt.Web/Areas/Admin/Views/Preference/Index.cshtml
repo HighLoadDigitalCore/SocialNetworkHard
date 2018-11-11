@@ -1,0 +1,42 @@
+@model PagedList.IPagedList<Preference>
+
+@{
+    ViewBag.Title = "Предпочтения";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Предпочтения
+</h2>
+@Html.ActionLink("Добавить", "Create", "Preference", null, new { @class = "btn btn-primary" })
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Наименования
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "Edit", "Preference", new { id = item.ID }, new { @class = "btn  btn-default" })
+                @Html.ActionLink("Удалить", "Delete", "Preference", new { id = item.ID }, new { @class = "btn  btn-danger" })
+            </td>
+        </tr>
+    }
+</table>
+<div class="pager">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

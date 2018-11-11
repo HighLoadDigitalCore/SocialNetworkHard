@@ -1,0 +1,23 @@
+﻿@model IList<BlogPost>
+@if (Model.Any())
+{
+    <section class="mm_diaries">
+        <div class="mm_title"><a href="@Url.Action("Index", "Blog")">Записи из дневников</a></div>
+        @foreach (var blogPost in Model)
+        {
+            <div class="mmd_item @blogPost.User.GenderStr">
+                <div class="mmdi_author">
+                    <a class="mmdi_authorName" href="@Url.Action("Index", "User", new {id = blogPost.UserID})">@blogPost.User.FirstName</a>
+                    <span class="pnc_img">
+                        <img alt="" src="@blogPost.User.FullAvatarPath?w=42&h=42&mode=crop">
+                    </span>
+                </div>
+                <div class="diariesItem min">
+                    @Html.Raw(blogPost.Text.Teaser(500).NlToP())
+
+                </div>
+                <a href="@Url.Action("Post", "Blog", new {id = blogPost.ID})" c class="learnMore">Показать полностью</a>
+            </div>
+        }
+    </section>
+}

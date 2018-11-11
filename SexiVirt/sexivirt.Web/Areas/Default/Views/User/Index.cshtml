@@ -1,0 +1,264 @@
+﻿@model User
+@{
+    ViewBag.Title = Model.FirstName;
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+
+@section header {
+    @Scripts.Render("~/Scripts/jScrollPane.js")
+    @Scripts.Render("~/Scripts/default/money.js")
+    @Scripts.Render("~/Scripts/default/rating.js")
+    @Scripts.Render("~/Scripts/default/album-access.js")
+    @Scripts.Render("~/Scripts/default/gift.js")
+    @Scripts.Render("~/Scripts/default/friendship.js")
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="user-page @Model.GenderStr clear">
+            <div class="user-info">
+                <div class="status @(Model.IsOnline ? "online" : "offline")"></div>
+                <h1>@Model.FirstName</h1>
+                <div class="visit">Последний визит: @Model.LastVisitDate.ToString("d MMMM в HH:mm")</div>
+                <div class="write another">
+                    @Model.Status
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <h3>Информация</h3><span> — </span>
+                        <br />
+                        <ul class="left info">
+                            @if (Model.Birthday.HasValue)
+                            {
+                                <li>Возраст: <span>@Model.Age @Model.Age.CountWord("год", "года", "лет")</span></li>
+                            }
+
+                            @if (Model.Height.HasValue)
+                            {
+                                <li>Рост: <span>@Model.Height см</span></li>
+                            }
+                        </ul>
+                        <ul class="info">
+                            @if (Model.CityID.HasValue)
+                            {
+                                <li>Город: <a href="@Url.Action("Index", "People", new {IsReal = true, Sex = (currentUser != null ? !currentUser.Sex : true), CityID = Model.CityID, CityName = Model.City.Name })">@Model.City.Name</a></li>
+                            }
+                            @if (Model.Weight.HasValue)
+                            {
+                                <li>Вес: <span>@Model.Weight кг</span></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="about">
+                    <div class="title">
+                        <h3>Пара слов о себе</h3><span> — </span>
+                    </div>
+                    @Html.Raw(Model.Description.NlToBr())
+                </div>
+                @if (Model.SubPreferences.Any())
+                {
+                    <div class="preferences">
+                        <div class="title">
+                            <h3>Предпочтения</h3>
+                        </div>
+                        <ul>
+                            @foreach (var preference in Model.SubPreferences)
+                            {
+                                <li>@preference.Name</li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+
+            <div class="user-photo @Model.GenderStr">
+                <img src="@Model.FullAvatarPath?w=183&h=183&mode=crop" alt="" id="ProfileAvatar">
+
+                @if (currentUser != null)
+                {
+                    <div class="rating">
+                        <div>Рейтинг</div>
+                        <div id="RatingWrapper">
+                            @Html.Partial("Rating", Model)
+                        </div>
+                        @*<a href="#">Что это?</a>*@
+                    </div>
+                    if (!currentUser.BlockedBy(Model.ID) && !Model.BlockedBy(currentUser.ID))
+                    {
+                        @*<a class="button message" href="@Url.Action("Write", "Message", new { id = Model.ID })">
+                            <span class="icon"></span>
+                            Отправить сообщение
+                        </a>*@
+
+
+                        if (Setting.Get("EnablePayMessages") == "True" && !currentUser.HasConversation(Model.ID) && (!currentUser.PayedMessage.HasValue || currentUser.PayedMessage.Value < DateTime.Now))
+                        {
+                            <a class="button message" id="MessagePay">
+                                <span class="icon"></span>
+                                Отправить сообщение
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="button message" href="@Url.Action("Write", "Message", new {id = Model.ID})">
+                                <span class="icon"></span>
+                                Отправить сообщение
+                            </a>
+                        }
+                        <div class="button present" id="MakeGiftBtn" data-id="@Model.ID">
+                            <span class="icon"></span>
+                            Подарить подарок
+                        </div>
+
+                        if (currentUser.CanAskForFriend(Model.ID))
+                        {
+                            if (currentUser.MeAskedForFriendship(Model.ID))
+                            {
+                                <div class="button add confirmFriendship" data-id="@currentUser.MeAskedFriendship(Model.ID).ID">
+                                    <span class="icon"></span>
+                                    Подтвердить дружбу
+                                </div>
+                                <div class="button cross declineFriendship" data-id="@currentUser.MeAskedFriendship(Model.ID).ID">
+                                    <span class="icon"></span>
+                                    Отклонить дружбу
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="button add addToFriendship" data-id="@Model.ID">
+                                    <span class="icon"></span>
+                                    Добавить в друзья
+                                </div>
+                            }
+                        }
+                        else if (currentUser.HasFriend(Model.ID))
+                        {
+                            <div class="link cross cancelFriendship" data-id="@Model.ID">
+                                <span class="icon"></span>
+                                Удалить из друзей
+                            </div>
+                        }
+                        else if (currentUser.AskForFriend(Model.ID))
+                        {
+                            <div class="link minus cancelFriendship" data-id="@Model.ID">
+                                <span class="icon"></span>
+                                Отозвать приглашение
+                            </div>
+                        }
+                    }
+                    if (currentUser.BlockedBy(Model.ID))
+                    {
+                        <p class="block-message">@Model.FirstName @(Model.Sex ? "заблокировал" : "заблокировала") Вас</p>
+                    }
+                    if (Model.BlockedBy(currentUser.ID))
+                    {
+                        <p class="block-message">Вы заблокировали<br/> @Model.FirstName</p>
+                    }
+                    if (Model.BlockedBy(currentUser.ID))
+                    {
+                        <div class="link plus unblockUser" data-id="@Model.ID">
+                            <span class="icon"></span>
+                            Разблокировать
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="link cross blockUser" data-id="@Model.ID">
+                            <span class="icon"></span>
+                            Заблокировать
+                        </div>
+                    }
+
+                }
+                else
+                {
+                    <div class="rating">
+                        <span>
+                            Рейтинг<br>
+                            <span>@Model.CalculatedRating</span>
+                        </span><br>
+                        @*<a href="#">Что это?</a>*@
+                    </div>
+                }
+            </div>
+            @if (Model.SubGifts.Any())
+            {
+                <div class="gifts">
+                    <div class="header">
+                        <a href="@Url.Action("Index", "Gift", new { id = Model.ID })">Подарки</a>
+                    </div>
+
+                    @if (Model.SubGifts.Any())
+                    {
+                        foreach (var userGift in Model.SubGifts.Take(4))
+                        {
+                            <div class="gift-item giftUserItem" data-id="@userGift.ID">
+                                <img src="@userGift.Gift.Image?w=128&h=128&mode=crop" />
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="empty-description">
+                            Если человеку дарят подарки — значит он точно не одинок. Но у вас пока нет ни одного. Знакомтесь с людьми, чтобы их получить. Вы также можете <a href="#">подарить подарок</a> сами себе.
+                        </div>
+                    }
+
+                </div>
+            }
+
+            @if (Model.SubAlbumsForHome.Any())
+            {
+                <div class="albums">
+                    <div class="header">
+                        <a href="@Url.Action("Index", "Album", new { id = Model.ID })">Альбомы</a>
+                    </div>
+                    <div class="albums-list">
+                        @foreach (var album in Model.SubAlbumsForHome)
+                        {
+                            @Html.Partial("AlbumPartial", album)
+                        }
+                    </div>
+                </div>
+            }
+            @if (Model.SubBlogPosts.Any())
+            {
+                <div class="diaries">
+                    <div class="header">
+                        <a href="@Url.Action("Blog", "Blog", new {id = Model.ID })">Дневники</a>
+                    </div>
+                    @foreach (var post in Model.SubBlogPosts.Take(1))
+                    {
+                        @Html.Partial("~/Areas/Default/Views/Home/PostPartial.cshtml", post)
+                    }
+                    @if (Model.SubBlogPosts.Any() && Model.SubBlogPosts.First().Text.StripTags().Length > 200)
+                    {
+                        <a href="#" id="DiaryFullView">Показать полностью</a>
+                    }
+                </div>
+            }
+            
+            @if (Model.SubEvents.Any())
+            {
+                <div class="events-block">
+                    <div class="header">
+                        <a href="javascript:void(0);">События</a>
+                    </div>
+                    <div>
+                        @foreach (var @event in Model.SubEvents.Take(3))
+                        {
+                            @Html.Partial("~/Areas/Default/Views/Home/EventPartial.cshtml", @event)
+                        }
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+<style>
+    .event-item {
+        margin-right: 35px;
+    }
+</style>

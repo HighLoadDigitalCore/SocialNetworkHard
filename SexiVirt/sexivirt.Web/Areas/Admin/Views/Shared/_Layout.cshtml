@@ -1,0 +1,67 @@
+﻿@using sexivirt.Web.Controllers
+@{
+    User currentUser = null;
+    if (ViewContext.Controller is sexivirt.Web.Controllers.BaseController)
+    {
+        ((BaseController)ViewContext.Controller).UpdateOnline();
+        currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    }
+    
+    
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    @Styles.Render("~/Content/css/admin")
+    @Styles.Render("~/Content/css/jqueryui")
+    @RenderSection("styles", false)
+</head>
+<body>
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")">sexivirt AdminPanel</a>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav pull-right">
+
+                    <li class="dropdown">
+                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="glyphicon glyphicon-user"></i> &nbsp; @currentUser.Email &nbsp;<b class="caret"></b>
+                        </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/">На сайт</a></li>
+                                <li class="divider"></li>
+                                <li><a href="@Url.Action("Logout", "Login", new { area = "Default" })">Выход</a></li>
+                            </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="col-md-3">
+            @Html.Partial("AdminMenu", "Home")
+        </div>
+        <div class="col-md-9">
+            @RenderBody()
+        </div>
+    </div>
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@Scripts.Render("~/bundles/jquery-ui")*@
+    @RenderSection("scripts", false)
+    <script type="text/javascript" src="/Scripts/admin/common.js"></script>
+
+    @RenderSection("header", false)
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿@model GroupBlogPostView
+
+@using (Html.BeginForm("CreatePost", "Group", FormMethod.Post, new { id = "CreatePostForm" }))
+{
+    @Html.Hidden("GroupID", Model.GroupID)
+    <div class="blocks">
+        <div class="title">Добавить запись</div>
+        <div class="comment">
+            @Html.Hidden("Attach", Model.Attach)
+            @Html.TextBox("Header", Model.Header, new { placeholder = "Напишите сюда заголовок" })
+            <div class="image" id="AttachWrapper" style="margin-top: 10px">
+                @if (!string.IsNullOrEmpty(Model.Attach))
+                {
+                    <img src="@Model.Attach?w=300&h=200&mode=crop" />
+                    <div class="remove"></div>
+                }
+            </div>
+
+            @Html.TextArea("Text", Model.Text, new { placeholder = "Напишите сюда и нажмите кнопку «Отправить»" })
+            <button class="greenBut" id="CreatePostButton">Отправить</button>
+            <div class="addimage link" id="AttachImageBtn">Приложить картинку</div>
+            @*<div class="add-photo">Добавить фото или видео</div>*@
+        </div>
+    </div>
+}
+
+@Html.Partial("~/Areas/Default/Views/Blog/UploadTemplateImage.cshtml")

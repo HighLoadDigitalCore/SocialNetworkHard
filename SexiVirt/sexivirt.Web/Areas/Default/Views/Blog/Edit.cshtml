@@ -1,0 +1,47 @@
+﻿@model BlogPostView
+@{
+    ViewBag.Title = Model.ID == 0 ? "Новая запись" : "Редактирование записи";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/css/jquery.cleditor.css")
+}
+@section header {
+    @Scripts.Render("~/bundles/fineuploader")
+    @Scripts.Render("~/Scripts/jquery.cleditor.js")
+    @Scripts.Render("~/Scripts/default/edit-blog.js")
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="create-note clear">
+            <h1>@(Model.ID == 0 ? "Новая запись" : "Редактирование записи") в <a href="@Url.Action("My", "Blog")">дневнике</a></h1>
+            @using (Html.BeginForm("Edit", "Blog", FormMethod.Post))
+            {
+                @Html.Hidden("ID", Model.ID)
+                @Html.Hidden("Attach", Model.Attach)
+                @Html.TextBoxFor( x=> x.Header, new { placeholder = "Введите заголовок вашей записи" })
+                <div class="symbols">
+                    <div class="wrapper ctrl-b">— ctrl+B</div>
+                    <div class="wrapper ctrl-i">— ctrl+I</div>
+                    <div class="wrapper ctrl-u">— ctrl+U</div>
+                </div>
+                <div class="image" id="AttachWrapper">
+                    @if (!string.IsNullOrEmpty(Model.Attach))
+                    {
+                        <img src="@Model.Attach?w=300&h=200&mode=crop" />
+                        <div class="remove"></div>
+                    }
+                </div>
+                <div id="EditorCell" class="@(ViewBag.TextCSS)">
+                    @Html.TextAreaFor(x => x.Text, new { placeholder = "Здесь будет текст вашей записи" })
+                </div>
+                <button class="greenBut">Отправить</button>
+                <div class="addimage link" id="AttachImageBtn">Приложить картинку</div>
+
+
+            }
+        </section>
+    </div>
+</div>
+@Html.Partial("UploadTemplateImage")

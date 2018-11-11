@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[User] (
+    [ID]            INT            IDENTITY (1, 1) NOT NULL,
+    [Email]         NVARCHAR (150) NULL,
+	[Login]         NVARCHAR (150) NOT NULL,
+    [Password]      NVARCHAR (50)  NOT NULL,
+    [AddedDate]     DATETIME       NOT NULL,
+    [ActivatedDate] DATETIME       NULL,
+    [ActivatedLink] NVARCHAR (50)  NOT NULL,
+    [LastVisitDate] DATETIME       NOT NULL,
+    [AvatarPath]    NVARCHAR (150) NOT NULL,
+    [FirstName]     NVARCHAR (500) NOT NULL,
+	[Sex] BIT NOT NULL,
+	[Rating]		INT NOT NULL,
+	[Status]		NVARCHAR (500) NULL,
+	[Birthday]		DATETIME NULL, 
+	[CityID]		INT NULL,
+	[Height]		INT NULL,
+	[Weight]		INT NULL,
+	[Description]	NVARCHAR (MAX) NULL,
+	[PayedTill] DATETIME NULL, 
+	[Money] FLOAT NOT NULL,
+    CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED ([ID] ASC),
+	CONSTRAINT [FK_User_City] FOREIGN KEY ([CityID]) REFERENCES [dbo].[City] ([ID])
+);
+

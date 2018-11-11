@@ -1,0 +1,27 @@
+﻿@model User
+
+@if (!Model.SubPreferences.Any())
+{
+    <div class="empty-description">
+        Любите что-нибудь не стандартное? А может, предпочитаете классику? Добавьте сюда свои сексуальные предпочтения. Так вы легко сможете найти того, кто будет вам по душе.
+    </div>
+    <ul>
+        <li class="add" id="ChangePreferences">
+            <span class="plus"></span>
+            Добавить
+        </li>
+    </ul>
+}
+else
+{
+    <ul>
+        @foreach (var preference in Model.SubPreferences)
+        {
+            <li>@preference.Name</li>
+        }
+        <li class="add" id="ChangePreferences">
+            <span class="plus"></span>
+            Изменить
+        </li>
+    </ul>
+}

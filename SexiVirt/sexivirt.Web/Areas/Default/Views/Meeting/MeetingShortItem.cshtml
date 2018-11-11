@@ -1,0 +1,45 @@
+﻿@model Meeting
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var opened = ((bool?)ViewBag.Opened) ?? false;
+}
+<div class="cam_meet @Model.User.GenderStr">
+    <div class="cam_date">@Model.MeetingDate.EventDateNamed()</div>
+    <div class="cam_city">@Model.City.Name</div>
+    <div class="bigFrame_photo @Model.User.GenderStr popupMeeting" data-id="@Model.ID">
+        <img src="@Model.User.FullAvatarPath?w=153&h=153&mode=crop" alt="" />
+    </div>
+    <div class="cam_name popupMeeting" data-id="@Model.ID">
+        <a href="@Url.Action("Index", "User", new { id = Model.UserID})">@Model.User.FirstName</a>
+    </div>
+    <div class="cam_desc">@Model.Text</div>
+    <div class="cam_services">
+        @foreach (var preference in Model.User.SubPreferences.Take(3))
+        {
+            if (currentUser != null && currentUser.HasPreference(preference.ID))
+            {
+                <div class="selected">@preference.Name</div>
+            }
+            else
+            {
+                <div>@preference.Name</div>
+            }
+        }
+        @if (Model.User.SubPreferences.Count > 3)
+        {
+            if (opened)
+            {
+                <div class="dots" data-opened="False" data-id="@Model.User.ID">>&larr;</div>
+            }
+            else
+            {
+                <div class="dots" data-opened="True" data-id="@Model.User.ID">...</div>
+            }
+        }
+      @*  @if (Model.User.SubPreferences.Count > 3)
+        {
+            <div class="cam_more" data-id="@Model.UserID">...</div>
+        }*@
+    </div>
+</div>
+

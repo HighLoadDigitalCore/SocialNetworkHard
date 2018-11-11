@@ -1,0 +1,65 @@
+﻿@model PagedList.IPagedList<User>
+@{
+    ViewBag.Title = "User";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Пользователи
+</h2>
+@Html.ActionLink("Создать", "Create", "User", null, new { @class = "btn btn-primary" })
+<style>
+    .st td {
+        padding: 10px;
+    }
+</style>
+<table class="st">
+    <tr>
+        <td><b>Имя, Фамилия, Email (или их часть):</b></td>
+        <td><input value="@(Request.QueryString["word"])" class="form-control" type="text" id="SearchWord" /></td>
+        <td>
+            <button class="btn btn-primary" target="@Url.Action("Index", new{page = ViewBag.Page})" onclick="document.location.href = $(this).attr('target') + '&word=' + $('#SearchWord').val()">Искать</button>
+        </td>
+    </tr>
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Имя
+            </th>
+            <th>
+                Фамилия
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                @item.FirstName
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "Edit", "User", new { id = item.ID, page = ViewBag.Page, word = ViewBag.Word }, new { @class = "btn btn-default" })
+
+                @Html.ActionLink("Зайти", "Login", "User", new { id = item.ID }, new { @class = "btn btn-default" })
+            </td>
+        </tr>
+    }
+</table>
+<div class="pager">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, word = ViewBag.Word }))
+</div>

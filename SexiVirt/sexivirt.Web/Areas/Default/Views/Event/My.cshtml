@@ -1,0 +1,24 @@
+﻿@model IList<Event>
+@{
+    ViewBag.Title = "Мои события";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="events-list">
+            <h1>Мои события</h1>
+            @if (currentUser != null)
+            {
+                <div class="addWrite"><a href="@Url.Action("Create", "Event")">Добавить новое событие</a></div>
+            }
+            <div class="my-list">
+                @foreach (var item in Model)
+                {
+                    @Html.Partial("MyEventShortItem", item)
+                }
+            </div>
+        </section>
+    </div>
+</div>

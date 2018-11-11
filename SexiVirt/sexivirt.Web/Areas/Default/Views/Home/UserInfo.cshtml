@@ -1,0 +1,36 @@
+﻿@model User
+
+@if (!Model.Birthday.HasValue)
+{
+    <div class="warning">
+        Добавьте дату рождения
+    </div>
+}
+<ul class="left info">
+    @if (Model.Birthday.HasValue)
+    {
+        <li>Возраст: <span>@Model.Age @Model.Age.CountWord("год", "года", "лет")</span></li>
+    }
+
+    @if (Model.Height.HasValue)
+    {
+        <li>Рост: <span>@Model.Height см</span></li>
+    }
+</ul>
+<ul class="info">
+    @if (Model.CityID.HasValue)
+    {
+        <li>Город: <a href="@Url.Action("Index", "People", new {IsReal = true, Sex = !Model.Sex, CityID = Model.CityID, CityName = Model.City.Name })">@Model.City.Name</a></li>
+    }
+    @if (Model.Weight.HasValue)
+    {
+        <li>Вес: <span>@Model.Weight кг</span></li>
+    }
+</ul>
+@if (!Model.Birthday.HasValue && !Model.Height.HasValue && !Model.CityID.HasValue &&
+                        !Model.Weight.HasValue)
+{
+    <div class="empty-description">
+        Вы не заполнили информацию о себе. Рекомендуем вам сделать это как можно скорее, иначе другим людям будет сложно вас найти
+    </div>
+}

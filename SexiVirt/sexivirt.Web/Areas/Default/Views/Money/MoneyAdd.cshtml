@@ -1,0 +1,29 @@
+﻿@using Microsoft.Ajax.Utilities
+@model MoneyAddModel
+<div id="MoneyAddCell">
+    <div class="popup-wrapper">
+        <div class="item robo">
+            <img src="/Content/images/robo.jpg"><a onclick="$(this).hasClass('active') ? $(this).removeClass('active'): $(this).addClass('active');return false;" target="_blank" href="https://www.robokassa.ru/ru/index.aspx">ROBOKASSA</a>
+        </div>
+    </div>
+
+    @using (Ajax.BeginForm("MoneyAdd", new { }, new AjaxOptions() { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "MoneyAddCell" }, new { id = "MoneyForm" }))
+    {
+        <input type="text" name="Sum" value="@Model.Sum" style="height: 25px">
+        <span class="ruble">руб.</span>
+        <button type="button" onclick="$('#MoneyForm').submit()" class="greenBut">Отправить</button>
+
+        if (!Model.RedirectLink.IsNullOrWhiteSpace())
+        {
+            <script type="text/javascript">
+                document.location.href = '@(Html.Raw(Model.RedirectLink))';
+            </script>
+
+        }
+        if (!Model.Error.IsNullOrWhiteSpace())
+        {
+            <div class="p-line"><b>@Html.Raw(Model.Error)</b></div>
+        }
+    }
+
+</div>

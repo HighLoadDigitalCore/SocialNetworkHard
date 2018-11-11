@@ -1,0 +1,89 @@
+@model sexivirt.Web.Models.ViewModels.GiftView
+@{
+    ViewBag.Title = Model.ID == 0 ? "Добавить подарок" : "Изменить подарок";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/css/fineuploader")
+}
+@section header {
+    @Scripts.Render("~/bundles/fineuploader")
+    @Scripts.Render("~/Scripts/admin/edit-gift.js")
+
+}
+<h2>@(Model.ID == 0 ? "Добавить подарок" : "Изменить подарок")</h2>
+<p></p>
+@using (Html.BeginForm("Edit", "Gift", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        @Html.Hidden("ID", Model.ID)
+        @Html.Hidden("Image", Model.Image)
+        <div class="form-group @Html.HasErrorClass("Type", "has-error")">
+            <label class="col-sm-3 control-label" for="Type">
+                Тип
+            </label>
+            <div class="col-sm-5">
+                @Html.DropDownList("Type", Model.SelectListType, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Type")
+            </div>
+        </div>
+        <div class="form-group  @Html.HasErrorClass("CoverUrl", "has-error")">
+            <label class="col-sm-3 control-label" for="CoverUrl">
+                Картинка
+            </label>
+            <div class="col-sm-5">
+                <img src="@Model.FullImage" alt="avatar" id="PreviewImage" />
+                <br />
+                <div class="btn" id="ChangeImage">
+                    загрузить фото
+                </div>
+            </div>
+            <div class="col-sm-4">
+                @if (Html.HasError("Image"))
+                {
+                    @Html.ValidationMessage("Image")
+                }
+                else
+                {
+                    <p class="hint">
+                        Загрузите <strong>картинку</strong> и она автоматически преобразуется
+                        до нужных размеров.
+                    </p>
+                }
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("Price", "has-error")">
+            <label class="col-sm-3 control-label" for="Price">
+                Цена
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Price", Model.Price, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Price")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("IsActive", "has-error")">
+            <div class="col-sm-3 control-label">
+            </div>
+            <div class="col-sm-5">
+                <div class="checkbox">
+                    <label>
+                        @Html.CheckBox("IsActive", Model.IsActive)
+                        Активный
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("IsActive")
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Сохранить
+        </button>
+        @Html.ActionLink("Отмена", "Index", null, null, new { @class = "btn" })
+    </fieldset>
+}
+@Html.Partial("UploadTemplate")

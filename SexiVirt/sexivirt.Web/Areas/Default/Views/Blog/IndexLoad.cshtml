@@ -1,0 +1,15 @@
+﻿@model IList<object>
+@{
+    var total = (int)ViewBag.Total;
+    var type = (int?)ViewBag.Type ?? 2;
+}
+@Html.Hidden("LastSkip", total)
+@foreach (var item in Model)
+{
+    @(type == 1 ? Html.Partial("ShortBlogPostInList", item) : Html.Partial("ShortBlogAuthor", item))
+
+}
+@if (Model.Count == 18)
+{
+    <a class="next" href="@Url.Action("IndexLoad", "Blog")">Загружаю</a>
+}

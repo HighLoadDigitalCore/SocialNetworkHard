@@ -1,0 +1,33 @@
+﻿ +@{
+    var controllerName = ViewContext.RequestContext.RouteData.Values["controller"] as string;
+}
+@if (controllerName == "Chat")
+{
+
+    <div class="bs-sidebar hidden-print" id="chatList" role="complementary">
+        <ul class="nav bs-sidenav">
+            <li class="skip"><a href="#"><h4>Групповой чат</h4></a></li>
+            @Html.Action("ChatUserList", "Chat")
+            <li class="skip">
+                <div class="chat-add">
+                    <input type="text" value="" placeholder="Имя, email пользователя"/>
+                    <a href="#" id="adminChatAdd" onclick="addUserToChat()">Добавить пользователя</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+}
+<div class="bs-sidebar hidden-print" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="@(controllerName == "Home" ? "active" : "")">@Html.ActionLink("Главная", "Index", "Home")</li>
+        <li class="@(controllerName == "User" ? "active" : "")">@Html.ActionLink("Пользователи", "Index", "User")</li>
+        <li class="@(controllerName == "Preference" ? "active" : "")">@Html.ActionLink("Предпочтения", "Index", "Preference")</li>
+        <li class="@(controllerName == "City" ? "active" : "")">@Html.ActionLink("Города", "Index", "City")</li>
+        <li class="@(controllerName == "Gift" ? "active" : "")">@Html.ActionLink("Подарки", "Index", "Gift")</li>
+        <li class="@(controllerName == "Money" ? "active" : "")">@Html.ActionLink("Вывод средств", "Index", "Money")</li>
+        <li class="@(controllerName == "PayMessage" ? "active" : "")">@Html.ActionLink("Платные сообщения", "Index", "PayMessage")</li>
+        <li class="@(controllerName == "Chat" ? "active" : "")">@Html.ActionLink("Групповой чат", "Index", "Chat")</li>
+        <li class="@(controllerName == "Settings" ? "active" : "")">@Html.ActionLink("Настройки", "Index", "Settings")</li>
+    </ul>
+</div>

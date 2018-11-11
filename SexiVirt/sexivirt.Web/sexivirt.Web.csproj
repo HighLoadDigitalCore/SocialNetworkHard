@@ -1,0 +1,789 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87DA2F28-A8AC-40EA-9BE7-52F80F7E1EF8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>sexivirt.Web</RootNamespace>
+    <AssemblyName>sexivirt.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>true</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DeployEncryptKey>Encryption password is used only if any deployment setting is marked as secure</DeployEncryptKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer">
+      <HintPath>..\packages\ImageResizer.3.4.2\lib\ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer.Mvc">
+      <HintPath>..\packages\ImageResizer.Mvc.3.4.2\lib\ImageResizer.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MiniProfiler">
+      <HintPath>..\packages\MiniProfiler.2.1.0\lib\net40\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.2.1.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Default\Models\" />
+    <Folder Include="Areas\Default\Views\Robo\" />
+    <Folder Include="Content\files\avatars\" />
+    <Folder Include="Content\files\gifts\" />
+    <Folder Include="Content\files\uploads\" />
+    <Folder Include="Content\logs\" />
+    <Folder Include="Views\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Messages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChatController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CityController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GiftController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MoneyController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PayMessageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PreferenceController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TestController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Default\Controllers\AlbumController.cs" />
+    <Compile Include="Areas\Default\Controllers\BlogController.cs" />
+    <Compile Include="Areas\Default\Controllers\CommentController.cs" />
+    <Compile Include="Areas\Default\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Default\Controllers\ErrorController.cs" />
+    <Compile Include="Areas\Default\Controllers\EventController.cs" />
+    <Compile Include="Areas\Default\Controllers\FeedController.cs" />
+    <Compile Include="Areas\Default\Controllers\FileController.cs" />
+    <Compile Include="Areas\Default\Controllers\FriendController.cs" />
+    <Compile Include="Areas\Default\Controllers\GiftController.cs" />
+    <Compile Include="Areas\Default\Controllers\GroupController.cs" />
+    <Compile Include="Areas\Default\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Default\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Default\Controllers\MeetingController.cs" />
+    <Compile Include="Areas\Default\Controllers\MessageController.cs" />
+    <Compile Include="Areas\Default\Controllers\MoneyController.cs" />
+    <Compile Include="Areas\Default\Controllers\PeopleController.cs" />
+    <Compile Include="Areas\Default\Controllers\RoboController.cs" />
+    <Compile Include="Areas\Default\Controllers\SearchController.cs" />
+    <Compile Include="Areas\Default\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\Default\Controllers\UserController.cs" />
+    <Compile Include="Areas\Default\DefaultAreaRegistration.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Auth\AuthHttpModule.cs" />
+    <Compile Include="Global\Auth\CustomAuthentication.cs" />
+    <Compile Include="Global\Auth\HttpContextCookieProvider.cs" />
+    <Compile Include="Global\Auth\IAuthCookieProvider.cs" />
+    <Compile Include="Global\Auth\IAuthentication.cs" />
+    <Compile Include="Global\Auth\IUserable.cs" />
+    <Compile Include="Global\Auth\UserIndentity.cs" />
+    <Compile Include="Global\Auth\UserProvider.cs" />
+    <Compile Include="Global\Config\Config.cs" />
+    <Compile Include="Global\Config\IConfig.cs" />
+    <Compile Include="Global\Config\MailSetting.cs" />
+    <Compile Include="Global\Config\MailTemplateConfig.cs" />
+    <Compile Include="Global\FineUpload.cs" />
+    <Compile Include="Global\FineUploaderResult.cs" />
+    <Compile Include="Global\SearchEngine.cs" />
+    <Compile Include="Helpers\CustomHelpers.cs" />
+    <Compile Include="Mail\MailSender.cs" />
+    <Compile Include="Mail\NotifyMail.cs" />
+    <Compile Include="Mappers\CommonMapper.cs" />
+    <Compile Include="Models\Mappers\MapperCollection.cs" />
+    <Compile Include="Models\Mappers\ModelMapper.cs" />
+    <Compile Include="Models\ViewModels\AlbumView.cs" />
+    <Compile Include="Models\ViewModels\BlogPostView.cs" />
+    <Compile Include="Models\ViewModels\CityView.cs" />
+    <Compile Include="Models\ViewModels\CommentView.cs" />
+    <Compile Include="Models\ViewModels\DepositCandidateView.cs" />
+    <Compile Include="Models\ViewModels\EventView.cs" />
+    <Compile Include="Models\ViewModels\GiftView.cs" />
+    <Compile Include="Models\ViewModels\GroupBlogPostView.cs" />
+    <Compile Include="Models\ViewModels\GroupView.cs" />
+    <Compile Include="Models\ViewModels\Info\ContactSearch.cs" />
+    <Compile Include="Models\ViewModels\Info\EventSearch.cs" />
+    <Compile Include="Models\ViewModels\Info\GroupSearch.cs" />
+    <Compile Include="Models\ViewModels\Info\MeetingSearch.cs" />
+    <Compile Include="Models\ViewModels\Info\PeopleSearch.cs" />
+    <Compile Include="Models\ViewModels\Info\SearchInfo.cs" />
+    <Compile Include="Models\ViewModels\LoginView.cs" />
+    <Compile Include="Models\ViewModels\MeetingView.cs" />
+    <Compile Include="Models\ViewModels\MessageView.cs" />
+    <Compile Include="Models\ViewModels\MoneyWithdrawView.cs" />
+    <Compile Include="Models\ViewModels\PhotoView.cs" />
+    <Compile Include="Models\ViewModels\PreferenceView.cs" />
+    <Compile Include="Models\ViewModels\UserGiftView.cs" />
+    <Compile Include="Models\ViewModels\User\BaseUserView.cs" />
+    <Compile Include="Models\ViewModels\User\ChangePasswordView.cs" />
+    <Compile Include="Models\ViewModels\User\ForgotPasswordView.cs" />
+    <Compile Include="Models\ViewModels\User\RegisterUserView.cs" />
+    <Compile Include="Models\ViewModels\User\UserDescriptionView.cs" />
+    <Compile Include="Models\ViewModels\User\UserInfoView.cs" />
+    <Compile Include="Models\ViewModels\User\UserView.cs" />
+    <Compile Include="Models\ViewModels\User\VKSignUpViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\IsUserPassword.cs" />
+    <Compile Include="Validation\PropertiesMustMatch.cs" />
+    <Compile Include="Validation\UniqueValidation.cs" />
+    <Compile Include="Validation\UserEmail.cs" />
+    <Compile Include="Validation\ValidEmail.cs" />
+    <Compile Include="Validation\ValidLatin.cs" />
+    <Compile Include="Validation\ValidPhone.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\admin.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\datepicker.css" />
+    <Content Include="Content\css\fineuploader-4.1.1.min.css" />
+    <Content Include="Content\css\fineuploader.css" />
+    <Content Include="Content\css\jquery-ui-1.10.0.custom.css" />
+    <Content Include="Content\css\jquery.cleditor.css" />
+    <Content Include="Content\css\jquery.formstyler.css" />
+    <Content Include="Content\css\jquery.mCustomScrollbar.css" />
+    <Content Include="Content\css\jquery.ui.1.10.0.ie.css" />
+    <Content Include="Content\css\PagedList.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\style_bootstrap.css" />
+    <Content Include="Content\fonts\myriadpro-cond.svg" />
+    <Content Include="Content\images\add-event-error.png" />
+    <Content Include="Content\images\add-event.png" />
+    <Content Include="Content\images\album-shadow-b.jpg" />
+    <Content Include="Content\images\album-shadow-r.jpg" />
+    <Content Include="Content\images\arrow-down.png" />
+    <Content Include="Content\images\autorization-bg.jpg" />
+    <Content Include="Content\images\avarat-border.png" />
+    <Content Include="Content\images\blank.gif" />
+    <Content Include="Content\images\blur.png" />
+    <Content Include="Content\images\car1-nav.png" />
+    <Content Include="Content\images\car2-nav.png" />
+    <Content Include="Content\images\clouds.png" />
+    <Content Include="Content\images\c_searchbut.jpg" />
+    <Content Include="Content\images\datepicker_day_bg.png" />
+    <Content Include="Content\images\datepicker_day_sunday_bg.png" />
+    <Content Include="Content\images\datepicker_next.png" />
+    <Content Include="Content\images\datepicker_prev.png" />
+    <Content Include="Content\images\datepicker_sprite.png" />
+    <Content Include="Content\images\default_avatar.jpg" />
+    <Content Include="Content\images\default_gift.png" />
+    <Content Include="Content\images\dropdown.png" />
+    <Content Include="Content\images\edit-ico.png" />
+    <Content Include="Content\images\footer-bg.png" />
+    <Content Include="Content\images\footer-bg1.png" />
+    <Content Include="Content\images\gifts\gift-1.png" />
+    <Content Include="Content\images\gifts\gift-2.png" />
+    <Content Include="Content\images\gifts\gift-3.png" />
+    <Content Include="Content\images\gifts\gift-4.png" />
+    <Content Include="Content\images\gifts\gift-5.png" />
+    <Content Include="Content\images\gone-impressions.png" />
+    <Content Include="Content\images\left-r.png" />
+    <Content Include="Content\images\login-shadow.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\m-bg-bot.png" />
+    <Content Include="Content\images\m-bg-top.png" />
+    <Content Include="Content\images\m-bg.png" />
+    <Content Include="Content\images\main-bg.jpg" />
+    <Content Include="Content\images\man-avatar.jpg" />
+    <Content Include="Content\images\man-avatar.png" />
+    <Content Include="Content\images\meetingBg.png" />
+    <Content Include="Content\images\openAlbum-ico.jpg" />
+    <Content Include="Content\images\openAlbum-ico.png" />
+    <Content Include="Content\images\photo\albums\0.jpg" />
+    <Content Include="Content\images\photo\albums\00.jpg" />
+    <Content Include="Content\images\photo\albums\01.jpg" />
+    <Content Include="Content\images\photo\albums\02.jpg" />
+    <Content Include="Content\images\photo\albums\03.jpg" />
+    <Content Include="Content\images\photo\albums\04.jpg" />
+    <Content Include="Content\images\photo\albums\05.jpg" />
+    <Content Include="Content\images\photo\albums\06.jpg" />
+    <Content Include="Content\images\photo\albums\1.jpg" />
+    <Content Include="Content\images\photo\albums\10.jpg" />
+    <Content Include="Content\images\photo\albums\11.jpg" />
+    <Content Include="Content\images\photo\albums\12.jpg" />
+    <Content Include="Content\images\photo\albums\13.jpg" />
+    <Content Include="Content\images\photo\albums\14.jpg" />
+    <Content Include="Content\images\photo\albums\15.jpg" />
+    <Content Include="Content\images\photo\albums\16.jpg" />
+    <Content Include="Content\images\photo\albums\2.jpg" />
+    <Content Include="Content\images\photo\albums\3.jpg" />
+    <Content Include="Content\images\photo\albums\4.jpg" />
+    <Content Include="Content\images\photo\albums\5.jpg" />
+    <Content Include="Content\images\photo\albums\6.jpg" />
+    <Content Include="Content\images\photo\albums\7.jpg" />
+    <Content Include="Content\images\photo\albums\8.jpg" />
+    <Content Include="Content\images\photo\albums\9.jpg" />
+    <Content Include="Content\images\photo\albums\closeAlbum.jpg" />
+    <Content Include="Content\images\photo\albums\closeAlbum1.jpg" />
+    <Content Include="Content\images\photo\albums\closeAlbumSecond.jpg" />
+    <Content Include="Content\images\photo\albums\closeAlbumSecond1.jpg" />
+    <Content Include="Content\images\photo\albums\close_man.png" />
+    <Content Include="Content\images\photo\albums\close_woman.png" />
+    <Content Include="Content\images\photo\userPhoto.jpg" />
+    <Content Include="Content\images\plus18.png" />
+    <Content Include="Content\images\popup-separator.png" />
+    <Content Include="Content\images\popupMeet.png" />
+    <Content Include="Content\images\popupMeetBot.png" />
+    <Content Include="Content\images\popupMeetTop.png" />
+    <Content Include="Content\images\postComment-bg.png" />
+    <Content Include="Content\images\ppm_but-ico.png" />
+    <Content Include="Content\images\presents.png" />
+    <Content Include="Content\images\regarrov.png" />
+    <Content Include="Content\images\review.jpg" />
+    <Content Include="Content\images\robo.jpg" />
+    <Content Include="Content\images\searchBut.png" />
+    <Content Include="Content\images\selete-ico.png" />
+    <Content Include="Content\images\separator.png" />
+    <Content Include="Content\images\shadow.png" />
+    <Content Include="Content\images\spec-frame.png" />
+    <Content Include="Content\images\tail-hight-man.png" />
+    <Content Include="Content\images\tail-hight.png" />
+    <Content Include="Content\images\tail-min-man.png" />
+    <Content Include="Content\images\tail-min.png" />
+    <Content Include="Content\images\top1.png" />
+    <Content Include="Content\images\top2.png" />
+    <Content Include="Content\images\top3.png" />
+    <Content Include="Content\images\top4.png" />
+    <Content Include="Content\images\type2-bottom.png" />
+    <Content Include="Content\images\type2-top.png" />
+    <Content Include="Content\images\woman-avatar.jpg" />
+    <Content Include="Content\images\woman-avatar.png" />
+    <Content Include="Content\images\Новая папка\frame-big-man.png" />
+    <Content Include="Content\images\Новая папка\frame-big-woman.png" />
+    <Content Include="Content\images\Новая папка\frame-man.png" />
+    <Content Include="Content\images\Новая папка\frame-men.png" />
+    <Content Include="Content\images\Новая папка\frame-min-man.png" />
+    <Content Include="Content\images\Новая папка\frame-min-woman.png" />
+    <Content Include="Content\images\Новая папка\frame-woman.png" />
+    <Content Include="Content\images\Новая папка\frame-women.png" />
+    <Content Include="Content\images\сomment.png" />
+    <Content Include="Content\prettyPhoto\css\prettyPhoto.css" />
+    <Content Include="Content\prettyPhoto\images\backgrounds\bodyBackground.jpg" />
+    <Content Include="Content\prettyPhoto\images\backgrounds\checkmark.gif" />
+    <Content Include="Content\prettyPhoto\images\fullscreen\1.jpg" />
+    <Content Include="Content\prettyPhoto\images\fullscreen\2.jpg" />
+    <Content Include="Content\prettyPhoto\images\fullscreen\3.jpg" />
+    <Content Include="Content\prettyPhoto\images\fullscreen\4.jpg" />
+    <Content Include="Content\prettyPhoto\images\fullscreen\5.jpg" />
+    <Content Include="Content\prettyPhoto\images\fullscreen\6.jpg" />
+    <Content Include="Content\prettyPhoto\images\fullscreen\DSC05016.jpg" />
+    <Content Include="Content\prettyPhoto\images\fullscreen\DSCF0031.JPG" />
+    <Content Include="Content\prettyPhoto\images\fullscreen\high.gif" />
+    <Content Include="Content\prettyPhoto\images\fullscreen\huge.gif" />
+    <Content Include="Content\prettyPhoto\images\fullscreen\wide.gif" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="Content\prettyPhoto\images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Content\prettyPhoto\images\thumbnails\flash-logo.png" />
+    <Content Include="Content\prettyPhoto\images\thumbnails\quicktime-logo.gif" />
+    <Content Include="Content\prettyPhoto\images\thumbnails\t_1.jpg" />
+    <Content Include="Content\prettyPhoto\images\thumbnails\t_2.jpg" />
+    <Content Include="Content\prettyPhoto\images\thumbnails\t_3.jpg" />
+    <Content Include="Content\prettyPhoto\images\thumbnails\t_4.jpg" />
+    <Content Include="Content\prettyPhoto\images\thumbnails\t_5.jpg" />
+    <Content Include="Content\prettyPhoto\index.html" />
+    <Content Include="Content\prettyPhoto\js\jquery-1.3.2.min.js" />
+    <Content Include="Content\prettyPhoto\js\jquery-1.4.4.min.js" />
+    <Content Include="Content\prettyPhoto\js\jquery.prettyPhoto.js" />
+    <Content Include="Content\share42\icons.png" />
+    <Content Include="Content\share42\share42.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\admin\common.js" />
+    <Content Include="Scripts\admin\conversation.js" />
+    <Content Include="Scripts\admin\edit-gift.js" />
+    <Content Include="Scripts\admin\message.js" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Default\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\AdminMenu.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
+    <Content Include="Areas\Default\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Default\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Home\UserLogin.cshtml" />
+    <Content Include="Areas\Default\Views\Login\ForgotPassword.cshtml" />
+    <Content Include="Areas\Default\Views\Login\ForgotPasswordSuccess.cshtml" />
+    <Content Include="Areas\Default\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Error\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Error\NotFoundPage.cshtml" />
+    <Content Include="Areas\Default\Views\User\Index.cshtml" />
+    <Content Include="Areas\Default\Views\User\Register.cshtml" />
+    <Content Include="Areas\Default\Views\User\RegisterSuccess.cshtml" />
+    <Content Include="Areas\Default\Views\Home\UploadTemplateAvatar.cshtml" />
+    <Content Include="Areas\Admin\Views\City\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\City\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Gift\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Gift\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Preference\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Preference\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\UploadTemplate.cshtml" />
+    <Content Include="Areas\Default\Views\Shared\_BootstrapLayout.cshtml" />
+    <Content Include="Content\fonts\myriadpro-cond.eot" />
+    <Content Include="Content\fonts\myriadpro-cond.ttf" />
+    <Content Include="Content\fonts\myriadpro-cond.woff" />
+    <Content Include="Areas\Default\Views\Home\Auth.cshtml" />
+    <Content Include="Areas\Default\Views\Login\AjaxAside.cshtml" />
+    <Content Include="Areas\Default\Views\Shared\_Ok.cshtml" />
+    <Content Include="Areas\Default\Views\Home\Home.cshtml" />
+    <Content Include="Areas\Default\Views\Home\MainMenu.cshtml" />
+    <Content Include="Areas\Default\Views\Shared\AlbumPartial.cshtml" />
+    <Content Include="Areas\Default\Views\Home\PostPartial.cshtml" />
+    <Content Include="Areas\Default\Views\Home\EventPartial.cshtml" />
+    <Content Include="Areas\Default\Views\Home\Status.cshtml" />
+    <Content Include="Areas\Default\Views\Home\StatusForm.cshtml" />
+    <Content Include="Areas\Default\Views\Home\UserInfo.cshtml" />
+    <Content Include="Areas\Default\Views\Home\EditUserInfo.cshtml" />
+    <Content Include="Areas\Default\Views\Home\UserDescription.cshtml" />
+    <Content Include="Areas\Default\Views\Home\EditUserDescription.cshtml" />
+    <Content Include="Areas\Default\Views\Home\UserPreferences.cshtml" />
+    <Content Include="Areas\Default\Views\Home\AjaxPreferences.cshtml" />
+    <Content Include="Areas\Default\Views\People\Index.cshtml" />
+    <Content Include="Areas\Default\Views\People\SearchPeople.cshtml" />
+    <Content Include="Areas\Default\Views\People\AjaxPreferences.cshtml" />
+    <Content Include="Areas\Default\Views\People\SearchPreference.cshtml" />
+    <Content Include="Areas\Default\Views\People\UserPreference.cshtml" />
+    <Content Include="Areas\Default\Views\People\Load.cshtml" />
+    <Content Include="Areas\Default\Views\Message\Index_.cshtml" />
+    <Content Include="Areas\Default\Views\Message\ConnectItem.cshtml" />
+    <Content Include="Areas\Default\Views\Message\Conversation.cshtml" />
+    <Content Include="Areas\Default\Views\Message\Load.cshtml" />
+    <Content Include="Areas\Default\Views\Message\MessageItem.cshtml" />
+    <Content Include="Areas\Default\Views\Message\GetLast.cshtml" />
+    <Content Include="Areas\Default\Views\Message\LoadConversations.cshtml" />
+    <Content Include="Areas\Default\Views\Album\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Album\Edit.cshtml" />
+    <Content Include="Areas\Default\Views\Album\PhotoItem.cshtml" />
+    <Content Include="Areas\Default\Views\Album\UploadTemplatePhoto.cshtml" />
+    <Content Include="Areas\Default\Views\Album\Item.cshtml" />
+    <Content Include="Areas\Default\Views\Album\BuyAlbum.cshtml" />
+    <Content Include="Areas\Default\Views\Money\Popup.cshtml" />
+    <Content Include="Areas\Default\Views\Album\Photo.cshtml" />
+    <Content Include="Areas\Default\Views\Album\All.cshtml" />
+    <Content Include="Areas\Default\Views\Album\AllPhoto.cshtml" />
+    <Content Include="Areas\Default\Views\User\Rating.cshtml" />
+    <Content Include="Areas\Default\Views\Login\Ajax.cshtml" />
+    <Content Include="Areas\Default\Views\Gift\List.cshtml" />
+    <Content Include="Areas\Default\Views\Gift\Popup.cshtml" />
+    <Content Include="Areas\Default\Views\Gift\Item.cshtml" />
+    <Content Include="Areas\Default\Views\Gift\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Gift\GiftPartial.cshtml" />
+    <Content Include="Areas\Default\Views\Friend\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Friend\ContactSearch.cshtml" />
+    <Content Include="Areas\Default\Views\Friend\NewContacts.cshtml" />
+    <Content Include="Areas\Default\Views\Friend\MyContacts.cshtml" />
+    <Content Include="Areas\Default\Views\People\UserShortItem.cshtml" />
+    <Content Include="Areas\Default\Views\Friend\ShortFullContactItem.cshtml" />
+    <Content Include="Areas\Default\Views\Friend\ShortNewContactItem.cshtml" />
+    <Content Include="Areas\Default\Views\Friend\Load.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\ShortBlogAuthor.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\IndexLoad.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\Edit.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\UploadTemplateImage.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\Blog.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\My.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\ShortMyBlogPost.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\MyLoad.cshtml" />
+    <Content Include="Scripts\default\blog-blog.js" />
+    <Content Include="Scripts\default\edit-group.js" />
+    <Content Include="Scripts\default\feed.js" />
+    <Content Include="Scripts\default\blog-post.js" />
+    <Content Include="Scripts\default\index-group.js" />
+    <Content Include="Scripts\default\item-event.js" />
+    <Content Include="Scripts\default\edit-event.js" />
+    <Content Include="Scripts\default\edit-meeting.js" />
+    <Content Include="Scripts\default\event.js" />
+    <Content Include="Scripts\default\item-group.js" />
+    <Content Include="Scripts\jquery.jcarousel.min.js" />
+    <Content Include="Scripts\default\meeting.js" />
+    <Content Include="Scripts\default\my-blog.js" />
+    <Content Include="Areas\Default\Views\Blog\ShortBlogPost.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\Post.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\BlogLoad.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\Comment.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\CommentRating.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\SubComment.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\CreateComment.cshtml" />
+    <Content Include="Areas\Default\Views\Comment\Rating.cshtml" />
+    <Content Include="Areas\Default\Views\Home\Blog.cshtml" />
+    <Content Include="Areas\Default\Views\Meeting\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Meeting\MeetingShortItem.cshtml" />
+    <Content Include="Areas\Default\Views\Meeting\Load.cshtml" />
+    <Content Include="Areas\Default\Views\Meeting\Edit.cshtml" />
+    <Content Include="Areas\Default\Views\Meeting\SearchMeeting.cshtml" />
+    <Content Include="Areas\Default\Views\Meeting\My.cshtml" />
+    <Content Include="Areas\Default\Views\Meeting\SearchPreference.cshtml" />
+    <Content Include="Areas\Default\Views\Meeting\Popup.cshtml" />
+    <Content Include="Areas\Default\Views\User\PostPartial.cshtml" />
+    <Content Include="Areas\Default\Views\Event\Edit.cshtml" />
+    <Content Include="Areas\Default\Views\Event\UploadTemplateImage.cshtml" />
+    <Content Include="Areas\Default\Views\Event\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Event\SearchEvent.cshtml" />
+    <Content Include="Areas\Default\Views\Event\EventShortItem.cshtml" />
+    <Content Include="Areas\Default\Views\Event\Load.cshtml" />
+    <Content Include="Areas\Default\Views\Event\Item.cshtml" />
+    <Content Include="Areas\Default\Views\Event\LoadUsers.cshtml" />
+    <Content Include="Areas\Default\Views\Event\SubComment.cshtml" />
+    <Content Include="Areas\Default\Views\Event\Comment.cshtml" />
+    <Content Include="Areas\Default\Views\Event\CommentRating.cshtml" />
+    <Content Include="Areas\Default\Views\Event\CreateComment.cshtml" />
+    <Content Include="Areas\Default\Views\Event\My.cshtml" />
+    <Content Include="Areas\Default\Views\Group\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Group\GroupShortItem.cshtml" />
+    <Content Include="Areas\Default\Views\Group\Load.cshtml" />
+    <Content Include="Areas\Default\Views\Group\GroupSearch.cshtml" />
+    <Content Include="Areas\Default\Views\Group\Edit.cshtml" />
+    <Content Include="Areas\Default\Views\Group\UploadTemplateAvatar.cshtml" />
+    <Content Include="Areas\Default\Views\Group\My.cshtml" />
+    <Content Include="Areas\Default\Views\Group\Item.cshtml" />
+    <Content Include="Areas\Default\Views\Group\LoadUsers.cshtml" />
+    <Content Include="Areas\Default\Views\Group\ShortGroupBlogPost.cshtml" />
+    <Content Include="Areas\Default\Views\Group\LoadPosts.cshtml" />
+    <Content Include="Areas\Default\Views\Group\CreatePost.cshtml" />
+    <Content Include="Areas\Default\Views\Group\Post.cshtml" />
+    <Content Include="Areas\Default\Views\Group\Comment.cshtml" />
+    <Content Include="Areas\Default\Views\Group\CommentRating.cshtml" />
+    <Content Include="Areas\Default\Views\Group\CreateComment.cshtml" />
+    <Content Include="Areas\Default\Views\Group\SubComment.cshtml" />
+    <Content Include="Areas\Default\Views\Search\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Search\SearchForm.cshtml" />
+    <Content Include="Areas\Default\Views\Search\ShortUsers.cshtml" />
+    <Content Include="Areas\Default\Views\Search\UserPreference.cshtml" />
+    <Content Include="Areas\Default\Views\Search\People.cshtml" />
+    <Content Include="Areas\Default\Views\Search\ShortEvents.cshtml" />
+    <Content Include="Areas\Default\Views\Search\ShortGroups.cshtml" />
+    <Content Include="Areas\Default\Views\Search\ShortBlogPosts.cshtml" />
+    <Content Include="Areas\Default\Views\Search\Events.cshtml" />
+    <Content Include="Areas\Default\Views\Search\Groups.cshtml" />
+    <Content Include="Areas\Default\Views\Search\BlogPosts.cshtml" />
+    <Content Include="Areas\Default\Views\Feed\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Feed\FeedItem.cshtml" />
+    <Content Include="Areas\Default\Views\Feed\Load.cshtml" />
+    <Content Include="Areas\Default\Views\Event\MyEventShortItem.cshtml" />
+    <Content Include="Areas\Default\Views\Meeting\MyMeetingItem.cshtml" />
+    <Content Include="Areas\Default\Views\Group\MyGroupShortItem.cshtml" />
+    <Content Include="Areas\Default\Views\Feed\Count.cshtml" />
+    <Content Include="Areas\Default\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Default\Views\Settings\Index.cshtml" />
+    <Content Include="Areas\Default\Views\Group\HideUsers.cshtml" />
+    <Content Include="Areas\Default\Views\User\Password.cshtml" />
+    <Content Include="Areas\Default\Views\Blog\ShortBlogPostInList.cshtml" />
+    <Content Include="Areas\Default\Views\Money\MoneyAdd.cshtml" />
+    <Content Include="Areas\Default\Views\Money\MoneyRemove.cshtml" />
+    <Content Include="Areas\Default\Views\Money\MoneyHistory.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Money\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Money\Edit.cshtml" />
+    <Content Include="Areas\Default\Views\Meeting\TodayList.cshtml" />
+    <Content Include="Areas\Default\Views\Event\TodayList.cshtml" />
+    <Content Include="Areas\Admin\Views\Settings\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PayMessage\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\PayMessage\Edit.cshtml" />
+    <Content Include="Areas\Default\Views\Money\PayMessage.cshtml" />
+    <Content Include="Content\prettyPhoto\README" />
+    <Content Include="Areas\Default\Views\Home\About.cshtml" />
+    <Content Include="Areas\Default\Views\Group\PostEdit.cshtml" />
+    <Content Include="Areas\Admin\Views\Chat\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Chat\ChatUserList.cshtml" />
+    <Content Include="Areas\Admin\Views\Chat\AddUser.cshtml" />
+    <Content Include="Areas\Default\Views\Message\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Chat\ConnectItem.cshtml" />
+    <Content Include="Areas\Admin\Views\Chat\Conversation.cshtml" />
+    <Content Include="Areas\Admin\Views\Chat\GetLast.cshtml" />
+    <Content Include="Areas\Admin\Views\Chat\IndexChat.cshtml" />
+    <Content Include="Areas\Admin\Views\Chat\LoadConversations.cshtml" />
+    <Content Include="Areas\Admin\Views\Chat\Load.cshtml" />
+    <Content Include="Areas\Admin\Views\Chat\MessageItem.cshtml" />
+    <Content Include="Areas\Admin\Views\Chat\GetConnectsList.cshtml" />
+    <None Include="Properties\PublishProfiles\Sexi.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\default\album-access.js" />
+    <Content Include="Scripts\default\aside-auth.js" />
+    <Content Include="Scripts\default\edit-blog.js" />
+    <Content Include="Scripts\default\common.js" />
+    <Content Include="Scripts\default\contact.js" />
+    <Content Include="Scripts\default\conversation.js" />
+    <Content Include="Scripts\default\edit-album.js" />
+    <Content Include="Scripts\default\edit-user.js" />
+    <Content Include="Scripts\default\auth.js" />
+    <Content Include="Scripts\default\friendship.js" />
+    <Content Include="Scripts\default\gift.js" />
+    <Content Include="Scripts\default\index-blog.js" />
+    <Content Include="Scripts\default\index.js" />
+    <Content Include="Scripts\default\message.js" />
+    <Content Include="Scripts\default\money.js" />
+    <Content Include="Scripts\default\people.js" />
+    <Content Include="Scripts\default\photo.js" />
+    <Content Include="Scripts\default\group-post.js" />
+    <Content Include="Scripts\default\post.js" />
+    <Content Include="Scripts\default\profile.js" />
+    <Content Include="Scripts\default\rating.js" />
+    <Content Include="Scripts\default\register.js" />
+    <Content Include="Scripts\default\search.js" />
+    <Content Include="Scripts\fineuploader-4.1.1.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.cleditor.js" />
+    <Content Include="Scripts\jquery.cleditor.min.js" />
+    <Content Include="Scripts\jquery.donetyping.js" />
+    <Content Include="Scripts\jquery.fineuploader-3.5.0.js" />
+    <Content Include="Scripts\jquery.fineuploader-3.5.0.min.js" />
+    <Content Include="Scripts\jquery.fineuploader-4.1.1.min.js" />
+    <Content Include="Scripts\jquery.formstyler.js" />
+    <Content Include="Scripts\jquery.formstyler.min.js" />
+    <Content Include="Scripts\jquery.highlight.js" />
+    <Content Include="Scripts\jquery.jscroll.js" />
+    <Content Include="Scripts\jquery.jscroll.min.js" />
+    <Content Include="Scripts\jquery.mCustomScrollbar.js" />
+    <Content Include="Scripts\jquery.mousewheel.js" />
+    <Content Include="Scripts\jquery.placeholder.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jScrollPane.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Tools\Tool\Tool.csproj">
+      <Project>{2755dee8-1af1-41cc-b798-1eed42a9581d}</Project>
+      <Name>Tool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OhAuthToo-master\OhAuthToo.csproj">
+      <Project>{5f857325-b7d3-4405-a173-05d72c180925}</Project>
+      <Name>OhAuthToo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\sexivirt.Model\sexivirt.Model.csproj">
+      <Project>{69b9bddf-2bff-4755-920b-db29b3d3565e}</Project>
+      <Name>sexivirt.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Messages.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>15986</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://sexivirt.local</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://sexivirt.local</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

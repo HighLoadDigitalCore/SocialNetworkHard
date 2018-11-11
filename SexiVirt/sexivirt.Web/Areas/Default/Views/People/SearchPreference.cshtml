@@ -1,0 +1,22 @@
+﻿@model List<Preference>
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <span data-id="@item.ID">
+            @{
+        var guid = Guid.NewGuid().ToString("N");
+            }
+            @Html.Hidden("Preferences.index", guid)
+            @Html.Hidden("Preferences[" + guid + "].ID", item.ID)
+            @Html.Hidden("Preferences[" + guid + "].Name", item.Name)
+            @item.Name
+        </span>
+        <span data-id="@item.ID" class="delete-preference" title="Удалить">X</span>
+    }
+}
+<div class="cmf_addType" id="ChangePreferences">@(Model != null && Model.Any() ? "Изменить" : "Добавить")</div>
+@if (Model.Any())
+{
+    <div class="cmf_addType cmf_remove" id="ClearPreferences">Удалить все</div>
+}

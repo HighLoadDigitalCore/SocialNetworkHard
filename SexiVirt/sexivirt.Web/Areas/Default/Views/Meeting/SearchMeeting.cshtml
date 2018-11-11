@@ -1,0 +1,32 @@
+﻿@model sexivirt.Web.Models.ViewModels.Info.MeetingSearch
+
+<div class="cm_filter">
+    @using (Html.BeginForm("Index", "Meeting", FormMethod.Post, new {id ="SearchMeetingForm" }))
+    {
+        @Html.Hidden("IsReal", true)
+        @Html.Hidden("CityID", Model.CityID)
+        @Html.Hidden("Sex", Model.Sex)
+        <div><strong>Я ищу встречи, начиная с</strong></div>
+        @*@Html.TextBox("StartDate", Model.StartDate != null ? Model.StartDate.Value.ToString("dd.MM.yyyy") : "", new { placeholder = "Выберите дату", @class = "datePicker" })*@
+        @Html.DropDownList("DayStart", Model.DayStartSelectList, new { @class = "selectEmul" })
+        <span>до</span>
+        @*@Html.TextBox("EndDate", Model.EndDate != null ? Model.EndDate.Value.ToString("dd.MM.yyyy") : "", new { placeholder = "Выберите дату", @class = "datePicker" })*@
+        @Html.DropDownList("DayEnd", Model.DayEndSelectList, new { @class = "selectEmul" })
+        <br />
+        <span>с</span>
+        <div class="radioEmul gender @(Model.Sex ? "active" : "") male" data-value="true">Мужчиной</div>
+        <div class="radioEmul gender @(Model.Sex ? "" : "active") female" data-value="false">Женщиной</div>
+        <span>от</span>
+        @Html.DropDownListFor(x=> x.AgeStart, Model.AgeStartSelectList, new { @class = "selectEmul max-height-select" })
+        <span>до</span>
+        @Html.DropDownListFor(x=> x.AgeEnd, Model.AgeEndSelectList, new { @class = "selectEmul max-height-select" })
+        <span>лет, в городе</span>
+           @Html.TextBox("CityName", Model.CityName, new { placeholder = "Введите название" })
+        <br />
+        <span>предпочитающей</span>
+        <div class="cmf_type" id="PreferenceSelectWrapper">
+            @Html.Partial("SearchPreference", Model.Preferences ?? new List<Preference>())
+        </div>
+        <button type="button" class="meeting cmf_button greenBut" id="SearchBtn">Найти</button>
+    }
+</div>

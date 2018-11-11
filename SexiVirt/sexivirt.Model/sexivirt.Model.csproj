@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69B9BDDF-2BFF-4755-920B-DB29B3D3565E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>sexivirt.Model</RootNamespace>
+    <AssemblyName>sexivirt.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Proxy\Album.cs" />
+    <Compile Include="Proxy\AlbumAccess.cs" />
+    <Compile Include="Proxy\Blocked.cs" />
+    <Compile Include="Proxy\BlockGroupUser.cs" />
+    <Compile Include="Proxy\BlogPost.cs" />
+    <Compile Include="Proxy\ChangePassword.cs" />
+    <Compile Include="Proxy\City.cs" />
+    <Compile Include="Proxy\Comment.cs" />
+    <Compile Include="Proxy\CommentBlogPost.cs" />
+    <Compile Include="Proxy\CommentEvent.cs" />
+    <Compile Include="Proxy\CommentGroupBlogPost.cs" />
+    <Compile Include="Proxy\CommentRating.cs" />
+    <Compile Include="Proxy\Connect.cs" />
+    <Compile Include="Proxy\DepositCandidate.cs" />
+    <Compile Include="Proxy\Event.cs" />
+    <Compile Include="Proxy\Feed.cs" />
+    <Compile Include="Proxy\Friendship.cs" />
+    <Compile Include="Proxy\Gift.cs" />
+    <Compile Include="Proxy\Group.cs" />
+    <Compile Include="Proxy\GroupBlogPost.cs" />
+    <Compile Include="Proxy\Meeting.cs" />
+    <Compile Include="Proxy\Message.cs" />
+    <Compile Include="Proxy\MoneyDetail.cs" />
+    <Compile Include="Proxy\MoneyWithdraw.cs" />
+    <Compile Include="Proxy\Photo.cs" />
+    <Compile Include="Proxy\Preference.cs" />
+    <Compile Include="Proxy\Role.cs" />
+    <Compile Include="Proxy\User.cs" />
+    <Compile Include="Proxy\UserEvent.cs" />
+    <Compile Include="Proxy\UserEventRating.cs" />
+    <Compile Include="Proxy\UserGift.cs" />
+    <Compile Include="Proxy\UserGroup.cs" />
+    <Compile Include="Proxy\UserPreference.cs" />
+    <Compile Include="Proxy\UserRating.cs" />
+    <Compile Include="Proxy\UserRole.cs" />
+    <Compile Include="Proxy\UserSettings.cs" />
+    <Compile Include="Proxy\UserStatus.cs" />
+    <Compile Include="SqlRepository.cs" />
+    <Compile Include="SqlRepository\RoboTransaction.cs" />
+    <Compile Include="SqlRepository\Album.cs" />
+    <Compile Include="SqlRepository\AlbumAccess.cs" />
+    <Compile Include="SqlRepository\Blocked.cs" />
+    <Compile Include="SqlRepository\BlockGroupUser.cs" />
+    <Compile Include="SqlRepository\BlogPost.cs" />
+    <Compile Include="SqlRepository\ChangePassword.cs" />
+    <Compile Include="SqlRepository\City.cs" />
+    <Compile Include="SqlRepository\Comment.cs" />
+    <Compile Include="SqlRepository\CommentBlogPost.cs" />
+    <Compile Include="SqlRepository\CommentEvent.cs" />
+    <Compile Include="SqlRepository\CommentGroupBlogPost.cs" />
+    <Compile Include="SqlRepository\CommentRating.cs" />
+    <Compile Include="SqlRepository\Connect.cs" />
+    <Compile Include="SqlRepository\DepositCandidate.cs" />
+    <Compile Include="SqlRepository\Event.cs" />
+    <Compile Include="SqlRepository\Feed.cs" />
+    <Compile Include="SqlRepository\Friendship.cs" />
+    <Compile Include="SqlRepository\Gift.cs" />
+    <Compile Include="SqlRepository\Group.cs" />
+    <Compile Include="SqlRepository\GroupBlogPost.cs" />
+    <Compile Include="SqlRepository\Meeting.cs" />
+    <Compile Include="SqlRepository\Message.cs" />
+    <Compile Include="SqlRepository\MoneyDetail.cs" />
+    <Compile Include="SqlRepository\MoneyWithdraw.cs" />
+    <Compile Include="SqlRepository\Photo.cs" />
+    <Compile Include="SqlRepository\Preference.cs" />
+    <Compile Include="SqlRepository\Role.cs" />
+    <Compile Include="SqlRepository\MessagePayments.cs" />
+    <Compile Include="SqlRepository\Settings.cs" />
+    <Compile Include="SqlRepository\User.cs" />
+    <Compile Include="SqlRepository\UserEvent.cs" />
+    <Compile Include="SqlRepository\UserEventRating.cs" />
+    <Compile Include="SqlRepository\UserGift.cs" />
+    <Compile Include="SqlRepository\UserGroup.cs" />
+    <Compile Include="SqlRepository\UserPreference.cs" />
+    <Compile Include="SqlRepository\UserRating.cs" />
+    <Compile Include="SqlRepository\UserRole.cs" />
+    <Compile Include="sexivirtDb.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sexivirtDb.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="SqlRepository\UserStatus.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="CodeTemplates\Scaffolders\IRepository\IRepository.ps1" />
+    <None Include="CodeTemplates\Scaffolders\IRepository\IRepositoryItemTemplate.cs.t4" />
+    <None Include="CodeTemplates\Scaffolders\IRepository\IRepositoryTemplate.cs.t4" />
+    <None Include="CodeTemplates\Scaffolders\ProviderRepository\ProviderRepository.ps1" />
+    <None Include="CodeTemplates\Scaffolders\Proxy\Proxy.ps1" />
+    <None Include="CodeTemplates\Scaffolders\Proxy\ProxyLangTemplate.cs.t4" />
+    <None Include="CodeTemplates\Scaffolders\Proxy\ProxyTemplate.cs.t4" />
+    <None Include="CodeTemplates\Scaffolders\SqlRepository\SqlRepository.ps1" />
+    <None Include="CodeTemplates\Scaffolders\SqlRepository\SqlRepositoryLangTemplate.cs.t4" />
+    <None Include="CodeTemplates\Scaffolders\SqlRepository\SqlRepositoryTemplate.cs.t4" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="sexivirtDb.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>sexivirtDb.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sexivirtDb.dbml.layout">
+      <DependentUpon>sexivirtDb.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Tools\Tool\Tool.csproj">
+      <Project>{2755dee8-1af1-41cc-b798-1eed42a9581d}</Project>
+      <Name>Tool</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

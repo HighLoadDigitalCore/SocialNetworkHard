@@ -1,0 +1,143 @@
+﻿@model sexivirt.Model.User
+@{
+    ViewBag.Title = "Моя страница";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/css/jquery-ui-1.10.0.custom.css")
+}
+@section header
+{
+    @Scripts.Render("~/bundles/fineuploader")
+    @Scripts.Render("~/Scripts/jScrollPane.js")
+    @Scripts.Render("~/bundles/jquery-ui")
+    @Scripts.Render("~/Scripts/default/profile.js")
+    @Scripts.Render("~/Scripts/default/gift.js")
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="user-page @Model.GenderStr clear">
+            <div class="user-info">
+                <div class="status @(Model.IsOnline ? "online" : "offline")"></div>
+                <h1>@Model.FirstName <span>— это вы</span></h1>
+                <div class="visit">Последний визит: @Model.LastVisitDate.ToString("d MMMM в HH:mm")</div>
+                <div id="StatusWrapper">
+                    @Html.Action("Status", Model)
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <h3>Информация</h3><span> — </span><a href="#" id="EditInfoActive">Редактировать</a>
+                    </div>
+                    <div id="UserInfoWrapper">
+                        @Html.Partial("UserInfo", Model)
+                    </div>
+                </div>
+                <div class="about">
+                    <div class="title">
+                        <h3>Пара слов о себе</h3><span> — </span><a href="#" id="DescriptionChangeActive">Редактировать</a>
+                    </div>
+                    <div id="UserDescriptionWrapper">
+                        @Html.Partial("UserDescription", Model)
+                    </div>
+
+                </div>
+                <div class="preferences">
+                    <div class="title">
+                        <h3>Предпочтения</h3>
+                    </div>
+                    <div id="PreferencesWrapper">
+                        @Html.Partial("UserPreferences", Model)
+                    </div>
+
+                </div>
+            </div>
+            <div class="user-photo woman">
+                <img src="@Model.FullAvatarPath?w=183&h=183&mode=crop" alt="" id="ProfileAvatar">
+                <div class="change-avatar" id="ChangeAvatar">
+                    Изменить<br>свое фото
+                </div>
+                <div class="rating">
+                    <span>Рейтинг<br><span>@Model.CalculatedRating</span></span><br>
+                    @*<a href="#">Что это?</a>*@
+                </div>
+            </div>
+            <div class="gifts">
+                <div class="header">
+                    <a href="@Url.Action("Index", "Gift")">Подарки</a>
+                </div>
+
+                @if (Model.SubGifts.Any())
+                {
+                    foreach (var userGift in Model.SubGifts.Take(4))
+                    {
+                        <div class="gift-item giftUserItem" data-id="@userGift.ID">
+                            <img src="@userGift.Gift.Image?w=128&h=128&mode=crop" />
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="empty-description">
+                        Если человеку дарят подарки — значит он точно не одинок. Но у вас пока нет ни одного. Знакомтесь с людьми, чтобы их получить. Вы также можете <a href="#" id="MakeGiftAnchor" data-id="@Model.ID">подарить подарок</a> сами себе.
+                    </div>
+                }
+
+            </div>
+            <div class="albums">
+                <div class="header">
+                    <a href="@Url.Action("Index", "Album")">Альбомы</a>
+                </div>
+                <div class="albums-list">
+                    @foreach (var album in Model.SubAlbums.Take(2))
+                    {
+                        @Html.Partial("AlbumPartial", album)
+                    }
+                    <div class="add-album" onclick="document.location.href = '@(Url.Action("Create", "Album"))';">
+                        <div class="plus"></div>
+                        Новый<br>альбом
+                    </div>
+                </div>
+            </div>
+            @if (Model.SubBlogPosts.Any())
+            {
+                <div class="diaries">
+                    <div class="header">
+                        <a href="@Url.Action("My", "Blog")">Дневники</a>
+                    </div>
+                    @foreach (var post in Model.SubBlogPosts.Take(1))
+                    {
+                        @Html.Partial("PostPartial", post)
+                    }
+                    <div class="add-diary" onclick="document.location.href = '@(Url.Action("Add", "Blog"))';">
+                        <div class="plus"></div>
+                        Новая<br>запись
+                    </div>
+                    @if (Model.SubBlogPosts.Any() && Model.SubBlogPosts.First().Text.StripTags().Length > 200)
+                    {
+                        <a href="#" id="DiaryFullView">Показать полностью</a>
+                    }
+                </div>
+            }
+            @if (Model.SubEvents.Any())
+            {
+                <div class="events-block">
+                    <div class="header">
+                        <a href="@(Url.Action("My", "Event"))">События</a>
+                    </div>
+                    <div>
+                        @foreach (var @event in Model.SubEvents.Take(2))
+                        {
+                            @Html.Partial("EventPartial", @event)
+                        }
+                        <div class="event-item add-event" onclick="document.location.href = '@(Url.Action("Create", "Event"))'; ">
+                            <div class="plus"></div>
+                            Новая<br>запись
+                        </div>
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+@Html.Partial("UploadTemplateAvatar")

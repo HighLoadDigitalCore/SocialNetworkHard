@@ -1,0 +1,28 @@
+@model sexivirt.Web.Models.ViewModels.CityView
+@{
+    ViewBag.Title = Model.ID == 0 ? "Добавить город" : "Изменить город";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>@(Model.ID == 0 ? "Добавить город" : "Изменить город")</h2>
+<p></p>
+@using (Html.BeginForm("Edit", "City", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        @Html.Hidden("ID", Model.ID)
+        <div class="form-group @Html.HasErrorClass("Name", "has-error")">
+            <label class="col-sm-3 control-label" for="Name">
+                Наименование
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Name", Model.Name, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Name")
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Сохранить
+        </button>
+        @Html.ActionLink("Отмена", "Index", null, null, new { @class = "btn" })
+    </fieldset>
+}

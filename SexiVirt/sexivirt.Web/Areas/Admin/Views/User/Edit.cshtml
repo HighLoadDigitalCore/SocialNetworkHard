@@ -1,0 +1,87 @@
+﻿@model sexivirt.Web.Models.ViewModels.User.UserView
+@{
+    ViewBag.Title = Model.ID == 0 ? "Добавить пользователя" : "Изменить пользователя";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@(Model.ID == 0 ? "Добавить пользователя" : "Изменить пользователя")</h2>
+<p></p>
+@using (Html.BeginForm("Edit", "User",new{page = ViewBag.Page, word = ViewBag.Word}, FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        @Html.Hidden("ID", Model.ID)
+
+        <div class="form-group @Html.HasErrorClass("Email", "has-error")">
+            <label class="col-sm-3 control-label" for="Email">
+                Email
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("Email", Model.Email, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("Email")
+            </div>
+        </div>
+        <div class="form-group @Html.HasErrorClass("FirstName", "has-error")">
+            <label class="col-sm-3 control-label" for="Email">
+                Имя
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("FirstName", Model.FirstName, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                @Html.ValidationMessage("FirstName")
+            </div>
+        </div>  
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="BlockType">
+                Способ блокировки
+            </label>
+            <div class="col-sm-5">
+                @Html.DropDownList("BlockType", new[]{new SelectListItem(){Selected = Model.BlockType == -1, Text = "Не блокировать", Value = "-1"},new SelectListItem(){Selected = Model.BlockType == 0, Text = "Блокировать до указаной даты", Value = "0"},new SelectListItem(){Selected = Model.BlockType == 1, Text = "Блокировать до указанной даты по IP", Value = "1"}  } , new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="BlockTill">
+                Блокировать пользователя до
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("BlockTill", Model.BlockTill, new { @class = "form-control datepicker" })
+            </div>
+            <div class="col-sm-4">
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="StartIP">
+                Начальный IP для блокировки
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("StartIP", Model.StartIP, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="EndIP">
+                Конечный IP для блокировки
+            </label>
+            <div class="col-sm-5">
+                @Html.TextBox("EndIP", Model.EndIP, new { @class = "form-control" })
+            </div>
+            <div class="col-sm-4">
+                
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                Сохранить
+            </button>
+            @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
+        </div>
+    </fieldset>
+}

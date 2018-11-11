@@ -1,0 +1,6 @@
+2014-07-11 14:43:15.1464|ERROR|sexivirt.Web.Mail.MailSender|Mail send exception
+2014-07-11 14:45:50.6073|ERROR|sexivirt.Web.Mail.MailSender|Mail send exception
+2014-07-11 14:46:29.7125|ERROR|sexivirt.Web.Mail.MailSender|Mail send exception
+2014-07-11 14:47:46.4239|ERROR|sexivirt.Web.Mail.MailSender|Mail send exception
+2014-07-11 14:51:00.6330|ERROR|sexivirt.Web.Mail.MailSender|Mail send exception
+2014-07-11 14:52:15.8463|ERROR|sexivirt.Web.Mail.MailSender|Mail send exception

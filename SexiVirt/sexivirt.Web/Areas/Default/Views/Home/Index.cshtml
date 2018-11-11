@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Sexivirt.com";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+@section header {
+    @Scripts.Render("~/Scripts/jquery.jcarousel.min.js")
+    @Scripts.Render("~/Scripts/default/index.js")
+    @Scripts.Render("~/Scripts/default/auth.js")
+    @Scripts.Render("~/Scripts/default/register.js")
+}
+@if (currentUser == null)
+{
+    <div class="m_header intro">
+        <div class=paralax>
+            <div class=slides>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="mh_presentations">
+                <div class="mhp_item item1">
+                    <span></span>
+                    <div>Знакомся и соблазняй</div>
+                </div>
+                <div class="mhp_item item2">
+                    <span></span>
+                    <div>Ходи на свидания</div>
+                </div>
+                <a rel="prettyPhoto[pp_gal]" style="display: block" href="http://www.youtube.com/watch?v=8E0UjhOCVtg">
+                    <div class="mhp_video">
+                        <div>Видеопрезентация</div>
+                    </div>
+                </a>
+                <div class="mhp_item item3">
+                    <span></span>
+                    <div>Делись впечатлениями</div>
+                </div>
+                <div class="mhp_item item4">
+                    <span></span>
+                    <div>Зарабатывай деньги</div>
+                </div>
+            </div>
+            @Html.Partial("Auth")
+        </div>
+    </div>
+}
+<style>
+    .pp_social {
+        display: none;
+    }
+</style>
+<div class="middle">
+    @Html.Action("TodayList", "Meeting")
+    @Html.Action("TodayList", "Event")
+    @Html.Action("Blog", "Home")
+</div>

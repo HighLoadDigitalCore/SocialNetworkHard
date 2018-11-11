@@ -1,0 +1,48 @@
+﻿@using sexivirt.Web.Areas.Admin.Controllers
+@model IList<Message>
+@{
+    var currentUser = ((ChatController)ViewContext.Controller).CurrentUser;
+    var connect = (sexivirt.Model.Connect)ViewBag.Connect;
+    var opponent = connect.Viral(currentUser);
+}
+<script type="text/javascript" src="/Scripts/admin/conversation.js"></script>
+@Html.Hidden("ID", connect.ID)
+@Html.Hidden("ChatUserID", (int)(ViewBag.ChatUserID?? 0))
+<div class="middle">
+    <div class="content">
+        <section class="dialog @opponent.GenderStr clear">
+            <div class="list" id="MessagesWrapper">
+                <div id="MessagesList">
+                    @foreach (var message in Model)
+                    {
+                        @Html.Partial("MessageItem", message)
+                    }
+                    <div class="clear-block"></div>
+                </div>
+                <div id="LastLine"></div>
+            </div>
+            <div class="send clear">
+                @if (!currentUser.BlockedBy(opponent.ID))
+                {
+                    <div class="">
+                        @Html.TextArea("Message", "", new { placeholder = "Введите текст сообщения" })
+                        <a class="delete" onclick="removeConversation(this, @connect.ID); return false;" href="@Url.Action("RemoveAll", "Chat", new {id = connect.ID })">
+                            Удалить беседу
+                        </a>
+                        <button class="greenBut" id="WriteMessageBtn">Отправить</button>
+                    </div>
+                }
+                else
+                {
+                    <div class="">
+                        <p class="block-message">
+                            @opponent.FirstName @(opponent.Sex ? "заблокировал" : "заблокировала") Вас
+                        </p>
+                    </div>
+                }
+            </div>
+        </section>
+    </div>
+</div>
+
+

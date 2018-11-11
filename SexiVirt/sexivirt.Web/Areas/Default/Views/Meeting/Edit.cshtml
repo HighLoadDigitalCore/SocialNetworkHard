@@ -1,0 +1,43 @@
+﻿@model MeetingView
+
+@{
+    ViewBag.Title = Model.ID == 0 ? "Создать встречу" : "Редактировать встречу";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/css/jquery-ui-1.10.0.custom.css")
+}
+@section header {
+    @Scripts.Render("~/bundles/jquery-ui")
+    @Scripts.Render("~/Scripts/default/edit-meeting.js")
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="create-meeting">
+            <h1>
+                @(Model.ID == 0 ? "Создать" : "Редактировать")
+                <a href="@Url.Action("My", "Meeting")">встречу</a>
+            </h1>
+            @Html.ValidationMessage("Money")
+            @using (Html.BeginForm("Edit", "Meeting", FormMethod.Post, new { id = "MeetingForm" }))
+            {
+                @Html.Hidden("ID", Model.ID)
+                @Html.Hidden("CityID", Model.CityID)
+                @Html.TextArea("Text", Model.Text)
+                @Html.DropDownList("MeetingDate", Model.MeetingDateSelectList, new { @class = "selectEmul" })
+                @Html.TextBox("CityName", Model.CityName, new { placeholder = "город", @class = "city" })
+                <button type="button" class="greenBut" id="SubmitMeetingBtn">Создать</button>
+                <div class="limit" id="Limit">Осталось еще 34 символа</div>
+            }
+            @if (Model.ID == 0)
+            {
+                <div class="description">
+                    <p><div class="title">Внимание!</div></p>
+                    <p>Создание встречи — платная услуга. После нажатия кнопки «Создать» с вас будет списано 50 р. Если на вашем балансе нет этих денег, вы можете пополнить его на <a href="#" id="RefillBtn">этой странице</a>.</p>
+                    Не волнуйтесь, вы сможете редактировать встречу бесплатно, если конечно ее дата еще не прошла
+                </div>
+            }
+        </section>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+﻿@model sexivirt.Web.Models.ViewModels.User.UserDescriptionView
+
+@using (Html.BeginForm("EditUserInfo", "Home", FormMethod.Post, new { id = "EditUserDescForm" }))
+{
+    @Html.TextArea("Description", Model.Description)
+    <button type="button" class="send" id="DescriptionChangeBtn">Сохранить</button>
+}

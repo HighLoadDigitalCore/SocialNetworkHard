@@ -1,0 +1,8 @@
+﻿@model BlogPost
+<div class="diary-item">
+    <div class="date">@Model.AddedDate.ToString("dd MMMM")</div>
+    <input id="PostFull" type="hidden" value="@Model.Text.StripTags()" />
+    <div class="cd_text" id="PostFullText">
+        @Html.Raw(Model.Text.StripTags().Teaser(200).NlToP())
+    </div>
+</div>

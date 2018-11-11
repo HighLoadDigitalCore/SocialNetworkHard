@@ -1,0 +1,84 @@
+﻿@using sexivirt.Web.Areas.Admin.Controllers
+@using sexivirt.Web.Controllers
+@{
+    
+    
+    User currentUser = null;
+    if (ViewContext.Controller is sexivirt.Web.Controllers.BaseController)
+    {
+        ((BaseController) ViewContext.Controller).UpdateOnline();
+       currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    }
+    
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>@ViewBag.Title</title>
+    @*@Styles.Render("~/Content/css")*@
+    <link rel="stylesheet" href="/Content/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/css/jquery.formstyler.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/css/jquery.mCustomScrollbar.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/prettyPhoto/css/prettyPhoto.css" type="text/css" />
+    @RenderSection("styles", false)
+    @Scripts.Render("~/bundles/jquery2")
+</head>
+<body>
+    <header>
+        @*<span class="plus18"></span>*@
+        <div>
+            <a href="/" title='Главная'></a>
+            <nav>
+                <a href="@Url.Action("Index", "People")">Люди</a>
+                <a href="@Url.Action("Index", "Meeting")">Встречи</a>
+                <a href="@Url.Action("Index", "Event")">События</a>
+                <a href="@Url.Action("Index", "Group")">Группы</a>
+                <a href="@Url.Action("Index", "Blog")">Дневники</a>
+            </nav>
+            @using (Html.BeginForm("Index", "Search", FormMethod.Post))
+            {
+                @Html.TextBox("searchString", "", new { id="searchForm", placeholder = "Поиск по всему сайту" })
+                <button id="searchBtnSearch"></button>
+            }
+        </div>
+    </header>
+    @RenderBody()  
+    <footer>
+        <div>
+            <a href="/" title='Главная'></a>
+            <nav>
+                <a href="@Url.Action("Index", "People")">Люди</a>
+                <a href="@Url.Action("Index", "Meeting")">Встречи</a>
+                <a href="@Url.Action("Index", "Event")">События</a>
+                <a href="@Url.Action("Index", "Group")">Группы</a>
+                <a href="@Url.Action("Index", "Blog")">Дневники</a>
+                <a href="@Url.Action("About", "Home")">О проекте</a>
+            </nav>
+            <span>SexiVirt.com, @DateTime.Now.Year</span>
+        </div>
+    </footer>
+    <div id="PopupWrapper">
+
+    </div>
+    
+    @Scripts.Render("~/Scripts/jquery.blockUI.js")
+    @Scripts.Render("~/Scripts/jquery.placeholder.min.js")
+    @Scripts.Render("~/Scripts/jquery.formstyler.js")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
+    @Scripts.Render("~/Scripts/jquery.mousewheel.js")
+    @Scripts.Render("~/Scripts/jquery.mCustomScrollbar.js")
+    @Scripts.Render("~/Content/prettyPhoto/js/jquery.prettyPhoto.js")
+@*
+    @Scripts.Render("~/Scripts/jquery.mousewheel.js")
+    @Scripts.Render("~/Scripts/jScrollPane.js")
+*@
+    @Scripts.Render("~/Scripts/default/common.js")
+    @if (currentUser == null)
+    {
+          @Scripts.Render("~/Scripts/default/aside-auth.js")
+        
+    }
+    @RenderSection("header", false)
+</body>
+</html>

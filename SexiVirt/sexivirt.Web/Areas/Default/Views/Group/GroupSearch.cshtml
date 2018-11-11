@@ -1,0 +1,9 @@
+﻿@model sexivirt.Web.Models.ViewModels.Info.GroupSearch
+<div class="c_search">
+    @using (Html.BeginForm("Index", "Group", FormMethod.Post, new { id = "GroupSearchForm" }))
+    {
+        @Html.TextBox("SearchString", Model.SearchString, new { @class = "inputSearch", placeholder = "Начните вводить имя или e-mail" })
+        <button class="searchBut"></button>
+    }
+</div>
+

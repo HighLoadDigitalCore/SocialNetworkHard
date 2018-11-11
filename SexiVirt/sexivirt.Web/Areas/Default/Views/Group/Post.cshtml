@@ -1,0 +1,70 @@
+﻿@model GroupBlogPost
+
+@{
+    ViewBag.Title = Model.Header;
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+@section header {
+    @Scripts.Render("~/Scripts/default/group-post.js")
+}
+
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+
+    <div class="content">
+        <section class="diaries diariesArticle clear">
+            <h1 class="@Model.User.GenderStr"><a href="@Url.Action("Item", "Group", new { id = Model.GroupID})">Группа @Model.Group.Name</a></h1>
+
+            <div class="c_userName @Model.User.GenderStr">
+                <a href="@Url.Action("Index", "User", new {id = Model.UserID })">@Model.User.FirstName</a>
+                <div class="c_userPhoto @Model.User.GenderStr">
+                    <img src="@Model.User.FullAvatarPath?w=52&h=52&mode=crop" alt="" />
+                </div>
+            </div>
+            <article class="cd_article">
+                <div class="cda_date">@Model.AddedDate.EventDateNamed() в @Model.AddedDate.ToString("HH:mm")</div>
+                <h2>@Model.Header</h2>
+
+                @if (!string.IsNullOrWhiteSpace(Model.Attach))
+                {
+
+                    <img src="@Model.Attach?w=600" class="bordered" />
+                }
+                @Html.Raw(Model.Text)
+                <br />
+                <br />
+                <div class="share42init"></div>
+                <script type="text/javascript" src="/Content/share42/share42.js"></script>
+
+            </article>
+            <div class="commentsWrap">
+                @if (Model.CommentsCount > 0)
+                {
+                    <div class="comAmountTitle">@Model.CommentsCount @Model.CommentsCount.CountWord("комментарий", "комментария", "комментариев")</div>
+                }
+                @foreach (var comment in Model.SubComments)
+                {
+                    @Html.Partial("Comment", comment)
+                }
+            </div>
+            @if (currentUser != null)
+            {
+                <div class="cd_postСomment">
+                    <div class="cdpc_title">Что вы думаете об этой записи?</div>
+                    <div id="PostCommentWrapper">
+                        @Html.Action("CreateComment", "Group", new { id = Model.ID })
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="should-login">
+                    <span>Вы не зарегистрированы</span><br>
+                    Войдите в свою учетную запись или зарегистируйтесь, чтобы оставить комментарий.
+                </div>
+            }
+
+        </section>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+﻿@model AlbumView
+@{
+    ViewBag.Title = Model.ID == 0 ? "Добавить альбом" : "Изменить альбом";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+
+@section header {
+    @Scripts.Render("~/bundles/fineuploader")
+    @Scripts.Render("~/Scripts/default/edit-album.js")
+}
+
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="change-albums album-edit">
+            <h1><a href="@Url.Action("Index", "Album")">Альбомы</a><a href="@Url.Action("All", "Album")">Все фото</a></h1>
+            @using (Html.BeginForm("Edit", "Album", FormMethod.Post))
+            {
+                @Html.TextBox("Name", Model.Name, new { placeholder = "Введите название альбома" })
+                <div class="wrapper">
+                    <div class="paid">
+                        @Html.CheckBox("IsPayed", Model.IsPayed, new { @class = "checkboxEmul" })
+                        <span class="checkboxLabel">Платный альбом</span>
+                    </div>
+                    <div class="cost" id="CostWrapper">
+                        <span>Стоимость</span>
+                        @Html.TextBox("Price", Model.Price)
+                        <span>р. — комиссия сервиса 20%. <span id="CostInfoWrapper">Вы получите <span id="PriceWrapper">0</span> р.</span></span>
+                    </div>
+                </div>
+                <div id="AlbumWrapper">
+                    @if (Model.Photos != null)
+                    {
+                        foreach (var photo in Model.Photos)
+                        {
+                            @Html.Partial("PhotoItem", photo)
+                        }
+                    }
+                </div>
+                @Html.ValidationMessage("Photos")
+                <div class="photo-item add">
+                    <div class="add-wrapper" id="UploadPhoto">
+                        Добавить<br>фото
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="delete" id="DeletePhoto">
+                        Удалить выделенные фото
+                    </div>
+                    <div class="cover" id="MakeCover">
+                        Сделать обложкой альбома
+                    </div>
+                    <button class="greenBut">Сохранить изменения</button>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+@Html.Partial("UploadTemplatePhoto")

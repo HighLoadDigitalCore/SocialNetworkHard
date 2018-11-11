@@ -1,0 +1,21 @@
+﻿@model IList<MoneyDetail>
+<div class="popup-wrapper">
+    <div class="money-history">
+        <table>
+            <tr>
+                <td>№ платежа</td>
+                <td>Дата</td>
+                <td style="text-align: right; padding-right: 50px">Сумма</td>
+            </tr>
+            @foreach (var d in Model)
+            {
+                <tr>
+                    <td>@d.ID.ToString("d8")</td>
+                    <td>@d.AddedDate.ToString("dd.MM.yyyy")</td>
+                    <td style="text-align: right; padding-right: 50px">@d.Sum.ToString("### ### ###.##") р.</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

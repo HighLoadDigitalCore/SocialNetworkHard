@@ -1,0 +1,54 @@
+﻿@model User
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    if (currentUser != null && currentUser.ID == Model.ID)
+    {
+        ViewBag.Title = "Мои альбомы";
+    }
+    else
+    {
+        ViewBag.Title = "Альбомы";
+    }
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+
+@section header {
+    @Scripts.Render("~/Scripts/default/money.js")
+    @Scripts.Render("~/Scripts/default/album-access.js")
+}
+
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="c_albums clear">
+            <h1>
+                Альбомы
+                @if (currentUser != null && Model.ID == currentUser.ID)
+                {
+                    <a href="@Url.Action("All", "Album")">Все фото</a>
+                }
+            </h1>
+            <div class="c_userName @Model.GenderStr">
+                <a href="@Url.Action("Index", "User", new {id = Model.ID })">@Model.FirstName</a>
+                <div class="c_userPhoto  @Model.GenderStr">
+                    <img src="@Model.FullAvatarPath?w=52&h=52&mode=crop" alt="">
+                </div>
+            </div>
+            @foreach (var album in Model.SubAlbums)
+            {
+                @Html.Partial("AlbumPartial", album)
+            }
+            @if (currentUser != null && currentUser.ID == Model.ID)
+            {
+                <div class="new-album">
+                    <a href="@Url.Action("Create", "Album")">
+                        <div class="add-album">
+                            <div class="plus"></div>
+                            Новый<br>альбом
+                        </div>
+                    </a>
+                </div>
+            }
+        </section>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿@model CommentView
+
+@using (Html.BeginForm("CreateComment", "Event", FormMethod.Post, new { id = "CommentForm" }))
+{
+    @Html.Hidden("_ID", Model._ID)
+    @Html.Hidden("ParentID", Model.ParentID)
+    @Html.Hidden("OwnerID", Model.OwnerID)
+    @Html.Hidden("CopyID", Model.CopyID)
+    @Html.TextArea("Text", Model.Text, new { placeholder = "Напишите сюда свой комментарий и нажмете кнопку «Отправить»" })
+    
+    
+    <div id="AnswerTo" class="hidden answer-to">
+        <div class="close"></div>
+        Ответить <span id="AnswerToName"></span>
+    </div>
+    <button class="greenBut" id="SubmitCommentBtn">Отправить</button>
+}
+

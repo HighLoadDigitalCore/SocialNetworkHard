@@ -1,0 +1,19 @@
+﻿@model Meeting
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<div class="popupBg"></div>
+<div class="popup will-meet pp-type1">
+    <div class="pp_close close-popup">×</div>
+    <div class="pp_title">Встречусь @Model.MeetingDate.EventDateNamed()</div>
+    <div class="pp_text">@Model.City.Name</div>
+    <div class="bigFrame_photo @Model.User.GenderStr">
+        <img src="@Model.User.FullAvatarPath?w=153&h=153&mode=crop" alt="" />
+    </div>
+    <div class="ppm_name @Model.User.GenderStr"><a href="@Url.Action("Index", "User", new { id = Model.UserID })">@Model.User.FirstName</a></div>
+    <div class="pp_desc">@Model.Text</div>
+    @if (currentUser != null)
+    {
+        <a href="@Url.Action("Write", "Message", new {id = Model.UserID})" class="ppm_but greenBut">Отправить сообщение</a>
+    }
+</div>

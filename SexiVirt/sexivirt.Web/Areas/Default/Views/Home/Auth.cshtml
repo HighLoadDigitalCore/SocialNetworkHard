@@ -1,0 +1,37 @@
+﻿
+<div class="mh_autorization">
+    <div class="mha_sect1" id="AuthWrapper">
+        @Html.Action("Ajax", "Login")
+    </div>
+    <div class="mha_sect2">
+        <div>
+            <ul>
+                <li><button id="ShowRegisterButton">Регистрация</button></li>
+                <li><button id="ShowSocialButton">Вход через соцсети</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="registration" style="display:none;" id="RegisterWrapper">
+        @Html.Action("Register", "User")
+    </div>
+
+    <div class="social-login" style="display:none;" id="RegisterSocialWrapper">
+        @*
+        <div class="item twitter"></div>
+        <div class="item facebook"></div>
+        <a class="item vkontakte" href="@Url.Action("VKLogOn", "Login")">
+        </a>
+        <div class="item google"></div>
+        <div class="item write"></div>
+        <div class="item yellow"></div>
+*@
+        <script src="//ulogin.ru/js/ulogin.js"></script>
+        <div id="uLogin" data-ulogin="display=panel;fields=first_name,email,nickname,photo,photo_big,sex,bdate;providers=twitter,facebook,vkontakte,odnoklassniki,mailru,google;hidden=;redirect_uri=http%3A%2F%2F@(Request.Url.Host)%2FUser%2FSocials"></div>
+
+    </div>
+    <div class="registration restore-pass" style="display:none;" id="PasswordWrapper">
+        @Html.Action("Password", "User")
+    </div>
+</div>
+<div class="background-shadow"></div>

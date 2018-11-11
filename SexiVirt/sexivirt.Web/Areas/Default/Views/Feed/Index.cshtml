@@ -1,0 +1,39 @@
+﻿@model IList<Feed>
+@{
+    ViewBag.Title = "Новости";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+@section header {
+    @Scripts.Render("~/Scripts/jquery.jscroll.js")
+    @Scripts.Render("/Scripts/default/feed.js")
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="clear">
+            <h1>Новости</h1>
+            @if (Model.Any()) 
+            { 
+            <div id="FeedWrapper">
+                <div class="feed-list">
+                    @foreach (var item in Model)
+                    {
+                        @Html.Partial("FeedItem", item)
+                    }
+                </div>
+                @if (Model.Count == 18)
+                {
+                    <a class="next" href="@Url.Action("Load", "Feed", new { skip = 18 })">Загружаю</a>
+                }
+            </div>
+            }
+            else
+            {
+                <div class="empty-feed">
+                    Нет новостей
+                </div>
+            }
+        </section>
+    </div>
+</div>
+

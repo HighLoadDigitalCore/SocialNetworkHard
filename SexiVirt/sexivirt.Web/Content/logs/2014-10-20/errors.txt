@@ -1,0 +1,2 @@
+2014-10-20 08:51:42.8439|ERROR|sexivirt.Web.Mail.MailSender|Mail send exception
+2014-10-20 08:53:22.6246|ERROR|sexivirt.Web.Mail.MailSender|Mail send exception

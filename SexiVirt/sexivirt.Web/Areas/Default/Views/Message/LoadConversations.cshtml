@@ -1,0 +1,14 @@
+﻿@model  IList<Connect>
+@{
+    var total = (int)ViewBag.Total;
+    var filter = (string)ViewBag.Filter;
+}
+@foreach (var item in Model)
+{
+    @Html.Partial("ConnectItem", item)
+}
+
+@if (Model.Count == 10)
+{
+     <a class="next" href="@Url.Action("LoadConversations", "Message", new { skip = total, filter = filter })">Загружаю</a>
+}

@@ -1,0 +1,26 @@
+﻿@model IList<Meeting>
+@if (Model.Any())
+{
+    <section class="mm_today">
+        <div class="mm_title">
+            <a href="@Url.Action("Index", "Meeting")">Они хотят встретиться сегодня</a>
+        </div>
+        <div class="carousel carousel0">
+            <div class="carouselWrap">
+                <ul>
+                    @foreach (var meeting in Model)
+                    {
+                        <li data-id="@meeting.ID">
+                            <div class="bigFrame_photo @meeting.User.GenderStr"><img alt="" src="@meeting.User.FullAvatarPath?w=153&h=153&mode=crop"></div>
+                            <div class="cam_name">
+                                <a href="@Url.Action("Index", "User", new {id = meeting.UserID})">@meeting.User.FirstName</a>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="carouselPrev carouselPrev0"></div>
+            <div class="carouselNext carouselNext0"></div>
+        </div>
+    </section>
+}

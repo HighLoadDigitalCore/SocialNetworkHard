@@ -1,0 +1,5 @@
+﻿@model IList<Message>
+@foreach (var message in Model)
+{
+    @Html.Partial("MessageItem", message)
+}

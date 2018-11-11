@@ -1,0 +1,108 @@
+﻿@model Event
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+@section header {
+    <script src="http://api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+    @Scripts.Render("~/Scripts/default/item-event.js")
+}
+
+@Html.Hidden("Coordinate", Model.Coordinate)
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="event-page clear">
+            <h1 class="@Model.User.GenderStr"><a href="@Url.Action("Index", "Event")">События</a></h1>
+            <div class="c_userName @Model.User.GenderStr">
+                <a href="@Url.Action("Index", "User", new { id = Model.UserID })">@Model.User.FirstName</a>
+                <div class="c_userPhoto @Model.User.GenderStr">
+                    <img src="@Model.User.FullAvatarPath?w=52&h=52&mode=crop" alt="" />
+                </div>
+            </div>
+            <div class="left">
+                <div class="date">@Model.EventDate.EventDateNamed()</div>
+                <p><h2>@Model.Name</h2></p>
+                @Html.Raw(Model.Description.NlToBr())
+                <div class="map-block">
+                    <div class="place">@Model.Place</div>
+
+                    <div id="map" style="width:446px; height:289px"></div>
+                </div>
+                <br />
+                <div class="share42init"></div>
+                <script type="text/javascript" src="/Content/share42/share42.js"></script>
+
+            </div>
+            <div class="right">
+                <div class="event-image">
+                    <img src="@Model.ImagePath?w=160&h=176&mode=crop" alt="">
+                </div>
+
+                @if (currentUser != null)
+                {
+                    <div class="actions">
+                        @if (currentUser.InEvent(Model))
+                        {
+                        <a href="@Url.Action("Leave", "Event", new { id = Model.ID })" class="sign-up greenBut minus">Не пойду</a>
+                        }
+                        else
+                        {
+                        <a href="@Url.Action("Enter", "Event", new { id = Model.ID })" class="sign-up greenBut">Присоединиться</a>
+                        }
+                    </div>
+                }
+            </div>
+            <div class="blocks">
+                <div class="title">Пойдут на встречу</div>
+
+                <div id="EventUserWrapper">
+                    @foreach (var user in Model.SubUsers.Take(5))
+                    {
+                        <a href="@Url.Action("Index", "User", new { id = user.ID })">
+                            <div class="item @user.GenderStr">
+                                <img src="@user.FullAvatarPath?w=94&h=94&mode=crop" alt="" />
+                            </div>
+                        </a>
+                    }
+                    @if (Model.SubUsersCount > 5)
+                    {
+                        <div class="item another">
+                            <span>Еще @(Model.SubUsersCount - 5)<br></span>
+                            <a href="#" id="LoadAllUsers" data-id="@Model.ID">Показать<br>всех</a>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="blocks">
+                <div class="commentsWrap">
+                    @if (Model.CommentsCount > 0)
+                    {
+                        <div class="comAmountTitle title">@Model.CommentsCount @Model.CommentsCount.CountWord("комментарий", "комментария", "комментариев")</div>
+                    }
+                    @foreach (var comment in Model.SubComments)
+                    {
+                        @Html.Partial("Comment", comment)
+                    }
+                </div>
+                @if (currentUser != null)
+                {
+                    <div class="cd_postСomment">
+                        <div class="cdpc_title">Что вы думаете об этой записи?</div>
+                        <div id="PostCommentWrapper">
+                            @Html.Action("CreateComment", "Blog", new { id = Model.ID })
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="should-login">
+                        <span>Вы не зарегистрированы</span><br>
+                        Войдите в свою учетную запись или зарегистируйтесь, чтобы оставить комментарий.
+                    </div>
+                }
+            </div>
+        </section>
+    </div>
+</div>

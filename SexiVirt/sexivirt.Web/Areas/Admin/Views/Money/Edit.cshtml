@@ -1,0 +1,108 @@
+﻿@model sexivirt.Model.MoneyWithdraw
+@{
+    ViewBag.Title = "Заявка на вывод денег #" + Model.ID;
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>@("Заявка на вывод денег #" + Model.ID)</h2>
+<p></p>
+@using (Html.BeginForm("Edit", "Money", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <fieldset>
+        @Html.Hidden("ID", Model.ID)
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Дата заявки
+            </label>
+            <div class="col-sm-5">
+                <b>
+                    @Model.AddedDate.ToString("dd.MM.yyyy")
+                </b>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+        </div><div class="form-group">
+            <label class="col-sm-3 control-label">
+                Имя пользователя
+            </label>
+            <div class="col-sm-5">
+                <b>
+                    @Model.User.FirstName
+                </b>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Баланс пользователя
+            </label>
+            <div class="col-sm-5">
+                <b>
+                    @Model.User.Money р.
+                </b>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Способ вывода денег
+            </label>
+            <div class="col-sm-5">
+                <b>
+                    @(Model.Provider == 0 ? "Yandex" : "QIWI")
+                </b>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Номер счета
+            </label>
+            <div class="col-sm-5">
+                <b>
+                    @(Model.Account)
+                </b>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+        </div> <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Сумма для вывода
+            </label>
+            <div class="col-sm-5">
+                <b>
+                    @(Model.Sum)
+                </b>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">
+                Статус
+            </label>
+            <div class="col-sm-5">
+                <select class="form-control" name="Submitted">
+                    <option @(Model.Submitted ? "selected" : "") value="true">Подтверждена</option>
+                    <option @(!Model.Submitted ? "selected" : "") value="false">Не подтверждена</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            Сохранить
+        </button>
+        @Html.ActionLink("Отмена", "Index", null, null, new { @class = "btn" })
+    </fieldset>
+}
+

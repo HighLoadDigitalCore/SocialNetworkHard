@@ -1,0 +1,7 @@
+﻿@model BlogPost
+<div class="diary-item">
+    <div class="date">@Model.AddedDate.ToString("dd MMMM")</div>
+    <div class="cd_text">
+        @Html.Raw(Model.Text.StripTags().Teaser(200).NlToP())
+    </div>
+</div>

@@ -1,0 +1,65 @@
+﻿@using Microsoft.Ajax.Utilities
+@model sexivirt.Web.Models.ViewModels.EventView
+@{
+    ViewBag.Title = Model.ID == 0 ? "Новое событие" : "Редактирование события";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+}
+@section styles {
+    @Styles.Render("~/Content/css/jqueryui")
+}
+@section header {
+    <script src="http://api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+    @Scripts.Render("~/bundles/fineuploader")
+    @Scripts.Render("~/bundles/jquery-ui")
+    @Scripts.Render("~/Scripts/default/edit-event.js")
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="create event clear">
+            @if (Model.ID == 0)
+            {
+                <h1>Новое <a href="@Url.Action("Index", "Event")">событие</a></h1>
+            }
+            else
+            {
+                <h1>Редактирование <a href="@Url.Action("Index", "Event")">события</a></h1>
+            }
+            @using (Html.BeginForm("Edit", "Event", FormMethod.Post))
+            {
+                @Html.Hidden("ID", Model.ID)
+                @Html.Hidden("Coordinate", Model.Coordinate.IsNullOrWhiteSpace() ? "55.75109400578554|37.62008728027329":Model.Coordinate)
+                
+                @Html.Hidden("ImagePath", Model.ImagePath)
+                <div class="left">
+                    @Html.TextBox("Name", Model.Name, new { placeholder = "Введите название события" })
+                    @Html.TextArea("Description", Model.Description, new { placeholder = "Опишите ваше событие" } )
+                    @Html.HiddenFor(x=> x.CityName)
+                    @Html.TextBox("Place", Model.Place, new { placeholder = "Напишите адрес, где будет происходить событие" , style="margin-top:12px"})
+                    <div class="map-block">
+                        <div id="map" style="width:446px; height:289px"></div>
+                    </div>
+                    <button class="greenBut">@(Model.ID == 0 ? "Создать" : "Сохранить")</button>
+                </div>
+                <div class="right">
+                    @Html.TextBox("EventDate", Model.EventDate != null ? Model.EventDate.Value.ToString("dd.MM.yyyy") : "", new { placeholder = "Выберите дату", @class = "datePicker" })
+
+                    <div class="add @(ViewBag.EventClass)">
+                        <span class="silent-button" id="ChangeImage">
+                            @if (string.IsNullOrWhiteSpace(Model.ImagePath))
+                            {
+                                <text>Добавьте<br>фото</text>
+                            }
+                    </span>
+                    <img id="Image" style="display:none;" src="@Model.ImagePath?w=156&h=168&mode=crop" alt="">
+
+                </div>
+                <div class="clarification">
+                    Передвиньте маркер туда, где будет происходить событие.
+                </div>
+            </div>
+            }
+        </section>
+    </div>
+</div>
+@Html.Partial("UploadTemplateImage")

@@ -1,0 +1,32 @@
+﻿@using Microsoft.Ajax.Utilities
+@model MoneyWithdrawModel
+<div id="RemoveCell">
+    @using (Ajax.BeginForm("MoneyRemove", "Money", new { }, new AjaxOptions() { HttpMethod = "POST", UpdateTargetId = "RemoveCell", InsertionMode = InsertionMode.Replace, OnComplete = "loadPayItems();" }, new { ID = "WF" }))
+    {
+        <div class="popup-wrapper">
+            <div class="item yandex">
+                <a data-arg="Yandex" class="@(Model.PayType == "Yandex"? "active":"")" href="#">Яндекс.Деньги</a>
+            </div>
+            <div class="item visa">
+                <a data-arg="QIWI" class="@(Model.PayType == "QIWI"? "active":"")" href="#">Visa QIWI Wallet</a>
+            </div>
+            <input type="hidden" id="PayType" name="PayType" value="@Model.PayType" />
+        </div>
+        <div class="p-line">
+            <span>Номер счета:</span>
+            <br />
+            <input type="text" name="PayAccount" value="@Model.PayAccount">
+        </div>
+        <div class="p-line">
+            <span>Сумма для вывода:</span>
+            <br />
+            <input type="text" name="PaySum" value="@Model.PaySum">
+            <span class="ruble">руб.</span>
+            <button type="button" class="greenBut">Вывести</button>
+        </div>
+        if (!((string)ViewBag.Message).IsNullOrWhiteSpace())
+        {
+            <div class="p-line"><b>@Html.Raw(ViewBag.Message)</b></div>
+        }
+    }
+</div>

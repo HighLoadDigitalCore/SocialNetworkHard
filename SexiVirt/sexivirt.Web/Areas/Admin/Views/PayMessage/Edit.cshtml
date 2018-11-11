@@ -1,0 +1,42 @@
+﻿@model MessagePayment
+    @{
+        ViewBag.Title = Model.ID == 0 ? "Добавить тариф" : "Изменить тариф";
+        Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>@(Model.ID == 0 ? "Добавить тариф" : "Изменить тариф")</h2>
+    <p>@Html.ValidationSummary(true)</p>
+    @using (Html.BeginForm("Edit", "PayMessage", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <fieldset>
+            @Html.Hidden("ID", Model.ID)
+            <div class="form-group @Html.HasErrorClass("Price", "has-error")">
+                <label class="col-sm-3 control-label" for="Price">
+                    Цена
+                </label>
+                <div class="col-sm-5">
+                    @Html.TextBox("Price", Model.Price, new { @class = "form-control" })
+                </div>
+                <div class="col-sm-4">
+                    @Html.ValidationMessage("Price")
+                </div>
+            </div>
+            <div class="form-group @Html.HasErrorClass("Duration", "has-error")">
+                <label class="col-sm-3 control-label" for="Duration">
+                    Длительность (дней)
+                </label>
+                <div class="col-sm-5">
+                    @Html.TextBox("Duration", Model.Duration, new { @class = "form-control" })
+                </div>
+                <div class="col-sm-4">
+                    @Html.ValidationMessage("Duration")
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    Сохранить
+                </button>
+                @Html.ActionLink("Cancel", "Index", null, null, new { @class = "btn" })
+            </div>
+        </fieldset>
+    }

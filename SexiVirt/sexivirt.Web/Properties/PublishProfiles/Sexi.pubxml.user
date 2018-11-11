@@ -1,0 +1,1421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdcVJ0rGtuEepGeZJxwInrAAAAAACAAAAAAAQZgAAAAEAACAAAACQaQjl7AhFgDQuliWM9+ZqrR4e3QVkSw17Q7D2kKyAPwAAAAAOgAAAAAIAACAAAAAgBf0oiAPaH94ku0v7JYWrn+VrDRuWJmSgY2kbfmbncCAAAAA6UPTmGBb1y9caKNynVQZScm9pw/IaUcQSU1Asi8EegUAAAACZUkp5u5V8wjtCJNYXfsg9SELWTcHfHx2azEZeKYtNyjJgQRIzKnhUQolXs9kIberZ9xuXNpqCC1Jx2sAEXnDI</EncryptedPassword>
+    <_PublishTargetUrl>ftp://195.128.121.187/proserjo-3/WWWRoot</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Areas/Admin/Views/City/Edit.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/City/Index.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Gift/Edit.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Gift/Index.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Home/Index.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Money/Edit.cshtml">
+      <publishTime>07/14/2014 14:13:10</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Money/Index.cshtml">
+      <publishTime>07/14/2014 14:32:25</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/PayMessage/Edit.cshtml">
+      <publishTime>07/24/2014 20:39:10</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/PayMessage/Index.cshtml">
+      <publishTime>07/24/2014 20:33:31</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Preference/Edit.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Preference/Index.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Settings/Index.cshtml">
+      <publishTime>07/24/2014 20:08:25</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Shared/AdminMenu.cshtml">
+      <publishTime>07/24/2014 20:34:35</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Shared/UploadTemplate.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Shared/_Layout.cshtml">
+      <publishTime>07/17/2014 14:17:22</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/User/Edit.cshtml">
+      <publishTime>07/24/2014 17:32:23</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/User/Index.cshtml">
+      <publishTime>07/24/2014 19:49:05</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/web.config">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/_ViewStart.cshtml">
+      <publishTime>07/14/2014 12:57:28</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Album/All.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Album/AllPhoto.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Album/BuyAlbum.cshtml">
+      <publishTime>07/31/2014 09:36:41</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Album/Edit.cshtml">
+      <publishTime>07/14/2014 09:17:38</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Album/Index.cshtml">
+      <publishTime>07/30/2014 13:16:18</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Album/Item.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Album/Photo.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Album/PhotoItem.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Album/UploadTemplatePhoto.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/Blog.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/BlogLoad.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/Comment.cshtml">
+      <publishTime>07/31/2014 10:46:53</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/CommentRating.cshtml">
+      <publishTime>07/14/2014 09:13:32</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/CreateComment.cshtml">
+      <publishTime>07/31/2014 10:05:14</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/Edit.cshtml">
+      <publishTime>01/08/2014 12:27:10</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/Index.cshtml">
+      <publishTime>07/17/2014 11:42:24</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/IndexLoad.cshtml">
+      <publishTime>07/15/2014 17:08:41</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/My.cshtml">
+      <publishTime>07/16/2014 17:18:19</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/MyLoad.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/Post.cshtml">
+      <publishTime>08/01/2014 17:28:41</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/ShortBlogAuthor.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/ShortBlogPost.cshtml">
+      <publishTime>07/14/2014 09:43:10</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/ShortBlogPostInList.cshtml">
+      <publishTime>07/15/2014 16:54:46</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/ShortMyBlogPost.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/SubComment.cshtml">
+      <publishTime>07/31/2014 10:51:01</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Blog/UploadTemplateImage.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Comment/Rating.cshtml">
+      <publishTime>07/07/2014 10:06:22</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Error/Index.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Error/NotFoundPage.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/Comment.cshtml">
+      <publishTime>07/31/2014 10:46:58</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/CommentRating.cshtml">
+      <publishTime>07/14/2014 09:14:07</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/CreateComment.cshtml">
+      <publishTime>07/31/2014 10:05:51</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/Edit.cshtml">
+      <publishTime>07/11/2014 11:43:49</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/EventShortItem.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/Index.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/Item.cshtml">
+      <publishTime>08/01/2014 17:38:38</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/Load.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/LoadUsers.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/My.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/MyEventShortItem.cshtml">
+      <publishTime>07/16/2014 17:10:25</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/SearchEvent.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/SubComment.cshtml">
+      <publishTime>07/31/2014 10:51:08</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/TodayList.cshtml">
+      <publishTime>01/08/2014 10:46:17</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Event/UploadTemplateImage.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Feed/Count.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Feed/FeedItem.cshtml">
+      <publishTime>08/04/2014 10:10:33</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Feed/Index.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Feed/Load.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Friend/ContactSearch.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Friend/Index.cshtml">
+      <publishTime>07/07/2014 12:04:51</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Friend/Load.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Friend/MyContacts.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Friend/NewContacts.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Friend/ShortFullContactItem.cshtml">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Friend/ShortNewContactItem.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Gift/GiftPartial.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Gift/Index.cshtml">
+      <publishTime>07/10/2014 11:38:39</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Gift/Item.cshtml">
+      <publishTime>07/07/2014 12:36:24</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Gift/List.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Gift/Popup.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/Comment.cshtml">
+      <publishTime>07/31/2014 10:47:38</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/CommentRating.cshtml">
+      <publishTime>07/14/2014 09:14:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/CreateComment.cshtml">
+      <publishTime>07/31/2014 10:05:59</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/CreatePost.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/Edit.cshtml">
+      <publishTime>07/10/2014 14:04:37</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/GroupSearch.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/GroupShortItem.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/HideUsers.cshtml">
+      <publishTime>07/09/2014 10:14:13</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/Index.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/Item.cshtml">
+      <publishTime>07/09/2014 10:14:56</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/Load.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/LoadPosts.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/LoadUsers.cshtml">
+      <publishTime>07/09/2014 10:13:25</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/My.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/MyGroupShortItem.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/Post.cshtml">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/ShortGroupBlogPost.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/SubComment.cshtml">
+      <publishTime>07/31/2014 10:50:46</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Group/UploadTemplateAvatar.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/AjaxPreferences.cshtml">
+      <publishTime>07/31/2014 17:18:28</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/Auth.cshtml">
+      <publishTime>07/18/2014 12:18:40</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/Blog.cshtml">
+      <publishTime>01/08/2014 11:14:41</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/EditUserDescription.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/EditUserInfo.cshtml">
+      <publishTime>07/16/2014 09:29:49</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/EventPartial.cshtml">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/Home.cshtml">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/Index.cshtml">
+      <publishTime>04/08/2014 16:20:01</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/MainMenu.cshtml">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/PostPartial.cshtml">
+      <publishTime>07/15/2014 11:50:01</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/Status.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/StatusForm.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/UploadTemplateAvatar.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/UserDescription.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/UserInfo.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/UserLogin.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Home/UserPreferences.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Login/Ajax.cshtml">
+      <publishTime>08/04/2014 09:29:05</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Login/AjaxAside.cshtml">
+      <publishTime>07/29/2014 14:27:06</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Login/ForgotPassword.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Login/ForgotPasswordSuccess.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Login/Index.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Meeting/Edit.cshtml">
+      <publishTime>07/14/2014 11:59:19</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Meeting/Index.cshtml">
+      <publishTime>07/28/2014 10:30:38</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Meeting/Load.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Meeting/MeetingShortItem.cshtml">
+      <publishTime>07/28/2014 16:41:04</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Meeting/My.cshtml">
+      <publishTime>07/28/2014 10:32:47</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Meeting/MyMeetingItem.cshtml">
+      <publishTime>07/28/2014 10:33:55</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Meeting/Popup.cshtml">
+      <publishTime>07/31/2014 17:23:29</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Meeting/SearchMeeting.cshtml">
+      <publishTime>07/28/2014 11:44:43</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Meeting/SearchPreference.cshtml">
+      <publishTime>07/24/2014 12:43:34</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Meeting/TodayList.cshtml">
+      <publishTime>01/08/2014 10:47:48</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Message/ConnectItem.cshtml">
+      <publishTime>07/29/2014 14:55:29</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Message/Conversation.cshtml">
+      <publishTime>07/24/2014 12:33:30</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Message/GetLast.cshtml">
+      <publishTime>07/16/2014 10:37:47</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Message/Index.cshtml">
+      <publishTime>07/29/2014 14:53:16</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Message/Load.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Message/LoadConversations.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Message/MessageItem.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Money/MoneyAdd.cshtml">
+      <publishTime>07/30/2014 12:17:25</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Money/MoneyHistory.cshtml">
+      <publishTime>07/24/2014 12:29:13</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Money/MoneyRemove.cshtml">
+      <publishTime>07/14/2014 12:33:07</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Money/PayMessage.cshtml">
+      <publishTime>07/31/2014 09:37:31</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Money/Popup.cshtml">
+      <publishTime>07/22/2014 14:32:14</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/People/AjaxPreferences.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/People/Index.cshtml">
+      <publishTime>07/09/2014 10:34:15</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/People/Load.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/People/SearchPeople.cshtml">
+      <publishTime>07/18/2014 10:18:30</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/People/SearchPreference.cshtml">
+      <publishTime>07/10/2014 18:02:40</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/People/UserPreference.cshtml">
+      <publishTime>07/28/2014 15:46:22</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/People/UserShortItem.cshtml">
+      <publishTime>07/28/2014 15:44:42</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Search/BlogPosts.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Search/Events.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Search/Groups.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Search/Index.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Search/People.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Search/SearchForm.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Search/ShortBlogPosts.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Search/ShortEvents.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Search/ShortGroups.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Search/ShortUsers.cshtml">
+      <publishTime>07/28/2014 15:45:19</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Search/UserPreference.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Settings/Index.cshtml">
+      <publishTime>07/08/2014 12:12:02</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Shared/AlbumPartial.cshtml">
+      <publishTime>08/01/2014 17:30:35</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Shared/_BootstrapLayout.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Shared/_Layout.cshtml">
+      <publishTime>04/08/2014 16:03:54</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/Shared/_Ok.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/User/Index.cshtml">
+      <publishTime>07/24/2014 22:40:37</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/User/Password.cshtml">
+      <publishTime>08/04/2014 09:26:11</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/User/PostPartial.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/User/Rating.cshtml">
+      <publishTime>07/14/2014 09:15:02</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/User/Register.cshtml">
+      <publishTime>07/17/2014 12:28:09</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/User/RegisterSuccess.cshtml">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/web.config">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Areas/Default/Views/_ViewStart.cshtml">
+      <publishTime>07/07/2014 11:33:19</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>07/03/2014 21:22:09</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>08/05/2014 13:10:18</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>08/05/2014 13:10:18</publishTime>
+    </File>
+    <File Include="bin/App_GlobalResources.compiled">
+      <publishTime>08/05/2014 13:10:17</publishTime>
+    </File>
+    <File Include="bin/App_GlobalResources.dll">
+      <publishTime>08/05/2014 13:10:17</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>07/03/2014 21:22:11</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.Net4.dll">
+      <publishTime>07/03/2014 21:22:11</publishTime>
+    </File>
+    <File Include="bin/ImageResizer.dll">
+      <publishTime>07/03/2014 21:21:47</publishTime>
+    </File>
+    <File Include="bin/ImageResizer.Mvc.dll">
+      <publishTime>07/03/2014 21:22:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/03/2014 21:22:30</publishTime>
+    </File>
+    <File Include="bin/MiniProfiler.dll">
+      <publishTime>07/03/2014 21:22:33</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/03/2014 21:22:38</publishTime>
+    </File>
+    <File Include="bin/Ninject.dll">
+      <publishTime>07/03/2014 21:21:42</publishTime>
+    </File>
+    <File Include="bin/Ninject.Web.Common.dll">
+      <publishTime>07/03/2014 21:22:53</publishTime>
+    </File>
+    <File Include="bin/Ninject.Web.Mvc.dll">
+      <publishTime>07/03/2014 21:22:51</publishTime>
+    </File>
+    <File Include="bin/NLog.dll">
+      <publishTime>07/03/2014 21:22:57</publishTime>
+    </File>
+    <File Include="bin/OhAuthToo.dll">
+      <publishTime>07/09/2014 16:04:01</publishTime>
+    </File>
+    <File Include="bin/PagedList.dll">
+      <publishTime>07/03/2014 21:22:59</publishTime>
+    </File>
+    <File Include="bin/PagedList.Mvc.dll">
+      <publishTime>07/03/2014 21:23:01</publishTime>
+    </File>
+    <File Include="bin/sexivirt.Model.dll">
+      <publishTime>08/05/2014 13:09:54</publishTime>
+    </File>
+    <File Include="bin/sexivirt.Web.dll">
+      <publishTime>08/05/2014 13:09:55</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>07/03/2014 21:22:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>07/03/2014 21:22:22</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>07/03/2014 21:22:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>07/03/2014 21:22:25</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/03/2014 21:22:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/03/2014 21:22:29</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/03/2014 21:22:29</publishTime>
+    </File>
+    <File Include="bin/Tool.dll">
+      <publishTime>01/08/2014 16:38:56</publishTime>
+    </File>
+    <File Include="bin/WebActivator.dll">
+      <publishTime>07/03/2014 21:23:04</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>07/03/2014 21:23:06</publishTime>
+    </File>
+    <File Include="Content/css/admin.css">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap.css">
+      <publishTime>07/17/2014 14:09:14</publishTime>
+    </File>
+    <File Include="Content/css/bootstrap.min.css">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/css/datepicker.css">
+      <publishTime>07/17/2014 14:09:37</publishTime>
+    </File>
+    <File Include="Content/css/fineuploader-4.1.1.min.css">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/css/fineuploader.css">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/css/jquery-ui-1.10.0.custom.css">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/css/jquery.cleditor.css">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/css/jquery.formstyler.css">
+      <publishTime>07/16/2014 22:15:03</publishTime>
+    </File>
+    <File Include="Content/css/jquery.mCustomScrollbar.css">
+      <publishTime>07/14/2014 11:56:46</publishTime>
+    </File>
+    <File Include="Content/css/jquery.ui.1.10.0.ie.css">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/css/PagedList.css">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/css/style.css">
+      <publishTime>08/04/2014 16:47:16</publishTime>
+    </File>
+    <File Include="Content/css/style_bootstrap.css">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/fonts/myriadpro-cond.eot">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/fonts/myriadpro-cond.svg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/fonts/myriadpro-cond.ttf">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/fonts/myriadpro-cond.woff">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/add-event-error.png">
+      <publishTime>07/07/2014 11:17:39</publishTime>
+    </File>
+    <File Include="Content/images/add-event.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/album-shadow-b.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/album-shadow-r.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/arrow-down.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/autorization-bg.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/avarat-border.png">
+      <publishTime>07/10/2014 13:53:31</publishTime>
+    </File>
+    <File Include="Content/images/blank.gif">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/blur.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/car1-nav.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/car2-nav.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/clouds.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/c_searchbut.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/datepicker_day_bg.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/datepicker_day_sunday_bg.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/datepicker_next.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/datepicker_prev.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/datepicker_sprite.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/default_avatar.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/default_gift.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/dropdown.png">
+      <publishTime>07/16/2014 09:05:08</publishTime>
+    </File>
+    <File Include="Content/images/edit-ico.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/footer-bg.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/footer-bg1.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/gifts/gift-1.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/gifts/gift-2.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/gifts/gift-3.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/gifts/gift-4.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/gifts/gift-5.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/gone-impressions.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/left-r.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/login-shadow.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/logo.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/m-bg-bot.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/m-bg-top.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/m-bg.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/main-bg.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/man-avatar.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/man-avatar.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/meetingBg.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/openAlbum-ico.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/openAlbum-ico.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/0.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/00.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/01.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/02.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/03.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/04.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/05.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/06.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/1.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/10.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/11.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/12.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/13.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/14.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/15.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/16.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/2.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/3.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/4.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/5.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/6.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/7.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/8.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/9.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/close.png">
+      <publishTime>07/24/2014 16:36:10</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/closeAlbum.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/closeAlbum1.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/closeAlbumSecond.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/closeAlbumSecond1.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/close_man.png">
+      <publishTime>07/30/2014 13:36:43</publishTime>
+    </File>
+    <File Include="Content/images/photo/albums/close_woman.png">
+      <publishTime>07/30/2014 13:23:47</publishTime>
+    </File>
+    <File Include="Content/images/photo/userPhoto.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/plus18.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/popup-separator.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/popupMeet.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/popupMeetBot.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/popupMeetTop.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/postComment-bg.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/ppm_but-ico.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/presents.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/regarrov.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/review.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/robo.jpg">
+      <publishTime>07/14/2014 10:21:38</publishTime>
+    </File>
+    <File Include="Content/images/searchBut.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/selete-ico.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/separator.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/shadow.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/spec-frame.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/tail-hight-man.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/tail-hight.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/tail-min-man.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/tail-min.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/top1.png">
+      <publishTime>07/10/2014 18:30:22</publishTime>
+    </File>
+    <File Include="Content/images/top2.png">
+      <publishTime>07/10/2014 18:30:23</publishTime>
+    </File>
+    <File Include="Content/images/top3.png">
+      <publishTime>07/10/2014 18:30:23</publishTime>
+    </File>
+    <File Include="Content/images/top4.png">
+      <publishTime>07/10/2014 18:30:21</publishTime>
+    </File>
+    <File Include="Content/images/type2-bottom.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/type2-top.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/woman-avatar.jpg">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/woman-avatar.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/Новая папка/frame-big-man.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/Новая папка/frame-big-woman.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/Новая папка/frame-man.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/Новая папка/frame-men.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/Новая папка/frame-min-man.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/Новая папка/frame-min-woman.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/Новая папка/frame-woman.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/Новая папка/frame-women.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/images/сomment.png">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/css/prettyPhoto.css">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/backgrounds/bodyBackground.jpg">
+      <publishTime>04/08/2014 16:01:43</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/backgrounds/checkmark.gif">
+      <publishTime>04/08/2014 16:01:43</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/fullscreen/1.jpg">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/fullscreen/2.jpg">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/fullscreen/3.jpg">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/fullscreen/4.jpg">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/fullscreen/5.jpg">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/fullscreen/6.jpg">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/fullscreen/DSC05016.jpg">
+      <publishTime>04/08/2014 16:01:43</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/fullscreen/DSCF0031.JPG">
+      <publishTime>04/08/2014 16:01:43</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/fullscreen/high.gif">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/fullscreen/huge.gif">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/fullscreen/wide.gif">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/dark_rounded/btnNext.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/dark_rounded/btnPrevious.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/dark_rounded/contentPattern.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/dark_rounded/default_thumbnail.gif">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/dark_rounded/loader.gif">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/dark_rounded/sprite.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/dark_square/btnNext.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/dark_square/btnPrevious.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/dark_square/contentPattern.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/dark_square/default_thumbnail.gif">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/dark_square/loader.gif">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/dark_square/sprite.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/facebook/btnNext.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/facebook/btnPrevious.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/facebook/contentPatternBottom.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/facebook/contentPatternLeft.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/facebook/contentPatternRight.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/facebook/contentPatternTop.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/facebook/default_thumbnail.gif">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/facebook/loader.gif">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/facebook/sprite.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/light_rounded/btnNext.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/light_rounded/btnPrevious.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/light_rounded/default_thumbnail.gif">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/light_rounded/loader.gif">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/light_rounded/sprite.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/light_square/btnNext.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/light_square/btnPrevious.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/light_square/default_thumbnail.gif">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/light_square/loader.gif">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/prettyPhoto/light_square/sprite.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/thumbnails/flash-logo.png">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/thumbnails/quicktime-logo.gif">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/thumbnails/t_1.jpg">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/thumbnails/t_2.jpg">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/thumbnails/t_3.jpg">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/thumbnails/t_4.jpg">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/images/thumbnails/t_5.jpg">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/index.html">
+      <publishTime>01/18/2013 16:53:34</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/js/jquery-1.3.2.min.js">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/js/jquery-1.4.4.min.js">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/js/jquery.prettyPhoto.js">
+      <publishTime>01/18/2013 17:01:22</publishTime>
+    </File>
+    <File Include="Content/prettyPhoto/README">
+      <publishTime>01/18/2013 16:52:42</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/11/2014 14:29:24</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>08/05/2014 13:10:15</publishTime>
+    </File>
+    <File Include="Scripts/admin/common.js">
+      <publishTime>07/17/2014 14:20:59</publishTime>
+    </File>
+    <File Include="Scripts/admin/edit-gift.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap-datepicker.js">
+      <publishTime>07/17/2014 14:10:06</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/default/album-access.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/default/aside-auth.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/default/auth.js">
+      <publishTime>07/17/2014 15:06:36</publishTime>
+    </File>
+    <File Include="Scripts/default/blog-blog.js">
+      <publishTime>07/09/2014 10:32:43</publishTime>
+    </File>
+    <File Include="Scripts/default/blog-post.js">
+      <publishTime>07/31/2014 10:48:06</publishTime>
+    </File>
+    <File Include="Scripts/default/common.js">
+      <publishTime>07/29/2014 14:37:35</publishTime>
+    </File>
+    <File Include="Scripts/default/contact.js">
+      <publishTime>07/21/2014 12:08:27</publishTime>
+    </File>
+    <File Include="Scripts/default/conversation.js">
+      <publishTime>07/30/2014 12:56:55</publishTime>
+    </File>
+    <File Include="Scripts/default/edit-album.js">
+      <publishTime>07/11/2014 12:28:44</publishTime>
+    </File>
+    <File Include="Scripts/default/edit-blog.js">
+      <publishTime>01/08/2014 12:33:53</publishTime>
+    </File>
+    <File Include="Scripts/default/edit-event.js">
+      <publishTime>07/11/2014 11:51:41</publishTime>
+    </File>
+    <File Include="Scripts/default/edit-group.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/default/edit-meeting.js">
+      <publishTime>07/10/2014 18:03:51</publishTime>
+    </File>
+    <File Include="Scripts/default/edit-user.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/default/event.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/default/feed.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/default/friendship.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/default/gift.js">
+      <publishTime>01/08/2014 13:46:54</publishTime>
+    </File>
+    <File Include="Scripts/default/group-post.js">
+      <publishTime>08/04/2014 10:16:22</publishTime>
+    </File>
+    <File Include="Scripts/default/index-blog.js">
+      <publishTime>07/09/2014 11:33:07</publishTime>
+    </File>
+    <File Include="Scripts/default/index-group.js">
+      <publishTime>01/08/2014 12:38:37</publishTime>
+    </File>
+    <File Include="Scripts/default/index.js">
+      <publishTime>04/08/2014 16:22:43</publishTime>
+    </File>
+    <File Include="Scripts/default/item-event.js">
+      <publishTime>07/31/2014 10:48:27</publishTime>
+    </File>
+    <File Include="Scripts/default/item-group.js">
+      <publishTime>07/09/2014 10:16:10</publishTime>
+    </File>
+    <File Include="Scripts/default/meeting.js">
+      <publishTime>01/08/2014 13:30:22</publishTime>
+    </File>
+    <File Include="Scripts/default/message.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/default/money.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/default/my-blog.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/default/people.js">
+      <publishTime>01/08/2014 13:32:05</publishTime>
+    </File>
+    <File Include="Scripts/default/photo.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/default/post.js">
+      <publishTime>07/31/2014 10:48:36</publishTime>
+    </File>
+    <File Include="Scripts/default/profile.js">
+      <publishTime>01/08/2014 13:29:46</publishTime>
+    </File>
+    <File Include="Scripts/default/rating.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/default/register.js">
+      <publishTime>07/17/2014 18:19:05</publishTime>
+    </File>
+    <File Include="Scripts/default/search.js">
+      <publishTime>07/28/2014 15:29:35</publishTime>
+    </File>
+    <File Include="Scripts/fineuploader-4.1.1.min.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.0.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.0.min.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.10.4.custom.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.10.4.custom.min.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.blockUI.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.cleditor.js">
+      <publishTime>01/08/2014 12:32:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery.cleditor.min.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.donetyping.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.fineuploader-3.5.0.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.fineuploader-3.5.0.min.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.fineuploader-4.1.1.min.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.formstyler.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.formstyler.min.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.highlight.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.jcarousel.min.js">
+      <publishTime>07/16/2014 11:20:15</publishTime>
+    </File>
+    <File Include="Scripts/jquery.jscroll.js">
+      <publishTime>07/09/2014 11:36:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.jscroll.min.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.mCustomScrollbar.js">
+      <publishTime>07/14/2014 11:53:08</publishTime>
+    </File>
+    <File Include="Scripts/jquery.mousewheel.js">
+      <publishTime>07/11/2014 12:51:23</publishTime>
+    </File>
+    <File Include="Scripts/jquery.placeholder.min.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>07/11/2014 14:29:24</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>07/11/2014 14:29:24</publishTime>
+    </File>
+    <File Include="Scripts/jScrollPane.js">
+      <publishTime>07/11/2014 12:47:24</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>06/25/2014 23:54:36</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>04/08/2014 16:01:45</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/05/2014 13:10:14</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

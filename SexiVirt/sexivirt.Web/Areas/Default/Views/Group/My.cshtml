@@ -1,0 +1,25 @@
+﻿@model User
+@{
+    ViewBag.Title = "Мои группы";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+    var groupSearch = (sexivirt.Web.Models.ViewModels.Info.GroupSearch)ViewBag.GroupSearch;
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="groups clear">
+            <h1>Мои группы</h1>
+            @if (currentUser != null)
+            {
+                <div class="addWrite"><a href="@Url.Action("Create", "Group")">Добавить свою группу</a></div>
+            }
+            <div id="GroupListWrapper">
+                @foreach (var group in Model.MyGroups)
+                {
+                    @Html.Partial("MyGroupShortItem", group)
+                }
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+﻿body {
+    padding-top: 50px;
+}
+
+.main-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.has-warning .field-validation-error {
+    color: #c09853;
+}
+
+
+.has-error .field-validation-error {
+    color: #b94a48;
+}
+
+.has-success .field-validation-error {
+    color: #468847;
+}
+
+
+.field-validation-error {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #737373;
+}

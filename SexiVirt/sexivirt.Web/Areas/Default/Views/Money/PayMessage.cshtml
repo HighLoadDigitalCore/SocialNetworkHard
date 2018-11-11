@@ -1,0 +1,29 @@
+﻿@model IList<MessagePayment>
+@{
+    var currentUser = ((sexivirt.Web.Controllers.BaseController)ViewContext.Controller).CurrentUser;
+}
+<div id="PayMessageCell">
+    <div class="popupBg"></div>
+    <div class="popup balance pp-type2">
+        <div class="pp_close close-popup">×</div>
+        <div class="pp_title">Для отправки сообщения необходимо <br /> подключить услугу  отправки сообщений</div>
+        <div id="PopupContent">
+            @using (Ajax.BeginForm("PayMessage", new { }, new AjaxOptions() { HttpMethod = "POST", InsertionMode = InsertionMode.Replace, UpdateTargetId = "PayMessageCell" }, new { id = "PayMessageForm" }))
+            {
+                <div class="mpl">
+                    @foreach (var pay in Model)
+                    {
+                        <label><input name="pay" @(ViewBag.Pay == pay.ID ? "checked" : "") value="@pay.ID" type="radio" /><span>Длительность действия - @pay.Duration дней, стоимость - @pay.Price руб.</span></label>
+                    }
+                </div>
+
+                <button style="float: right; margin-right: 50px" type="button" onclick=" $('#PayMessageForm').submit() " class="greenBut">Оплатить</button>
+
+                if (ViewBag.Error != null)
+                {
+                    <div class="p-line"><b>@Html.Raw(ViewBag.Error)</b></div>
+                }
+            }
+        </div>
+    </div>
+</div>

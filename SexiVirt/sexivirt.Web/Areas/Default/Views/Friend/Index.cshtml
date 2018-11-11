@@ -1,0 +1,30 @@
+﻿@model IList<Friendship>
+@{
+    ViewBag.Title = "Контакты";
+    Layout = "~/Areas/Default/Views/Shared/_Layout.cshtml";
+    var contactSearch = (sexivirt.Web.Models.ViewModels.Info.ContactSearch)ViewBag.ContactSearch;
+}
+@section header {
+    @Scripts.Render("~/Scripts/jquery.jscroll.js")
+    @Scripts.Render("~/Scripts/jquery.donetyping.js")
+    @Scripts.Render("~/Scripts/default/contact.js")
+}
+<div class="middle">
+    @Html.Action("MainMenu", "Home")
+    <div class="content">
+        <section class="contacts clear">
+            <h1>Контакты</h1>
+            @Html.Partial("ContactSearch", contactSearch)
+
+            <div class="LoadPageWrapper">
+                <div class="new-contacts" id="NewContactsWrapper">
+                    @Html.Partial("NewContacts", Model)
+                </div>
+                <div class="my-contacts" id="MyContactsWrapper" data-skip="0">
+                    @Html.Action("MyContacts", "Friend", new { SearchString = contactSearch.SearchString })
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+

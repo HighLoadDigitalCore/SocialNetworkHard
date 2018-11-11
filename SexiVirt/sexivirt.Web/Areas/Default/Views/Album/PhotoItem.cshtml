@@ -1,0 +1,12 @@
+﻿@model PhotoView
+<div class="photo-item @(Model.Checked ? "selected" : "") @(Model.IsCover ? "active" : "")">
+    @{
+        var guid = Guid.NewGuid().ToString("N");
+    }
+    @Html.Hidden("Photos.index", guid)
+    @Html.Hidden("Photos[" + guid + "].ID", Model.ID)
+    @Html.Hidden("Photos[" + guid + "].FilePath", Model.FilePath)
+    @Html.Hidden("Photos[" + guid + "].IsCover", Model.IsCover, new { @class = "CoverInput" })
+    <img src="@Model.FilePath?w=155&h=155&mode=crop" alt="">
+    @Html.CheckBox("Photos["+guid +"].Checked", Model.Checked, new { @class = "checkboxEmul" })
+</div>

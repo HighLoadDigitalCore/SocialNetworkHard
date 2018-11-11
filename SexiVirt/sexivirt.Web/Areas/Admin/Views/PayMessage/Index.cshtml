@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Платные сообщения";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<MessagePayment>
+<h2>Платные сообщения</h2>
+@Html.ActionLink("Создать", "Create", "PayMessage", null, new { @class = "btn btn-primary" })
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Цена
+            </th>
+            <th>
+                Длительность (дней)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.Price.ToString("### ###.##")
+            </td>
+            <td>
+                @item.Duration
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "Edit", "PayMessage", new { id = item.ID }, new { @class = "btn btn-default" })
+                @Html.ActionLink("Удалить", "Delete", "PayMessage", new { id = item.ID }, new { @class = "btn btn-default" })
+            </td>
+        </tr>
+    }
+</table>
+<div class="pager">
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>
+
